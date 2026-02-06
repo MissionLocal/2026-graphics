@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple CSV Table (11 rows, 3 cols)</title>
+
+  <!-- Barlow -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- PapaParse (CSV loader) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Barlow", sans-serif;
+      background: #ffffff;
+    }
+
+    .table-container {
+      max-width: 550px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #ddd;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    th {
+      font-weight: 600;
+      border-bottom: 1px solid #ddd;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #eee;
+    }
+
+    tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .status {
+      font-size: 13px;
+      color: #6b7280;
+      margin: 0 0 8px 0;
+    }
+
+    @media (max-width: 480px) {
+      th, td {
+        padding: 6px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="table-container">
+
+    <table id="resultsTable" aria-label="Results table">
+      <thead>
+        <tr id="headerRow"></tr>
+      </thead>
+      <tbody id="bodyRows"></tbody>
+    </table>
+  </div>
+
+  <script>
+    /**
+     * CONFIG
+     * - Put your CSV next to this HTML file and name it results.csv
+     * - CSV should have headers in the first row
+     * - We will display only the first 3 columns and first 11 rows
+     */
+    const CSV_URL = "expenses_for_chart.csv";
+    const MAX_ROWS = 11;
+    const MAX_COLS = 3;
+
+    const headerRowEl = document.getElementById("headerRow");
+    const bodyRowsEl = document.getElementById("bodyRows");
+
+    function escapeHtml(s) {
+      return String(s ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    Papa.parse(CSV_URL, {
+      download: true,
+      header: true,
+      skipEmptyLines: true,
+      dynamicTyping: false,
+      complete: (results) => {
+        const rows = results?.data ?? [];
+        const fields = results?.meta?.fields ?? [];
+        const cols = fields.slice(0, MAX_COLS);
+
+        // Build header
+        headerRowEl.innerHTML = cols.map(c => `<th>${escapeHtml(c)}</th>`).join("");
+
+        // Build body (first 11 rows)
+        const slice = rows.slice(0, MAX_ROWS);
+        bodyRowsEl.innerHTML = slice.map(r => {
+          const tds = cols.map(c => `<td>${escapeHtml(r[c])}</td>`).join("");
+          return `<tr>${tds}</tr>`;
+        }).join("");
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
+  </script>
+</body>
+</html>
