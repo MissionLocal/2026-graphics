@@ -1,0 +1,959 @@
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "barlow", sans-serif;
+        font-size: 16px;
+    }
+
+    a {
+        color: #5E5E5E;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    
+    a:hover {
+        color: #5682A9;
+    }
+    
+    a:visited {
+        color: #5E5E5E;
+    }
+
+    /* legend */
+
+    .legend {
+        display: flex;
+        flex-direction: column;
+        max-width: 1000px;
+        margin: 5px auto;
+        padding: 0 20px;
+    }
+
+    .legend-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+
+    .legend-dot {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .green-dot {
+        background-color: #D0EBC7;
+    }
+
+    .yellow-dot {
+        background-color: #DBC297;
+    }
+
+    .red-dot {
+        background-color: #E8ADAB;
+    }
+
+    .grey-dot {
+        background-color: #858485;
+    }
+
+
+    /* category */
+
+    .portrait-category-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .portrait-category {
+        color: #848484;
+        margin: 15px 0;
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .portrait-category::before,
+    .portrait-category::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background-color: #b2b2b2;
+        margin: 0 10px;
+    }
+
+
+    /* Latest */
+
+    .latest-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 40px 0;
+    }
+    .latest-content {
+        display: flex;
+        flex-direction: column;
+        min-width: 275px;
+        max-width: 640px;
+        width: 90%;
+    }
+    .intro-graf {
+        font-size: 18px;
+        line-height: 1.5;
+        margin: 0 0 20px 0;
+    }
+
+    .intro-graf p {
+        font-weight: bold;
+    }
+
+    .firstcharacter {
+        float: left;
+        font-size: 48px;
+        line-height: 40px;
+        padding-right: 8px;
+        font-weight: bold;
+    }
+
+
+    /* portraits */
+
+    .portrait-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 1000px;
+        margin: auto; /* Margin between containers */
+        padding: 0 10px; /* Padding on the sides of the container */
+        gap: 20px; /* Even spacing between columns */
+    }
+
+    .portrait-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 105px;
+        gap: 5px;
+    }
+    
+    .portrait-row img {
+        width: 100px;
+        height: auto;
+    }
+
+    .portrait-row img:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+
+    .portrait-name {
+        font-weight: bold;
+        padding: 2px 0; 
+        justify-content: center;
+        text-align: center;
+    }
+
+    .portrait-title {
+        font-size: 14px;
+        color: #555;
+        padding: 0 0 2px 0;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    /* bio */
+
+    .bio {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .bio-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px 15px 20px;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        min-width: 275px;
+        max-width: 600px;
+        width: 90%;
+        gap: 10px;
+    }
+
+    .bio-title {
+        font-size: 24px;
+        font-weight: 900;
+        margin: 20px 0 12px 0;
+        padding: 0;
+    }
+
+    .bio-card {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .bio-card img {
+        width: 100px;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .bio-short-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bio-long-info {
+        margin-top: 15px;
+        line-height: 1.5;
+        padding-left: 20px;
+    }
+
+    .former-bio-long-info {
+        margin-top: 15px;
+        line-height: 1.5;
+        padding-left: 5px;
+    }
+
+    .read-more {
+        margin-top: 15px;
+        line-height: 1.5;
+        padding-left: 5px;
+    }
+
+    .name {
+        font-weight: bold;
+        font-size: 18px;
+        padding: 0 0 10px 0;
+    }
+
+    .status, .department {
+        font-size: 14px;
+        color: #555;
+        padding: 0 0 5px 0;
+    }
+
+    .who-is-leaving {
+        font-size: 20px;
+        font-weight: 900;
+        padding: 0 0 10px 0;
+    }
+
+
+    /* mobile */
+
+    @media screen and (max-width: 480px) {
+
+        .portrait-category {
+            margin: 5px 0;
+        }
+        
+        .portrait-title {
+            font-size: 14px;
+        }
+
+        .portrait-row img {
+            width: 80px;
+            height: auto;
+        }
+
+        .portrait-container {
+            width: 85px;
+            gap: 5px;
+        }
+
+        .bio-container {
+            width: 100%;
+        }
+        
+        .bio-title {
+            font-size: 20px;
+            font-weight: 900;
+            margin: 15px 0 10px 0;
+            padding: 0;
+        }
+        
+        .bio-card img {
+            width: 80px;
+            height: auto;
+            border-radius: 8px;
+        }
+    }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+
+<body>
+    <!-- last updated: Mar. 25, 2026 -->
+    <!-- what's latest -->
+    <div class="latest-box">
+        <div class="latest-content">
+            <div class="intro-graf"><span class="firstcharacter">T</span>his June, San Francisco voters will have an opportunity to, rather literally, <a href="https://missionlocal.org/2026/01/sf-ceo-tax-lurie-supervisors/">tax the rich.</a></div>
+
+<div class="intro-graf">The problem is, just two years ago, we — also literally — <a href="https://missionlocal.org/2024/09/san-francisco-tax-proposition-m/">voted to not do that.</a></div>
+
+<div class="intro-graf">Here’s how that works: In 2024, every last vestige of San Francisco political power united behind <a href="https://missionlocal.org/2024/09/san-francisco-tax-proposition-m/">Prop. M,</a> a sweeping rewrite of the city’s business tax formula. The issue was that San Francisco’s business tax revenue had grown top heavy: Just seven of the biggest companies accounted for 24 percent of the revenue and the 100 biggest companies paid 58 percent of it. </div>
+
+<div class="intro-graf">This left San Francisco extraordinarily susceptible to a massive financial hit if even a handful of companies relocated. In November 2024, 69.5 percent of voters approved Prop. M, and eased the burden on the city’s biggest companies (while the city did not disclose its largest companies, one needn’t be Hercule Poirot to deduce many or all of them. Just <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Salesforce_Tower_from_Salesforce_Park.jpg/960px-Salesforce_Tower_from_Salesforce_Park.jpg">scan the city skyline</a>, for starters.).</div>
+
+<div class="intro-graf">Here’s the thing, though: By doing so, the city raised the burden on many, many smaller companies. This, again, was by design.</div>
+
+<div class="intro-graf">Easing taxes on the rich to raise taxes on the not-as-rich, regardless of the rationality of spreading out a tax base, was never a natural fit for San Francisco’s electorate. And, not even two years later, the city’s service employee unions have signature-gathered a tax on wealthy corporations onto this June’s ballot.</div>
+
+<div class="intro-graf">Proposition D, the so-called overpaid CEO measure, would levy taxes on companies in which the CEO earns 100 times or more his or her median income employee. At issue here is that this would undo portions of Prop. M.</div>
+
+<div class="intro-graf">If voters approve, a measure meant to instill stability and predictability for businesses with offices in San Francisco would be replaced, not so long after the ink has dried. This is the opposite of predictability for city businesses — but, as a political measure, it was very predictable.</div>
+
+<div class="intro-graf">Also predictable: the news that the Chamber of Commerce signature-gathered its own dueling June 2026 measure intended to sink Prop. D (it’ll be called Prop. C).</div>
+
+<div class="intro-graf">When questioned regarding their stance on Props C and D, some city leaders and aspiring elected officials have been straightforward. Others have been tap dancing to rival the <a href="https://www.youtube.com/watch?v=zBb9hTyLjfM">Nicholas Brothers.</a> The county Democratic Party <a href="https://drive.google.com/file/d/1GjYFKgSMSmD5Tl6UHoXZ4QLeThJ9WGWP/view">will vote</a> on whether to endorse or spurn Props. C and D on Wednesday night.</div>
+
+<div class="intro-graf"><iframe width="560" height="315" src="https://www.youtube.com/embed/zBb9hTyLjfM?si=nOhnWshelrQt5gni" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+<div class="intro-graf">Prior to that, <i>Mission Local</i> asked San Francisco’s present and aspirational leaders the following:</div>
+
+<div class="intro-graf"><p>Are you publicly supporting or opposing the CEO tax? Please state why or why not and please state how you’ll be voting on your own ballot.</p></div>
+
+<div class="intro-graf">And here are their responses: </div>
+        </div>
+    </div>
+    <!-- legend -->
+    <div class="legend">
+        <div class="legend-item">
+          <div class="legend-dot green-dot"></div>
+          <div>Support the 'Overpaid CEO tax' proposal</div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot red-dot"></div>
+          <div>Oppose the 'Overpaid CEO tax' proposal</div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot grey-dot"></div>
+          <div>Answered, did not address the question</div>
+        </div>
+        <div class="legend-item">
+            <div><span style="font-style: italic;">Click on the photos to read more about their positions.</span></div>
+        </div>
+    </div>
+
+    <!-- portraits: mayor -->
+
+        <div class="portrait-category-container" id="top">
+        <div class="portrait-category">the Mayor</div>
+    </div>
+    <div class="portrait-row">
+        <div class="portrait-container">
+            <a href="#mayor"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/daniel-lurie.png" alt="Daniel Lurie"></a>
+            <div class="portrait-name">Daniel Lurie</div>
+        </div>
+    </div>
+    <div class="portrait-category-container" id="top">
+        <div class="portrait-category">Board of Supervisors</div>
+    </div>
+    <div class="portrait-row">
+        <div class="portrait-container">
+            <a href="#sup-d1"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/connie-chan.png" alt="Connie Chan"></a>
+            <div class="portrait-name">Connie Chan</div>
+            <div class="portrait-title">District 1 supervisor</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#sup-d2"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/stephen-sherrill.png" alt="Stephen Sherrill"></a>
+            <div class="portrait-name">Stephen Sherrill</div>
+            <div class="portrait-title">District 2 supervisor</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#sup-d3"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/danny-sauter.png" alt="Danny Sauter"></a>
+            <div class="portrait-name">Danny Sauter</div>
+            <div class="portrait-title">District 3 supervisor</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#sup-d4"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/alan-wong.png" alt="Paul Yep"></a>
+            <div class="portrait-name">Alan Wong</div>
+            <div class="portrait-title">District 4 supervisor</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#sup-d5"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/bilal-mahmood.png" alt="Bilal Mahmood"></a>
+            <div class="portrait-name">Bilal Mahmood</div>
+            <div class="portrait-title">District 5 supervisor</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#sup-d6"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/matt-dorsey.png" alt="Matt Dorsey"></a>
+            <div class="portrait-name">Matt Dorsey</div>
+            <div class="portrait-title">District 6 supervisor</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#sup-d7"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/myrna-melgar.png" alt="Myrna Melgar"></a>
+            <div class="portrait-name">Myrna Melgar</div>
+            <div class="portrait-title">District 7 supervisor</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#sup-d8"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/rafael-mandelman.png" alt="Rafael Mandelman"></a>
+            <div class="portrait-name">Rafael Mandelman</div>
+            <div class="portrait-title">District 8 supervisor</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#sup-d9"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/jackie-fielder.png" alt="Jackie Fielder"></a>
+            <div class="portrait-name">Jackie Fielder</div>
+            <div class="portrait-title">District 9 supervisor</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#sup-d10"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/shamann-walton.png" alt="Shamann Walton"></a>
+            <div class="portrait-name">Shamann Walton</div>
+            <div class="portrait-title">District 10 supervisor</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#sup-d11"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/chyanne-chen.png" alt="Chyanne Chen"></a>
+            <div class="portrait-name">Chyanne Chen</div>
+            <div class="portrait-title">District 11 supervisor</div>
+        </div>
+    </div>
+
+    <!-- portraits: major department heads -->
+    <div class="portrait-category-container">
+        <div class="portrait-category">Notable candidates for the Board of Supervisors</div>
+    </div>
+    <div class="portrait-row">
+        <div class="portrait-container">
+            <a href="#d2-candidate-lori"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/lori-brooke.png" alt="Lori Brooke"></a>
+            <div class="portrait-name">Lori Brooke</div>
+            <div class="portrait-title">District 2 candidate</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#d4-candidate-albert"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/albert-chow.png" alt="Albert Chow"></a>
+            <div class="portrait-name">Albert Chow</div>
+            <div class="portrait-title">District 4 candidate</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#d4-candidate-natalie"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/natalie-gee.png" alt="Natalie Gee"></a>
+            <div class="portrait-name">Natalie Gee</div>
+            <div class="portrait-title">District 4 candidate</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#d4-candidate-david"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/david-lee.png" alt="David Lee"></a>
+            <div class="portrait-name">David Lee</div>
+            <div class="portrait-title">District 4 candidate</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#d8-candidate-gary"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/gary-mccoy.png" alt="Gary McCoy"></a>
+            <div class="portrait-name">Gary McCoy</div>
+            <div class="portrait-title">District 8 candidate</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#d8-candidate-michael"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/michael-nguyen.png" alt="Michael Nguyen"></a>
+            <div class="portrait-name">Michael Nguyen</div>
+            <div class="portrait-title">District 8 candidate</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#d8-candidate-manny"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/manny-yekutiel-2.png" alt="Manny Yekutiel"></a>
+            <div class="portrait-name">Manny Yekutiel</div>
+            <div class="portrait-title">District 8 candidate</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#d10-candidate-theo"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/theo-ellington.png" alt="Theo Ellington"></a>
+            <div class="portrait-name">Theo Ellington</div>
+            <div class="portrait-title">District 10 candidate</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#d10-candidate-jr"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/jr-eppler.png" alt="J.R. Eppler"></a>
+            <div class="portrait-name">J.R. Eppler</div>
+            <div class="portrait-title">District 10 candidate</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#dj"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/dj-brookter.png" alt="D.J. Brookter"></a>
+            <div class="portrait-name">D.J. Brookter</div>
+            <div class="portrait-title">District 10 candidate</div>
+        </div>
+    </div>
+
+    
+    <div class="portrait-category-container">
+        <div class="portrait-category">State representatives</div>
+    </div>
+    <div class="portrait-row">
+        <div class="portrait-container">
+            <a href="#matt-haney"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/matt-haney-2.png" alt="Matt Haney"></a>
+            <div class="portrait-name">Matt Haney</div>
+            <div class="portrait-title">Assemblymember</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#catherine-stefani"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/catherine-stefani.png" alt="Catherine Stefani"></a>
+            <div class="portrait-name">Catherine Stefani</div>
+            <div class="portrait-title">Assemblymember</div>
+        </div>
+
+        <div class="portrait-container">
+            <a href="#scott-wiener"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/scott-wiener.png" alt="Scott Wiener"></a>
+            <div class="portrait-name">Scott Wiener</div>
+            <div class="portrait-title">State senator</div>
+        </div>
+
+    </div>
+
+        
+    <div class="portrait-category-container">
+        <div class="portrait-category">Congressional candidates</div>
+    </div>
+    <div class="portrait-row">
+        <div class="portrait-container">
+            <a href="#saikat"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/saikat-chakarbarti.png" alt="Saikat Chakarbarti"></a>
+            <div class="portrait-name">Saikat Chakarbarti</div>
+            <div class="portrait-title">Congressional candidate</div>
+        </div>
+
+        <div class="portrait-container">
+            <a href="#marie"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/marie-hurabiell.png" alt="Marie Hurabiell"></a>
+            <div class="portrait-name">Marie Hurabiell</div>
+            <div class="portrait-title">Congressional candidate</div>
+        </div>
+        
+        <div class="portrait-container">
+            <a href="#sup-d1"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/connie-chan.png" alt="Connie Chan"></a>
+            <div class="portrait-name">Connie Chan</div>
+            <div class="portrait-title">Congressional candidate</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#scott-wiener"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/scott-wiener.png" alt="Scott Wiener"></a>
+            <div class="portrait-name">Scott Wiener</div>
+            <div class="portrait-title">Congressional candidate</div>
+        </div>
+    </div>
+
+    <!-- bio info -->
+    <div class="bio">
+        <!-- mayor: bio info -->
+        <div class="bio-container" id="mayor">
+            <div class="bio-title">Mayor</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/daniel-lurie.png" alt="Daniel Lurie">
+                <div class="bio-short-info">
+                    <div class="name">Daniel Lurie</div>
+                    <div class="department">Mayor of San Francisco</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>In 2024, San Franciscans — from labor and business to every mayoral candidate and the Board of Supervisors — came together to pass comprehensive business tax reform and boost our city’s economic recovery. But this June, and for the third time in five years, this same debate will be on the ballot once again. That’s a clear sign of a broken system that rewards insiders at the expense of everyday San Franciscans.</p>
+
+                <p>Neither measure moves San Francisco forward. They have no impact on the imminent budget deficit or federally imposed health care cuts we face right now.</p>
+
+                <p>We want to see San Francisco build more housing that works for their respective neighborhoods.</p>
+
+                <p>We cannot be complacent about our recovery, and dueling proposals that produce longer, more confusing ballots reward division over consensus––only benefitting those who know how to game a broken system.</p>
+
+                <p>It’s time to turn the page on a ballot system that obstructs the progress and accountability San Franciscans deserve. I will not support either of these measures, but I am taking steps to fix the broken system that got us here. This November, working alongside dozens of city leaders, voters will have the opportunity to fix our bloated City Charter and a deeply flawed initiative system, and keep San Francisco’s recovery moving forward.</p>
+ <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="sup-d1">
+            <div class="bio-title">District 1 Supervisor and Congressional Candidate</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/connie-chan.png" alt="Connie Chan">
+                <div class="bio-short-info">
+                    <div class="name">Connie Chan</div>
+                    <div class="department">Board of Supervisors</div>
+                    <div class="status">Elected in 2020 and re-elected in November 2024</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+            <p>I am supportive of the overpaid CEO tax. Not only that, I, in fact, had our own version of it earlier this year. But we withdrew when we began to realize our labor partners had a very similar proposal, so we thought that signature-gathering is absolutely the way to go. It’s a lower barrier (50+1 percent vs. 66.7 percent) and I always think signature-gathering is in the San Francisco style. It’s very community-driven and allows conversations with voters.
+            </p>
+            <p>It addresses overpaid CEOs — CEOs paid 100 times or more the median income employee of their company. It’s about, how do we address the gap between the CEOs and the workers? It really is a significant gap. We have seen, on the federal level, billionaires and corporations are getting tax breaks. At the same time, we’re getting health care cuts, food security cuts and education cuts from the federal government. 
+            </p>
+            <p>I want to see us revert to pre-Prop. M (of 2024) and make sure these corporations are paying their fair share in San Francisco. </p>
+            <a href="#top">Back ↑</a>
+            </div>
+            </div>
+        <div class="bio-container" id="sup-d2">
+            <div class="bio-title">District 2 Supervisor</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/stephen-sherrill.png" alt="Stephen Sherrill">
+                <div class="bio-short-info">
+                    <div class="name">Stephen Sherrill</div>
+                    <div class="department">Board of Supervisors</div>
+                    <div class="status">Appointed by Mayor London Breed in December 2024</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>I’m not supporting the CEO tax right now. I’m concerned it risks accelerating the loss of grocery stores and pharmacies, which we’ve already seen with Walgreens closures in my district. We also just made major changes to our business tax structure with Prop. M in 2024, and I don’t think it’s responsible to revisit that so quickly. We need to maintain a thoughtful, long-term approach that supports downtown recovery and keeps San Francisco competitive.</p>
+ <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <!-- four deputies -->
+        <div class="bio-container" id="sup-d3">
+            <div class="bio-title">District 3 Supervisor</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/danny-sauter.png" alt="Danny Sauter">
+                <div class="bio-short-info">
+                    <div class="name">Danny Sauter</div>
+                    <div class="department">Board of Supervisors</div>
+                    <div class="status">Elected in November 2024</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Yes, I am supporting the Overpaid CEO Tax. As we face serious budget shortalls, we need new avenues to provide essential services that our residents rely on. This measure means we can avoid drastic cuts to street cleaning, first responders and community programs.</p> <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="sup-d4">
+            <div class="bio-title">District 4 Supervisor</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/alan-wong.png" alt="Alan Wong">
+                <div class="bio-short-info">
+                    <div class="name">Alan Wong</div>
+                    <div class="department">Board of Supervisors</div>
+                    <div class="status">Appointed by Mayor Daniel Lurie in December 2025</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>I support the CEO tax as a measured, practical step. As we work through San Francisco’s budget challenges, it seems reasonable to ask large corporations to contribute a bit more to help sustain the services and infrastructure that make our city a place where businesses can thrive and succeed. My goal is for San Francisco to succeed as a city that supports both a strong business environment and a high quality of life for its residents and workers.</p> <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="sup-d5">
+            <div class="bio-title">District 5 Supervisor</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/bilal-mahmood.png" alt="Bilal Mahmood">
+                <div class="bio-short-info">
+                    <div class="name">Bilal Mahmood</div>
+                    <div class="department">Board of Supervisors</div>
+                    <div class="status">Elected in November 2024</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Trump’s HR 1 created a $400 million budget hole in San Francisco, putting tens of thousands at risk of losing health care and food assistance. Prop. D is the only measure that can meaningfully close that gap, asking only the largest corporations to pay about a 1% gross receipts tax. Small businesses are protected, and similar taxes have not led to corporate flight or higher consumer costs. At a time when residents are being asked to pay more, it’s only fair that big corporations do their part.</p>
+                <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="sup-d6">
+            <div class="bio-title">District 6 Supervisor</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/matt-dorsey.png" alt="Matt Dorsey">
+                <div class="bio-short-info">
+                    <div class="name">Matt Dorsey</div>
+                    <div class="department">Board of Supervisors</div>
+                    <div class="status">Appointed by Mayor London Breed in 2022 and elected in November 2022</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p><a href="https://api.sf.gov/documents/52289/June2026_PropD_OpponentArgument_Redacted.pdf">Here’s the link</a> to the Prop. D Opponent Argument I wrote for the Voter Information Pamphlet.</p>
+<p>I strongly oppose Prop. D, which is asking voters to approve the largest business tax hike in San Francisco history — in some cases exceeding 900%. At a moment when we should all be united to protect the fragile economic recovery we’ve finally got underway, this divisive proposal will incentivize large employers to leave San Francisco — and it will impose a powerful disincentive for retailers and other businesses to ever come back again. It will cause countless businesses to raise prices on San Franciscans at a time when we should be doing the exact opposite — trying to improve affordability — and it won’t reduce a single CEO’s compensation.</p>
+
+<p>It’s just terrible public policy, and I intend to work hard to defeat it. 
+                </p>
+<a href="#top">Back ↑</a>
+            </div>
+        </div>
+        
+        <div class="bio-container" id="sup-d7">
+            <div class="bio-title">District 7 Supervisor</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/myrna-melgar.png" alt="Myrna Melgar">
+                <div class="bio-short-info">
+                    <div class="name">Myrna Melgar</div>
+                    <div class="department">Board of Supervisors</div>
+                    <div class="status">Elected in 2022 and re-elected in November 2024</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                 <p>Yes. The rich got a huge tax cut from Donald Trump's “Big Beautiful Bill.” This is one thing we can do at the local level to mitigate the damage.</p> <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="sup-d8">
+            <div class="bio-title">District 8 Supervisor</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/rafael-mandelman.png" alt="Rafael Mandelman">
+                <div class="bio-short-info">
+                    <div class="name">Rafael Mandelman</div>
+                    <div class="department">Board of Supervisors</div>
+                    <div class="status">Elected in 2018, and re-elected in 2022</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>I am not supporting the tax. Less than two years ago I was part of the effort to develop and pass the Prop. M business tax reform.  A main purpose of that measure was to encourage large employers to create jobs in San Francisco and to bring back our COVID-hollowed downtown. Prop. M was the result of broad consultation with stakeholders and involved a mix of tax cuts and increases to achieve revenue neutrality. This measure keeps the 2024 tax increases in place while reversing the tax cuts that were supposed to help revive our downtown. I share the proponents’ interest in finding additional revenue to pay for important services, but I don’t think this is the right way to do it.</p> <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="sup-d9">
+            <div class="bio-title">District 9 Supervisor</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/jackie-fielder.png" alt="Jackie Fielder">
+                <div class="bio-short-info">
+                    <div class="name">Jackie Fielder</div>
+                    <div class="department">Board of Supervisors</div>
+                    <div class="status">Elected in November 2024</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>It’s hard to say you care about affordability while opposing Prop. D. This will keep essential services affordable in a city where so much wealth is held by so few. </p>
+ <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="sup-d10">
+            <div class="bio-title">District 10 Supervisor</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/shamann-walton.png" alt="Shamann Walton">
+                <div class="bio-short-info">
+                    <div class="name">Shamann Walton</div>
+                    <div class="department">Board of Supervisors</div>
+                    <div class="status">Elected in 2018 and re-elected in November 2022</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>I am in 100% support of the CEO tax. We have a large projected budget deficit and this tax will ensure that the people who earn the most play a role in addressing  the city’s needs.</p>
+<a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="sup-d11">
+            <div class="bio-title">District 11 Supervisor</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/chyanne-chen.png" alt="Chyanne Chen">
+                <div class="bio-short-info">
+                    <div class="name">Chyanne Chen</div>
+                    <div class="department">Board of Supervisors</div>
+                    <div class="status">Elected in November 2024</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>I am a supporter of the CEO tax and will proudly be voting for it in June.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="d2-candidate-lori">
+            <div class="bio-title">District 2 Supervisor Candidate</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/lori-brooke.png" alt="Lori Brooke">
+                <div class="bio-short-info">
+                    <div class="name">Lori Brooke</div>
+                    <div class="department">Founder of Neighborhoods United SF</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>I am not publicly supporting or opposing the CEO tax. I understand the intent behind the measure, to generate revenue to protect essential services at a time when San Francisco is facing a significant budget deficit. Those are real challenges, and we need to take them seriously.</p>
+
+<p>At the same time, I have concerns about the potential economic impact of significantly increasing business taxes while the city is still working to recover and retain employers. We need to be thoughtful about any policy that could affect jobs, investment, and the overall stability of our local economy.</p>
+
+<p>My focus is on finding balanced, sustainable solutions that protect critical services, support working people, and help the city recover.</p>
+
+<p>On my own ballot, I am still reviewing the measure and will make a final decision after weighing its impact on the city’s budget, workforce, and long-term economic health.</p> <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="d4-candidate-albert">
+            <div class="bio-title">District 4 Supervisor Candidate</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/albert-chow.png" alt="Albert Chow">
+                <div class="bio-short-info">
+                    <div class="name">Albert Chow</div>
+                    <div class="department">Owner of the Great Wall Hardware and supporter of Joel Engardio recall</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>I will probably not support that one and probably vote for the other one that is a more gradual tax. I am not against billionaires paying their fair share, but it seems almost punitive. The way I see it, if anybody can pick up and move, it’s a billionaire or centimillionaire. If they have headquarters here and their workforce here and we do something that kind of in their mind says ‘this is the last straw, I’m done with this,’ I think that would end up hurting us more than helping us. We may get more tax in the first year or two but they may be thinking ‘I’ll move ot Austin.’ We’d lose the continued structural basis of our taxes in the long run. So, yes, they should pay their fair share, but we have to be measured in how we do it. They do have the ability to leave. </p> <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="d4-candidate-natalie">
+            <div class="bio-title">District 4 Supervisor Candidate</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/natalie-gee.png" alt="Natalie Gee">
+                <div class="bio-short-info">
+                    <div class="name">Natalie Gee</div>
+                    <div class="department">Legislative aide to District 10 Supervisor Shamann Walton</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Yes, I support it and actually helped gather signatures to get it on the ballot through my union, IFPTE Local 21. Working people already pay our fair share, whether it's sales tax or property tax. Meanwhile, CEOs got double-digit tax cuts from the federal government last year. We're just asking these big corporations, whose CEOs make 100 times what the median worker makes, to invest a little more in the city and keep our essential public services running.</p>
+<a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="d4-candidate-david">
+            <div class="bio-title">District 4 Supervisor Candidate</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/david-lee.png" alt="David Lee">
+                <div class="bio-short-info">
+                    <div class="name">David Lee</div>
+                    <div class="department">Former State Assembly and District 1 supervisor candidate</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Yes, I support the CEO tax. I will vote yes on D on my own ballot. A lot of billionaires already have tax breaks from the federal government. It's time for billionaires to pay their fair share in San Francisco.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="d8-candidate-gary">
+            <div class="bio-title">District 8 Supervisor Candidate</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/gary-mccoy.png" alt="Gary McCoy">
+                <div class="bio-short-info">
+                    <div class="name">Gary McCoy</div>
+                    <div class="department">Aide to Rep. Nancy Pelosi and recovery advocate</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>We should absolutely tax overpaid CEOs to protect San Franciscans and keep essential services in place in a time of massive federal tax and budget cuts that will impact SNAP, Medicare, and Medicaid. I will be voting yes on Prop. D.</p> <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="d8-candidate-michael">
+            <div class="bio-title">District 8 Supervisor Candidate</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/michael-nguyen.png" alt="Michael Nguyen">
+                <div class="bio-short-info">
+                    <div class="name">Michael Nguyen</div>
+                    <div class="department">IP attorney, LGBTQ+ activist and drag performer</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Yes, I am publicly supporting the Overpaid CEO Act. San Francisco is facing devastating federal cuts to Medicaid and the programs our most vulnerable residents depend on — in-home care for seniors, mental health services and our public hospitals. We can’t just sit back and abandon our most vulnerable San Franciscans. The Overpaid CEO Act will generate over $200 million annually to protect those services. So speaking plainly, this measure means the difference between people getting care and people going without. A city that works for everyone is also a city where companies can recruit, retain, and grow. Those things are connected — not in conflict. I will be voting yes on Prop. D.</p>
+                <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="d8-candidate-manny">
+            <div class="bio-title">District 8 Supervisor Candidate</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/manny-yekutiel-2.png">
+                <div class="bio-short-info">
+                    <div class="name">Manny Yekutiel</div>
+                    <div class="department">Owner of Manny's and founder of Civic Joy Fund</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>I don’t support this, and I join Mayor Lurie in his concern about this tax at this time. Our economic recovery is fragile, downtown vacancies remain high, and we're just now starting to see forward progress on businesses choosing San Francisco again.
+We just passed a complete overhaul of our business taxes in 2024 (Prop. M, which I supported), which is already bringing in more business tax revenue to the City. Adding another business tax at this critical moment in the City’s recovery could backfire, resulting in businesses leaving the City or choosing elsewhere, which would hurt employment.</p>
+<p>I totally get the appeal of taxing CEOs. But this isn't actually a tax on CEOs. It's a tax on gross receipts, which means companies will have to pay it whether they're profitable or not, and the cost gets passed down to consumers. Let’s do this the right way.</p> <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="d10-candidate-theo">
+            <div class="bio-title">District 10 Supervisor Candidate</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/theo-ellington.png" alt="Unfilled">
+                <div class="bio-short-info">
+                    <div class="name">Theo Ellington</div>
+                    <div class="department">Policy director at legal and government relations firm Brownstein and interim executive director of Ruth Williams Opera House</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>My sense is that the CEO tax will pass. People are struggling and looking for relief. Particularly with the rising cost of living, income inequality and uncertainty as it relates to the local and federal budget. This is not ideal way to craft such policy, but I will vote yes, understanding my district has a high unemployment rate, concentration of public housing, and large number of students qualify for free or reduced lunch.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="d10-candidate-jr">
+            <div class="bio-title">District 10 Supervisor Candidate</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/jr-eppler.png" alt="J.R. Eppler">
+                <div class="bio-short-info">
+                    <div class="name">J.R. Eppler</div>
+                    <div class="department">Business and nonprofit attorney, member of the Board of Appeals</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>I publicly support the CEO tax, and I’ll be voting yes on my own ballot. This is necessary to maintain essential services in the unfortunate face of lost federal funds. At a time when corporations received a tax windfall in the 2025 federal tax bill, it’s reasonable to ask the biggest companies to contribute a little more to protect the services San Franciscans rely on. This is a progressive tax that asks more from those at the top, not working families.</p><a href="#top">Back ↑</a>
+            </div>
+
+        </div>
+        <div class="bio-container" id="dj">
+            <div class="bio-title">District 10 Supervisor Candidate</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/dj-brookter.png" alt="D.J. Brookter">
+                <div class="bio-short-info">
+                    <div class="name">D.J. Brookter</div>
+                    <div class="department">Chief Executive Officer at Young Community Developers Inc., a nonprofit, and Member of Sheriff’s Department Oversight Board</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>I support the proposed Overpaid CEO Act because it asks large, highly profitable corporations to contribute more to the communities they operate in. By generating over $200 million annually for mental health care, public hospitals, emergency services, and youth programs — especially in underserved neighborhoods like District 10 — this measure takes a meaningful step toward addressing inequality. At a time when wealth is concentrated at the top and many families are struggling, it’s a fair and timely way to strengthen essential services and invest in a more equitable San Francisco. For these reasons, I plan to vote yes on my own ballot and publicly support the measure.</p><a href="#top">Back ↑</a>
+            </div>
+
+        </div>
+        <div class="bio-container" id="matt-haney">
+            <div class="bio-title">State Assemblymember</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/matt-haney-2.png" alt="Matt Haney">
+                <div class="bio-short-info">
+                    <div class="name">Matt Haney</div>
+                    <div class="department">Elected in April 2022.</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>I support the CEO tax. Yes on Prop. D</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <!-- major department heads: bio info -->
+        <div class="bio-container" id="catherine-stefani">
+            <div class="bio-title">State Assemblymember</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/catherine-stefani.png" alt="Catherine Stefani">
+                <div class="bio-short-info">
+                    <div class="name">Catherine Stefani</div>
+                    <div class="department">Elected in November 2024.</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Less than two years ago, San Francisco voters came together to pass Proposition M, a broadly supported overhaul of our business tax system backed by labor, business leaders, and community stakeholders. That measure reflected a consensus-driven approach to strengthening our local economy, one that I believe we must continue to pursue, and it is far too soon to rewrite it.</p>
+
+<p>This June, I will be voting no on both business tax measures because San Francisco cannot afford another divisive ballot fight when what we need is stability, certainty, and follow-through on what voters already approved.</p> <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="scott-wiener">
+            <div class="bio-title">State Senator and Congressional Candidate</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/scott-wiener.png" alt="Scott Wiener">
+                <div class="bio-short-info">
+                    <div class="name">Scott Wiener</div>
+                    <div class="department">Elected in 2016 and re-elected in November 2024</div>
+                </div>F
+            </div>
+            <div class="bio-long-info">
+                <p>Our city, like our state, faces a financial crisis in part because of Trump’s massive health care cuts that are paying for tax cuts for corporations and the wealthiest Americans. I have a long track record supporting progressive taxation — for example, I support increasing the state corporate tax, the extension of California’s 2012 income tax increase, and elimination of most of the Bush and Trump mega tax cuts. I am also very focused on the regional and local public transit revenue measures that are so essential for our transit systems. I do not support Props C and D.</p>
+
+<p>While I understand and respect the effort to generate revenue for city services, the gross receipts tax contained in Prop. D was brokered as part of Prop. M in 2024 — a consensus business tax reform that resulted from extensive negotiation, including by labor and business and for which I campaigned. I don’t support revisiting that negotiated tax measure.
+</p>
+
+                <a href="#top">Back ↑</a>
+            </div>
+
+
+        </div>
+        <div class="bio-container" id="marie">
+            <div class="bio-title">Congressional Candidate</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/marie-hurabiell.png" alt="Marie Hurabiell">
+                <div class="bio-short-info">
+                    <div class="name">Marie Hurabiell</div>
+                    <div class="department">Attorney, founder of Connected SF, former Trump appointee to Presidio Trust Board of Directors</div>
+                </div>
+            </div>
+            <div class="bio-long-info">
+                <p>We've already seen what happens when we layer taxes onto large employers: businesses leave, the tax base shrinks, and the programs we were trying to fund end up worse off. 2024’s Prop. M was a recognition that we had overcorrected. This measure risks repeating that mistake at exactly the wrong moment. I'm committed to finding durable, fiscally sound ways to fund mental health and emergency services; this isn't the right vehicle. I do not support the CEO Tax. </p>
+                <a href="#top">Back ↑</a>
+            </div>
+
+
+        </div>
+        <div class="bio-container" id="saikat">
+            <div class="bio-title">Congressional Candidate</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/saikat-chakarbarti.png" alt="Saikat Chakarbarti">
+                <div class="bio-short-info">
+                    <div class="name">Saikat Chakarbarti</div>
+                    <div class="department">Former tech executive and former campaign manager and chief of staff for Rep. Alexandria Ocasio-Cortez</div>
+                </div>
+            </div>
+            <div class="bio-long-info">
+                <p>Yes. I have publicly supported the ballot measure and <a href="https://www.instagram.com/p/DTgiEEMEsIt/">made a video </a>explaining why a few months ago. I will be voting for it.</p>
+
+<p>This act imposes a small surcharge on large corporations that pay their CEOs more than 100 times the wages of their median employees. Only corporations with over 1,000 employees and over a billion dollars in revenue will be affected, so small businesses will be fine.</p>
+
+<p>These are the same corporations that received a big tax cut this year from Trump. At the same time, we have seen funding for our housing, public health and safety programs slashed in San Francisco. This act rectifies the situation. If we don’t pass it, we will see worse street conditions, more cuts to our healthcare system and slower emergency response times.
+</p>
+
+                <p></p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+    </div>
+      
+</body>
