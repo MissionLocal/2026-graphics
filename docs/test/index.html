@@ -127,7 +127,7 @@
     const labelG = svg.append("g");
 
     // ── Load pre-computed CSV ──
-    d3.csv("data.csv").then(rawData => {
+    d3.csv("https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/04/data.csv").then(rawData => {
 
       const data = rawData.map(d => ({
         id:           d.id,
