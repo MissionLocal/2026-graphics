@@ -1,48 +1,302 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Overdose deaths in San Francisco</title>
-    <meta name="description" content="Overdose deaths in San Francisco" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
-    <!-- OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
-    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Scrolly preview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    #scrolly {
+      position: relative;
+    }
 
-  <body>
-    <main>
-      <section id="scrolly">
-        <div class="sticky-thing">
-          <div id="chart"></div>
+    article {
+      position: relative;
+      padding: 0;
+      max-width: 30rem;
+      margin: 0 auto;
+      padding-bottom: 10rem;
+    }
+
+    .sticky-thing {
+      position: -webkit-sticky;
+      position: sticky;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      z-index: 0;
+      top: 0vh;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step {
+      color: #1b1b1b;
+      background-color: #fafafaef;
+      font-family: Barlow, sans-serif;
+      padding: 5px 15px;
+      line-height: 25px;
+      font-size: 15px;
+      margin-bottom: 100vh;
+    }
+
+    .step:last-child {
+      margin-bottom: 0;
+    }
+
+    .step.is-active {
+      background-color: #fafafaef;
+    }
+
+    .step p {
+      padding: 0rem 1rem;
+      font-size: 1rem;
+    }
+
+    body {
+      margin: 0px;
+    }
+
+    .highlight {
+      background-color: #000000a7;
+      color: white;
+      padding: 3px;
+    }
+
+    @media (max-width: 600px) {
+      article {
+        margin: 0;
+        padding-top: 65vh;
+      }
+      .step {
+        margin-bottom: 100vh;
+        width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section id="scrolly">
+      <div class="sticky-thing">
+        <div id="chart"></div>
+      </div>
+
+      <article>
+        <div class="step" id="step-0">
+          <p>Step 0 placeholder. Full sample — each dot represents <span class="highlight">one person.</span></p>
         </div>
+        <div class="step" id="step-1">
+          <p>Step 1 placeholder. Split by <span class="highlight">GROUP</span> vs not.</p>
+        </div>
+        <div class="step" id="step-2">
+          <p>Step 2 placeholder. Within booked again, highlight those with a <span class="highlight">GROUP</span></p>
+        </div>
+        <div class="step" id="step-3">
+          <p>Step 3 placeholder. Isolate only those <span class="highlight">booked again with a GROUP.</span></p>
+        </div>
+        <div></div>
+      </article>
+    </section>
 
-        <article>
-          <div class="step" id="step-0">
-            <p>The Medical Examiner logged 2,669 overdose deaths in San Francisco between 2020 and 2023. Each dot represents <span class="highlight-deaths">one lost life.</span></p>
-            <p>This number is guaranteed to rise as more deaths from the end of last year are processed and reported.</p>
-          </div>
-          <div class="step" id="step-1">
-            <p>The main driver of these deaths: fentanyl. Around three-quarters of all overdose deaths involved the potent opioid.</p>
-          </div>
-          <div class="step" id="step-2">
-            <p>Significantly more men have died from overdose than women. Around TK% were killed, of which TK% ... etc. etc.</p>
-          </div>
-          <div class="step" id="step-3">
-            <p>Copy copy copy</p>
-          </div>
-          <div></div>
-        </article>
-      </section>
+    <section id="outro"></section>
+  </main>
 
-      <section id="outro"></section>
-    </main>
+  <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/scrollama@3.2.0/build/scrollama.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script>
+  (function () {
 
-    <!-- <div class='debug'></div> -->
-    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
-    <script src="https://unpkg.com/scrollama"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.7.0/d3.min.js" integrity="sha512-cd6CHE+XWDQ33ElJqsi0MdNte3S+bQY819f7p3NUHgwQQLXSKjE4cPZTeGNI+vaxZynk1wVU3hoHmow3m089wA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="d3.js"></script>
-  </body>
+    const RADIUS = 3;
+    const mobile = window.innerWidth <= 600;
+    const W      = mobile ? window.innerWidth - 20 : 800;
+    const H      = mobile ? window.innerHeight * 0.6 : 600;
+
+    // ── SVG (created before data loads so the page doesn't jump) ──
+    const svg = d3.select("#chart")
+      .append("svg")
+      .attr("width", W)
+      .attr("height", H);
+
+    const labelG = svg.append("g");
+
+    // ── Load pre-computed CSV ──
+    d3.csv("data.csv").then(rawData => {
+
+      const data = rawData.map(d => ({
+        id:           d.id,
+        booked_again: d.booked_again === "true",
+        drug:         d.drug === "true",
+        // desktop uses pre-computed positions directly
+        // mobile remaps x positions to W, y positions to H
+        // (since the CSV was generated at 800x600)
+        p0: { x: remap(+d.position_total_x,     0, 800, 0, W), y: remap(+d.position_total_y,     0, 600, 0, H) },
+        p1: { x: remap(+d.position_booked_x,    0, 800, 0, W), y: remap(+d.position_booked_y,    0, 600, 0, H) },
+        p2: { x: remap(+d.position_drug_hl_x,   0, 800, 0, W), y: remap(+d.position_drug_hl_y,   0, 600, 0, H) },
+        p3: { x: remap(+d.position_drug_only_x, 0, 800, 0, W), y: remap(+d.position_drug_only_y, 0, 600, 0, H) },
+      }));
+
+      // For mobile, rearrange p1/p2 to stack vertically
+      // (re-cluster by overriding x to W/2 and spreading y)
+      if (mobile) {
+        remapMobilePositions(data);
+      }
+
+      const circles = svg.selectAll("circle")
+        .data(data)
+        .join("circle")
+        .attr("cx", d => d.p0.x)
+        .attr("cy", d => d.p0.y)
+        .attr("r", RADIUS)
+        .attr("fill", "#888")
+        .attr("opacity", 0.85);
+
+      // ── Label helpers ──
+      function clearLabels() { labelG.selectAll("*").remove(); }
+
+      function addLabel(text, x, y) {
+        labelG.append("text")
+          .attr("x", x).attr("y", y)
+          .attr("text-anchor", "middle")
+          .attr("font-family", "Arial")
+          .attr("font-size", "12px")
+          .attr("fill", "#555")
+          .text(text)
+          .attr("opacity", 0)
+          .transition().duration(600).delay(1200)
+          .attr("opacity", 1);
+      }
+
+      // ── Slide transitions ──
+      function toSlide0() {
+        clearLabels();
+        circles.transition().duration(1500)
+          .attr("cx", d => d.p0.x).attr("cy", d => d.p0.y)
+          .attr("fill", "#888").attr("opacity", 0.85);
+      }
+
+      function toSlide1() {
+        clearLabels();
+        circles.transition().duration(1500)
+          .attr("cx", d => d.p1.x).attr("cy", d => d.p1.y)
+          .attr("fill", d => d.booked_again ? "#e05c47" : "#888")
+          .attr("opacity", 0.85)
+          .on("end", (d, i, nodes) => {
+            if (i === nodes.length - 1) {
+              if (mobile) {
+                addLabel("Booked again",     W/2, H*0.28 - 70);
+                addLabel("Not booked again", W/2, H*0.75 - 70);
+              } else {
+                addLabel("Booked again",     W*0.35, 30);
+                addLabel("Not booked again", W*0.65, 30);
+              }
+            }
+          });
+      }
+
+      function toSlide2() {
+        clearLabels();
+        circles.transition().duration(1500)
+          .attr("cx", d => d.p2.x).attr("cy", d => d.p2.y)
+          .attr("fill", d => (d.booked_again && d.drug) ? "#e05c47" : "#888")
+          .attr("opacity", d => d.booked_again ? 0.9 : 0.2)
+          .on("end", (d, i, nodes) => {
+            if (i === nodes.length - 1) {
+              if (mobile) {
+                addLabel("Booked again + drug",   W/2, H*0.18 - 60);
+                addLabel("Booked again, no drug", W/2, H*0.52 - 60);
+                addLabel("Not booked again",      W/2, H*0.85 - 60);
+              } else {
+                addLabel("Booked again + drug",   W*0.25, 30);
+                addLabel("Booked again, no drug", W*0.45, 30);
+                addLabel("Not booked again",      W*0.75, 30);
+              }
+            }
+          });
+      }
+
+      function toSlide3() {
+        clearLabels();
+        circles.transition().duration(1500)
+          .attr("cx", d => d.p3.x).attr("cy", d => d.p3.y)
+          .attr("fill", "#e05c47")
+          .attr("opacity", d => (d.booked_again && d.drug) ? 0.9 : 0)
+          .on("end", (d, i, nodes) => {
+            if (i === nodes.length - 1) {
+              addLabel("Booked again + drug charge", W/2, 30);
+            }
+          });
+      }
+
+      // ── Scrollama ──
+      const scroller = scrollama();
+
+      scroller.setup({
+        step: "#scrolly article .step",
+        offset: 0.85,
+        debug: false,
+      })
+      .onStepEnter(({ element }) => {
+        document.querySelectorAll(".step").forEach(s => s.classList.remove("is-active"));
+        element.classList.add("is-active");
+        const id = element.id;
+        if (id === "step-0") toSlide0();
+        if (id === "step-1") toSlide1();
+        if (id === "step-2") toSlide2();
+        if (id === "step-3") toSlide3();
+      });
+
+      window.addEventListener("resize", scroller.resize);
+
+    });
+
+    // ── Helpers ──
+
+    // Scale a value from one range to another
+    function remap(value, inMin, inMax, outMin, outMax) {
+      return outMin + (value - inMin) / (inMax - inMin) * (outMax - outMin);
+    }
+
+    // On mobile, override p1/p2 x/y to stack clusters vertically
+    // We do this by centering x on W/2 and spreading clusters along y
+    function remapMobilePositions(data) {
+      // For p1: keep relative x spread within each group but center around W/2
+      // Simple approach: just map the pre-computed x positions to W,
+      // then override y to create vertical separation between groups
+      const bookedGroup    = data.filter(d => d.booked_again);
+      const notBookedGroup = data.filter(d => !d.booked_again);
+
+      // Slide 1: booked top, not-booked bottom
+      centerGroup(bookedGroup,    "p1", W/2, H*0.28);
+      centerGroup(notBookedGroup, "p1", W/2, H*0.75);
+
+      // Slide 2: drug+booked top, booked-no-drug middle, not-booked bottom
+      const drugBooked   = data.filter(d => d.booked_again && d.drug);
+      const bookedNoDrug = data.filter(d => d.booked_again && !d.drug);
+      centerGroup(drugBooked,    "p2", W/2, H*0.18);
+      centerGroup(bookedNoDrug,  "p2", W/2, H*0.52);
+      centerGroup(notBookedGroup,"p2", W/2, H*0.85);
+    }
+
+    // Shift a group of nodes so their centroid lands on (cx, cy)
+    function centerGroup(nodes, posKey, cx, cy) {
+      if (!nodes.length) return;
+      const meanX = d3.mean(nodes, d => d[posKey].x);
+      const meanY = d3.mean(nodes, d => d[posKey].y);
+      const dx = cx - meanX;
+      const dy = cy - meanY;
+      nodes.forEach(d => {
+        d[posKey] = { x: d[posKey].x + dx, y: d[posKey].y + dy };
+      });
+    }
+
+  })();
+  </script>
+</body>
 </html>
