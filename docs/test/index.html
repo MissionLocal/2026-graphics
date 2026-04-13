@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Overdose deaths in San Francisco</title>
+    <meta name="description" content="Overdose deaths in San Francisco" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+  </head>
+
+  <body>
+    <main>
+      <section id="scrolly">
+        <div class="sticky-thing">
+          <div id="chart"></div>
+        </div>
+
+        <article>
+          <div class="step" id="step-0">
+            <p>The Medical Examiner logged 2,669 overdose deaths in San Francisco between 2020 and 2023. Each dot represents <span class="highlight-deaths">one lost life.</span></p>
+            <p>This number is guaranteed to rise as more deaths from the end of last year are processed and reported.</p>
+          </div>
+          <div class="step" id="step-1">
+            <p>The main driver of these deaths: fentanyl. Around three-quarters of all overdose deaths involved the potent opioid.</p>
+          </div>
+          <div class="step" id="step-2">
+            <p>Significantly more men have died from overdose than women. Around TK% were killed, of which TK% ... etc. etc.</p>
+          </div>
+          <div class="step" id="step-3">
+            <p>Copy copy copy</p>
+          </div>
+          <div></div>
+        </article>
+      </section>
+
+      <section id="outro"></section>
+    </main>
+
+    <!-- <div class='debug'></div> -->
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.7.0/d3.min.js" integrity="sha512-cd6CHE+XWDQ33ElJqsi0MdNte3S+bQY819f7p3NUHgwQQLXSKjE4cPZTeGNI+vaxZynk1wVU3hoHmow3m089wA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="d3.js"></script>
+  </body>
+</html>
