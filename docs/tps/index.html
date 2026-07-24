@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPS Status by Country</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Barlow', sans-serif;
+            background: #fff;
+            padding: 0;
+        }
+
+        .page-wrap {
+            display: flex;
+            justify-content: center;
+            padding: 10px 10px 0 10px;
+        }
+
+        .table-wrap {
+            width: 100%;
+            max-width: 560px;
+        }
+
+        .table-title {
+            width: 100%;
+            margin: 0 0 10px 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .result-table thead tr {
+            border-bottom: 1.5px solid #ddd;
+        }
+
+        .result-th-candidate {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: #888;
+            padding: 0 4px 6px 4px;
+            text-transform: uppercase;
+            text-align: left;
+        }
+
+        .result-th-num {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: #888;
+            padding: 0 4px 6px 4px;
+            text-transform: uppercase;
+            text-align: right;
+        }
+
+        .result-th-pct {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: #888;
+            padding: 0 4px 6px 4px;
+            text-transform: uppercase;
+            text-align: left;
+        }
+
+        .result-row {
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .result-row:last-child {
+            border-bottom: none;
+        }
+
+        .result-footer {
+            padding: 8px 4px;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .result-name {
+            padding: 8px 12px 8px 4px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #222;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+
+        .result-status {
+            padding: 8px 10px;
+            color: #333;
+            font-size: 13px;
+            font-weight: 500;
+            white-space: normal;
+            line-height: 1.35;
+            max-width: 260px;
+            vertical-align: middle;
+        }
+
+        .result-holders {
+            padding: 8px 4px 8px 10px;
+            text-align: right;
+            color: #222;
+            font-weight: 700;
+            font-size: 15px;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+
+        /* Legend */
+        .legend {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .legend-swatch {
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrap">
+        <div class="table-wrap">
+            <p class="table-title">TPS status by country</p>
+                        <div class="legend" id="legend" style="padding-bottom: 10px;"></div>
+            <table class="result-table">
+                <thead>
+                    <tr>
+                        <th class="result-th-candidate">Country</th>
+                        <th class="result-th-candidate">Status</th>
+                        <th class="result-th-num">TPS Holders</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    <script>
+        const pymChild = new pym.Child();
+
+        // Row highlight colors keyed off the hidden "current_status" field.
+        // This field is NOT rendered as a column -- it only drives row color.
+        const STATUS_COLORS = {
+            'terminated': '#fc8d59',
+            'paused': '#f4f29d',
+            'active': '#91bfdb'
+        };
+
+        function parseCSV(text) {
+            const lines = text.trim().split('\n');
+            const headers = splitRow(lines[0]);
+            return lines.slice(1).map(line => {
+                const vals = splitRow(line);
+                return Object.fromEntries(headers.map((h, i) => [h.trim(), vals[i] ?? '']));
+            });
+        }
+
+        function splitRow(row) {
+            const result = [];
+            let cur = '', inQuote = false;
+            for (let i = 0; i < row.length; i++) {
+                const ch = row[i];
+                if (ch === '"') {
+                    if (inQuote && row[i + 1] === '"') { cur += '"'; i++; }
+                    else { inQuote = !inQuote; }
+                } else if (ch === ',' && !inQuote) {
+                    result.push(cur); cur = '';
+                } else {
+                    cur += ch;
+                }
+            }
+            result.push(cur);
+            return result;
+        }
+
+        const fmtInt = n => {
+            const num = Number(String(n).replace(/,/g, ''));
+            return num > 0 ? num.toLocaleString() : '—';
+        };
+
+        function hexToRgba(hex, alpha) {
+            const h = hex.replace('#', '');
+            const r = parseInt(h.slice(0, 2), 16);
+            const g = parseInt(h.slice(2, 4), 16);
+            const b = parseInt(h.slice(4, 6), 16);
+            return `rgba(${r},${g},${b},${alpha})`;
+        }
+
+        function makeRow(row) {
+            // "Current Status" drives the row highlight color only --
+            // it is never rendered as its own column.
+            const currentStatus = (row['Current Status'] || '').toLowerCase().trim();
+            const color = STATUS_COLORS[currentStatus];
+            const bg = color ? hexToRgba(color, 0.35) : 'transparent';
+
+            return `
+                <tr class="result-row" style="background:${bg};">
+                    <td class="result-name">${row.Country || ''}</td>
+                    <td class="result-status">${row.Status || ''}</td>
+                    <td class="result-holders">${fmtInt(row['TPS Holders'])}</td>
+                </tr>`;
+        }
+
+        function renderLegend() {
+            const labels = { terminated: 'Terminated', paused: 'Paused', active: 'Active' };
+            const html = Object.entries(STATUS_COLORS).map(([key, color]) => `
+                <div class="legend-item">
+                    <span class="legend-swatch" style="background:${color};"></span>
+                    <span>${labels[key]}</span>
+                </div>`).join('');
+            document.getElementById('legend').innerHTML = html;
+        }
+
+        function render(rows) {
+            const sorted = [...rows].sort((a, b) => {
+                const aNum = Number(String(a['TPS Holders']).replace(/,/g, '')) || 0;
+                const bNum = Number(String(b['TPS Holders']).replace(/,/g, '')) || 0;
+                return bNum - aNum;
+            });
+            const html = sorted.map(makeRow).join('');
+            document.getElementById('resultsBody').innerHTML = html;
+            renderLegend();
+            pymChild.sendHeight();
+        }
+
+        fetch('data.csv')
+            .then(r => { if (!r.ok) throw new Error('Failed to load CSV'); return r.text(); })
+            .then(text => render(parseCSV(text)))
+            .catch(err => {
+                document.getElementById('resultsBody').innerHTML =
+                    `<tr><td colspan="3" style="padding:8px;color:#999;font-size:14px;">Data not yet available</td></tr>`;
+                pymChild.sendHeight();
+                console.error(err);
+            });
+    </script>
+</body>
+</html>
