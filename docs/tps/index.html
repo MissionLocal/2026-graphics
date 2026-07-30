@@ -281,7 +281,7 @@
         }
 
         function renderLegend() {
-            const labels = { terminated: 'Terminated', paused: 'Paused', active: 'Active' };
+            const labels = { terminated: 'Terminated', paused: 'Restored', active: 'Active' };
             const html = Object.entries(STATUS_COLORS).map(([key, color]) => `
                 <div class="legend-item">
                     <span class="legend-swatch" style="background:${color};"></span>
