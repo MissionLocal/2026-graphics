@@ -22,7 +22,7 @@
 
         .table-wrap {
             width: 100%;
-            max-width: 560px;
+            max-width: 620px;
         }
 
         .table-title {
@@ -117,6 +117,15 @@
             vertical-align: middle;
         }
 
+        .result-designated {
+            padding: 8px 4px 8px 10px;
+            text-align: right;
+            color: #555;
+            font-size: 14px;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+
         /* Legend */
         .legend {
             display: flex;
@@ -143,19 +152,27 @@
 </head>
 <body>
     <div class="page-wrap">
+        
         <div class="table-wrap">
-            <p class="table-title">TPS status by country</p>
-                        <div class="legend" id="legend" style="padding-bottom: 10px;"></div>
+            <p class="table-title">TPS Status by country</p>
+                        <div class="legend" id="legend" style="margin-bottom: 10px;"></div>
+
             <table class="result-table">
                 <thead>
                     <tr>
                         <th class="result-th-candidate">Country</th>
-                        <th class="result-th-candidate">Status</th>
+                        <th class="result-th-candidate">TPS Status</th>
                         <th class="result-th-num">TPS Holders</th>
+                        <th class="result-th-num">Designated</th>
                     </tr>
                 </thead>
                 <tbody id="resultsBody"></tbody>
             </table>
+            <p class="table-title" style="font-size:11px;font-weight:400;color:#999;margin-top:10px;line-height:1.4;">
+                Note: TPS status expiration dates often differ from work permit expiration dates. Data current as of July 27, 2026. TPS litigation is moving quickly — verify current status at
+                <a href="https://www.uscis.gov/humanitarian/temporary-protected-status" style="color:#999;">uscis.gov/humanitarian/temporary-protected-status</a>
+                before relying on this for compliance purposes.
+            </p>
         </div>
     </div>
 
@@ -178,7 +195,6 @@
                 const vals = splitRow(line);
                 return Object.fromEntries(headers.map((h, i) => [h.trim(), vals[i] ?? '']));
             });
-
         }
 
         function splitRow(row) {
@@ -212,23 +228,33 @@
             return `rgba(${r},${g},${b},${alpha})`;
         }
 
+        // Since there's no separate hidden status flag in this data, the
+        // highlight color is derived from the wording at the start of the
+        // "TPS Status" column itself.
+        function classifyStatus(statusText) {
+            const t = (statusText || '').toLowerCase();
+            if (t.startsWith('terminated / restored')) return 'paused';
+            if (t.startsWith('terminated')) return 'terminated';
+            return 'active'; // covers "Active" and "Extended"
+        }
+
         function makeRow(row) {
-            // "Current Status" drives the row highlight color only --
-            // it is never rendered as its own column.
-            const currentStatus = (row['Current Status'] || '').toLowerCase().trim();
+            const statusText = row['TPS Status'] || '';
+            const currentStatus = classifyStatus(statusText);
             const color = STATUS_COLORS[currentStatus];
             const bg = color ? hexToRgba(color, 0.35) : 'transparent';
 
             return `
                 <tr class="result-row" style="background:${bg};">
                     <td class="result-name">${row.Country || ''}</td>
-                    <td class="result-status">${row.Status || ''}</td>
-                    <td class="result-holders">${fmtInt(row['TPS Holders'])}</td>
+                    <td class="result-status">${statusText}</td>
+                    <td class="result-holders">${fmtInt(row['Total TPS Holders'])}</td>
+                    <td class="result-designated">${row['Date TPS was originally designated'] || ''}</td>
                 </tr>`;
         }
 
         function renderLegend() {
-            const labels = { terminated: 'Terminated', paused: 'Restored', active: 'Active' };
+            const labels = { terminated: 'Terminated', paused: 'Paused', active: 'Active' };
             const html = Object.entries(STATUS_COLORS).map(([key, color]) => `
                 <div class="legend-item">
                     <span class="legend-swatch" style="background:${color};"></span>
@@ -239,8 +265,8 @@
 
         function render(rows) {
             const sorted = [...rows].sort((a, b) => {
-                const aNum = Number(String(a['TPS Holders']).replace(/,/g, '')) || 0;
-                const bNum = Number(String(b['TPS Holders']).replace(/,/g, '')) || 0;
+                const aNum = Number(String(a['Total TPS Holders']).replace(/,/g, '')) || 0;
+                const bNum = Number(String(b['Total TPS Holders']).replace(/,/g, '')) || 0;
                 return bNum - aNum;
             });
             const html = sorted.map(makeRow).join('');
@@ -254,7 +280,7 @@
             .then(text => render(parseCSV(text)))
             .catch(err => {
                 document.getElementById('resultsBody').innerHTML =
-                    `<tr><td colspan="3" style="padding:8px;color:#999;font-size:14px;">Data not yet available</td></tr>`;
+                    `<tr><td colspan="4" style="padding:8px;color:#999;font-size:14px;">Data not yet available</td></tr>`;
                 pymChild.sendHeight();
                 console.error(err);
             });
