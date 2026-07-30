@@ -148,14 +148,39 @@
             border-radius: 2px;
             display: inline-block;
         }
+
+        .expand-btn {
+            display: block;
+            margin: 12px auto 0 auto;
+            padding: 7px 16px;
+            font-family: 'Barlow', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .expand-btn:hover {
+            background: #ebebeb;
+        }
+
+        .extra-row {
+            display: none;
+        }
+
+        .extra-row.visible {
+            display: table-row;
+        }
     </style>
 </head>
 <body>
     <div class="page-wrap">
-        
         <div class="table-wrap">
             <p class="table-title">TPS Status by country</p>
-                        <div class="legend" id="legend" style="margin-bottom: 10px;"></div>
+                        <div class="legend"  style="margin-bottom: 10px" id="legend"></div>
 
             <table class="result-table">
                 <thead>
@@ -168,6 +193,7 @@
                 </thead>
                 <tbody id="resultsBody"></tbody>
             </table>
+            <button id="expandBtn" class="expand-btn" style="display:none;">Show all countries</button>
             <p class="table-title" style="font-size:11px;font-weight:400;color:#999;margin-top:10px;line-height:1.4;">
                 Note: TPS status expiration dates often differ from work permit expiration dates. Data current as of July 27, 2026. TPS litigation is moving quickly — verify current status at
                 <a href="https://www.uscis.gov/humanitarian/temporary-protected-status" style="color:#999;">uscis.gov/humanitarian/temporary-protected-status</a>
@@ -238,14 +264,15 @@
             return 'active'; // covers "Active" and "Extended"
         }
 
-        function makeRow(row) {
+        function makeRow(row, isExtra) {
             const statusText = row['TPS Status'] || '';
             const currentStatus = classifyStatus(statusText);
             const color = STATUS_COLORS[currentStatus];
             const bg = color ? hexToRgba(color, 0.35) : 'transparent';
+            const rowClass = isExtra ? 'result-row extra-row' : 'result-row';
 
             return `
-                <tr class="result-row" style="background:${bg};">
+                <tr class="${rowClass}" style="background:${bg};">
                     <td class="result-name">${row.Country || ''}</td>
                     <td class="result-status">${statusText}</td>
                     <td class="result-holders">${fmtInt(row['Total TPS Holders'])}</td>
@@ -263,15 +290,40 @@
             document.getElementById('legend').innerHTML = html;
         }
 
+        const VISIBLE_COUNT = 10;
+
         function render(rows) {
             const sorted = [...rows].sort((a, b) => {
                 const aNum = Number(String(a['Total TPS Holders']).replace(/,/g, '')) || 0;
                 const bNum = Number(String(b['Total TPS Holders']).replace(/,/g, '')) || 0;
                 return bNum - aNum;
             });
-            const html = sorted.map(makeRow).join('');
+
+            const html = sorted.map((row, i) => makeRow(row, i >= VISIBLE_COUNT)).join('');
             document.getElementById('resultsBody').innerHTML = html;
             renderLegend();
+
+            const btn = document.getElementById('expandBtn');
+            const hiddenCount = sorted.length - VISIBLE_COUNT;
+
+            if (hiddenCount > 0) {
+                btn.style.display = 'block';
+                btn.textContent = `Show all ${sorted.length} countries`;
+                btn.onclick = () => {
+                    const expanding = btn.dataset.expanded !== 'true';
+                    document.querySelectorAll('.extra-row').forEach(row => {
+                        row.classList.toggle('visible', expanding);
+                    });
+                    btn.dataset.expanded = expanding ? 'true' : 'false';
+                    btn.textContent = expanding
+                        ? 'Show fewer countries'
+                        : `Show all ${sorted.length} countries`;
+                    pymChild.sendHeight();
+                };
+            } else {
+                btn.style.display = 'none';
+            }
+
             pymChild.sendHeight();
         }
 
