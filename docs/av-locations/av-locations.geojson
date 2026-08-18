@@ -1,0 +1,594 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "50 Quint St",
+                "Operator / User": "Sherman Little",
+                "Stated Fleet Use": "76 Charging Spaces",
+                "Proposed / Approved Land Use": "Industrial land",
+                "Planning Status and Policy Conflict": "Active/proposed fleet charging in PDR zone; subject to 2024 Conditional Use rules.",
+                "matched_address": "50 QUINT ST, SAN FRANCISCO, CA, 94124",
+                "zip": 94124
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.388371,
+                    37.746304
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "1111 Pennsylvania Ave",
+                "Operator / User": "Sherman Little",
+                "Stated Fleet Use": "52 Charging Spaces",
+                "Proposed / Approved Land Use": "Life sciences laboratory",
+                "Planning Status and Policy Conflict": "Successfully opposed by Teamsters due to displacement of laboratory development.",
+                "matched_address": "1111 PENNSYLVANIA AVE, SAN FRANCISCO, CA, 94107",
+                "zip": 94107
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.392558,
+                    37.75247
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "330 8th St",
+                "Operator / User": "Lyft",
+                "Stated Fleet Use": "30 Charging Spaces",
+                "Proposed / Approved Land Use": "Commercial",
+                "Planning Status and Policy Conflict": "Application withdrawn prior to approval.",
+                "matched_address": "330 8TH ST, SAN FRANCISCO, CA, 94103",
+                "zip": 94103
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.409928,
+                    37.774802
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "1101-1123 Sutter St",
+                "Operator / User": "Unlisted",
+                "Stated Fleet Use": "Fleet charging in garage",
+                "Proposed / Approved Land Use": "Mixed-use building",
+                "Planning Status and Policy Conflict": "No movement on Planning Application; conflicts with housing priorities.",
+                "matched_address": "1123 SUTTER ST, SAN FRANCISCO, CA, 94109",
+                "zip": 94109
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.418863,
+                    37.787854
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "2450 Alameda St",
+                "Operator / User": "Zoox",
+                "Stated Fleet Use": "15 Charging Spaces & R&D",
+                "Proposed / Approved Land Use": "Industrial / R&D",
+                "Planning Status and Policy Conflict": "Near Animal Care and SFSCPA; subject to non-retail automotive controls.",
+                "matched_address": "2450 ALAMEDA ST, SAN FRANCISCO, CA, 94103",
+                "zip": 94103
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.409236,
+                    37.768327
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "1200 Larkin St",
+                "Operator / User": "Sterling Organization",
+                "Stated Fleet Use": "74 Charging Spaces",
+                "Proposed / Approved Land Use": "132 housing units + 2 retail",
+                "Planning Status and Policy Conflict": "Successfully appealed by Teamsters; prevented loss of 132 housing units.",
+                "matched_address": "1200 LARKIN ST, SAN FRANCISCO, CA, 94109",
+                "zip": 94109
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.418691,
+                    37.78944
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "1500 19th Ave",
+                "Operator / User": "Unlisted",
+                "Stated Fleet Use": "12 Charging Spaces",
+                "Proposed / Approved Land Use": "Automotive conversion",
+                "Planning Status and Policy Conflict": "Cancelled application.",
+                "matched_address": "1500 19TH AVE, SAN FRANCISCO, CA, 94122",
+                "zip": 94122
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.476683,
+                    37.759784
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "1485 Bay Shore Blvd",
+                "Operator / User": "Waymo",
+                "Stated Fleet Use": "Waymo Staging Site",
+                "Proposed / Approved Land Use": "Industrial storage",
+                "Planning Status and Policy Conflict": "Surface staging use subject to Transit First restrictions.",
+                "matched_address": "1485 Bayshore Blvd, San Francisco, CA 94124",
+                "zip": 94124
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.401402,
+                    37.725536
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "5th St & Brannan St",
+                "Operator / User": "Waymo",
+                "Stated Fleet Use": "Waymo Staging Site",
+                "Proposed / Approved Land Use": "1,500+ rental apartments",
+                "Planning Status and Policy Conflict": "Staging site directly conflicts with Central SoMa residential entitlement.",
+                "matched_address": "5th St & Brannan St, San Francisco, CA 94107",
+                "zip": 94107
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.398814,
+                    37.776634
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "1160 Mission St",
+                "Operator / User": "TeraWatt, Waymo",
+                "Stated Fleet Use": "65 Charging Spaces",
+                "Proposed / Approved Land Use": "Downtown Commercial",
+                "Planning Status and Policy Conflict": "Private fleet hub in transit-rich Downtown corridor.",
+                "matched_address": "1160 MISSION ST, SAN FRANCISCO, CA, 94103",
+                "zip": 94103
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.412173,
+                    37.778319
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "2293 Powell St",
+                "Operator / User": "Tesla",
+                "Stated Fleet Use": "19 Superchargers",
+                "Proposed / Approved Land Use": "6-story mixed-use residential",
+                "Planning Status and Policy Conflict": "Authorized as non-fleet charging; successfully appealed by Teamsters.",
+                "matched_address": "2293 POWELL ST, SAN FRANCISCO, CA, 94133",
+                "zip": 94133
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.412003,
+                    37.805731
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "825 Sansome St",
+                "Operator / User": "Tesla",
+                "Stated Fleet Use": "2 fleet charging levels",
+                "Proposed / Approved Land Use": "Public parking garage",
+                "Planning Status and Policy Conflict": "Successfully appealed by Teamsters to prevent private fleet conversion.",
+                "matched_address": "825 SANSOME ST, SAN FRANCISCO, CA, 94111",
+                "zip": 94111
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.40218,
+                    37.797831
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "140 14th St",
+                "Operator / User": "Waymo",
+                "Stated Fleet Use": "Waymo Staging Site",
+                "Proposed / Approved Land Use": "Commercial lot",
+                "Planning Status and Policy Conflict": "Fleet charging application closed without approval; operating as staging.",
+                "matched_address": "140 14TH ST, SAN FRANCISCO, CA, 94103",
+                "zip": 94103
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.416643,
+                    37.76853
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "1700 Pine St",
+                "Operator / User": "Cruise",
+                "Stated Fleet Use": "Charging site (now empty)",
+                "Proposed / Approved Land Use": "Commercial garage",
+                "Planning Status and Policy Conflict": "Former Cruise charging facility, currently inactive.",
+                "matched_address": "1700 PINE ST, SAN FRANCISCO, CA, 94109",
+                "zip": 94109
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.423866,
+                    37.789252
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "855 Geary St",
+                "Operator / User": "Cruise",
+                "Stated Fleet Use": "20 Chargers",
+                "Proposed / Approved Land Use": "Commercial garage",
+                "Planning Status and Policy Conflict": "Mid-block garage conversion subject to non-conforming use rules.",
+                "matched_address": "855 GEARY ST, SAN FRANCISCO, CA, 94109",
+                "zip": 94109
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.417332,
+                    37.786137
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "241 Loomis St",
+                "Operator / User": "Cruise",
+                "Stated Fleet Use": "Charging site (now empty)",
+                "Proposed / Approved Land Use": "Industrial",
+                "Planning Status and Policy Conflict": "Inactive charging location.",
+                "matched_address": "241 LOOMIS ST, SAN FRANCISCO, CA, 94124",
+                "zip": 94124
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.405529,
+                    37.738824
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "1201 08th St",
+                "Operator / User": "Unlisted",
+                "Stated Fleet Use": "Approved fleet charging (empty)",
+                "Proposed / Approved Land Use": "15 housing units + retail",
+                "Planning Status and Policy Conflict": "Fleet approval sitting empty on parcel designated for housing infill.",
+                "matched_address": "1201 8th St, San Francisco, CA 94107",
+                "zip": 94107
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.399574,
+                    37.766697
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "465 Irwin St",
+                "Operator / User": "Unlisted",
+                "Stated Fleet Use": "Applied for fleet charging",
+                "Proposed / Approved Land Use": "Commercial / Industrial",
+                "Planning Status and Policy Conflict": "Application closed without city approval.",
+                "matched_address": "465 IRWIN ST, SAN FRANCISCO, CA, 94107",
+                "zip": 94107
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.398812,
+                    37.767258
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "2270 McKinnon Ave",
+                "Operator / User": "National Cab Co. / Dan Hinds",
+                "Stated Fleet Use": "Applied for fleet charging",
+                "Proposed / Approved Land Use": "Taxi / Industrial lot",
+                "Planning Status and Policy Conflict": "Application closed without city approval.",
+                "matched_address": "2270 MCKINNON AVE, SAN FRANCISCO, CA, 94124",
+                "zip": 94124
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.401479,
+                    37.742872
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "301 Brannan St",
+                "Operator / User": "Cruise",
+                "Stated Fleet Use": "Cruise HQ Site",
+                "Proposed / Approved Land Use": "Commercial office",
+                "Planning Status and Policy Conflict": "Zoning Administrator ruled Conditional Use Permit required; never obtained.",
+                "matched_address": "301 BRANNAN ST, SAN FRANCISCO, CA, 94107",
+                "zip": 94107
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.392076,
+                    37.781761
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "333 Brannan St",
+                "Operator / User": "Cruise",
+                "Stated Fleet Use": "Cruise HQ Site",
+                "Proposed / Approved Land Use": "Commercial office",
+                "Planning Status and Policy Conflict": "Zoning Administrator ruled Conditional Use Permit required; never obtained.",
+                "matched_address": "333 BRANNAN ST, SAN FRANCISCO, CA, 94107",
+                "zip": 94107
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.392675,
+                    37.781289
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "130 Townsend St",
+                "Operator / User": "Cruise",
+                "Stated Fleet Use": "Rear lot vehicle storage",
+                "Proposed / Approved Land Use": "Off-street parking rear lot",
+                "Planning Status and Policy Conflict": "City ruled rear lot was not permitted for vehicle storage.",
+                "matched_address": "130 TOWNSEND ST, SAN FRANCISCO, CA, 94107",
+                "zip": 94107
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.391441,
+                    37.779968
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "777 Harrison St",
+                "Operator / User": "Waymo, Whole Foods",
+                "Stated Fleet Use": "Waymo Staging Site",
+                "Proposed / Approved Land Use": "572 housing units",
+                "Planning Status and Policy Conflict": "Surface staging lot delays high-density SoMa housing development.",
+                "matched_address": "777 HARRISON ST, SAN FRANCISCO, CA, 94107",
+                "zip": 94107
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.399156,
+                    37.781072
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "120 Perry St",
+                "Operator / User": "Waymo, Caltrans",
+                "Stated Fleet Use": "Waymo Staging Site",
+                "Proposed / Approved Land Use": "14-story mixed-use building",
+                "Planning Status and Policy Conflict": "Staging lot conflicts with approved high-density tower height allowances.",
+                "matched_address": "120 PERRY ST, SAN FRANCISCO, CA, 94107",
+                "zip": 94107
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.396944,
+                    37.782121
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "350 Pacific Ave",
+                "Operator / User": "Waymo",
+                "Stated Fleet Use": "Waymo Staging Site",
+                "Proposed / Approved Land Use": "78 housing units",
+                "Planning Status and Policy Conflict": "Staging lot conflicts with Jackson Square residential infill.",
+                "matched_address": "350 PACIFIC AVE, SAN FRANCISCO, CA, 94111",
+                "zip": 94111
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.401474,
+                    37.797634
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "350 2nd St",
+                "Operator / User": "Waymo",
+                "Stated Fleet Use": "Waymo Staging Site",
+                "Proposed / Approved Land Use": "14-story hotel",
+                "Planning Status and Policy Conflict": "Staging lot occupies land designated for commercial development.",
+                "matched_address": "350 2ND ST, SAN FRANCISCO, CA, 94107",
+                "zip": 94107
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.395827,
+                    37.784756
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "640 Cesar Chavez St",
+                "Operator / User": "Cruise",
+                "Stated Fleet Use": "Operational site",
+                "Proposed / Approved Land Use": "Industrial PDR",
+                "Planning Status and Policy Conflict": "Industrial site subject to PDR fleet charging rules.",
+                "matched_address": "640 CESAR CHAVEZ ST, SAN FRANCISCO, CA, 94124",
+                "zip": 94124
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.384109,
+                    37.750533
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "2860 16th St",
+                "Operator / User": "Unlisted",
+                "Stated Fleet Use": "Applied for fleet charging",
+                "Proposed / Approved Land Use": "Commercial",
+                "Planning Status and Policy Conflict": "Application closed without city approval.",
+                "matched_address": "2860 16TH ST, SAN FRANCISCO, CA, 94103",
+                "zip": 94103
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.416944,
+                    37.765272
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "201 Toland St",
+                "Operator / User": "Waymo",
+                "Stated Fleet Use": "Waymo Main Site",
+                "Proposed / Approved Land Use": "Industrial PDR",
+                "Planning Status and Policy Conflict": "Main operational base located in the industrial PDR zone.",
+                "matched_address": "201 TOLAND ST, SAN FRANCISCO, CA, 94124",
+                "zip": 94124
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.397027,
+                    37.745897
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "1428 Yosemite Ave",
+                "Operator / User": "Unlisted",
+                "Stated Fleet Use": "Applied for fleet charging",
+                "Proposed / Approved Land Use": "Industrial PDR",
+                "Planning Status and Policy Conflict": "Application closed without city approval.",
+                "matched_address": "1428 YOSEMITE AVE, SAN FRANCISCO, CA, 94124",
+                "zip": 94124
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.388969,
+                    37.725389
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Site Address": "500 Beach St",
+                "Operator / User": "Unlisted",
+                "Stated Fleet Use": "Large EV project proposed",
+                "Proposed / Approved Land Use": "Commercial / Wharf",
+                "Planning Status and Policy Conflict": "Commercial EV proposal; not formally designated as fleet charging.",
+                "matched_address": "500 BEACH ST, SAN FRANCISCO, CA, 94133",
+                "zip": 94133
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.417345,
+                    37.807117
+                ]
+            }
+        }
+    ]
+}

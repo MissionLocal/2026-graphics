@@ -1,0 +1,109 @@
+/* ========== Base ========== */
+html, body { min-height: 100%; }
+body {
+  margin: 0;
+  padding: 0 0 20px 0;
+  font-family: Barlow, system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ========== Wrapper (matches footer) ========== */
+.wrapper {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 520px;
+  margin: 10px auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ========== Map container / canvas ========== */
+.map-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.map {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+  background: #f5f5f5;
+}
+
+/* ========== Title chip (house "control" spot) ========== */
+.control {
+  position: absolute;
+  top: 8px; left: 8px; z-index: 3;
+  margin: 0; padding: 6px 10px;
+  background: rgba(255, 255, 255, .95);
+  border-radius: 2px; box-shadow: 0 1px 2px rgba(0, 0, 0, .12);
+  display: flex; align-items: center; gap: 6px;
+  pointer-events: none;
+}
+.control-title { font-weight: 600; font-size: 13px; color: #223; letter-spacing: .01em; }
+
+/* ========== Centered info box ========== */
+.info-box {
+  position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); z-index: 4;
+  width: min(92vw, 480px); box-sizing: border-box;
+  padding: 10px 12px; background: rgba(255, 255, 255, .98);
+  backdrop-filter: saturate(140%) blur(2px);
+  border-radius: 8px; box-shadow: 0 2px 6px rgba(0, 0, 0, .12);
+  font-size: 13px; line-height: 1.4;
+  max-height: 46%; overflow-y: auto; white-space: normal;
+  display: none; pointer-events: auto;
+}
+.info-header {
+  display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; margin-bottom: 2px;
+}
+.info-header strong { font-size: 14px; color: #111; }
+.info-header .sep { opacity: .3; }
+.info-operator { color: #007DBC; font-weight: 600; }
+
+.info-address { font-size: 11.5px; color: #777; margin-bottom: 6px; }
+
+.info-stats { color: #333; }
+.info-stats .row { margin: 2px 0; }
+.info-stats .label { color: #667; font-weight: 500; }
+
+.info-desc {
+  margin-top: 6px; padding-top: 6px; border-top: 1px solid #eee;
+  color: #444; font-size: 12.5px;
+}
+
+/* Keep Mapbox controls below overlays */
+.mapboxgl-ctrl-top-right { z-index: 2; }
+
+/* ========== Footer (matches wrapper sizing) ========== */
+#last-updated {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 520px;
+  margin: 10px auto 0;
+  padding: 0 16px;
+  text-align: center;
+  color: #555;
+  font-family: Barlow, system-ui, sans-serif;
+  font-size: 0.9em;
+}
+#last-updated .inner { max-width: 500px; margin: 0 auto; line-height: 1.4; }
+
+/* ========== Mobile (≤640px) ========== */
+@media (max-width: 640px) {
+  .wrapper { padding-left: 10px !important; padding-right: 10px !important; }
+  #last-updated { padding-left: 10px !important; padding-right: 10px !important; font-size: 0.85em; }
+
+  .map { height: min(72vh, 580px); min-height: 430px; }
+
+  .info-box {
+    width: calc(100% - 20px);
+    max-width: 440px;
+    max-height: 70vh;
+    font-size: 12.5px;
+  }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Autonomous vehicle sites — San Francisco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Optional: parent may provide Pym; if not, this just won't run -->
+  <script src="https://pym.nprapps.org/pym.v1.min.js"></script>
+  <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="map-container">
+      <div id="map" class="map"></div>
+      <div id="info" class="info-box"></div>
+    </div>
+  </div>
+
+  <div id="last-updated">
+    <div class="inner">
+      Sites where autonomous-vehicle operators have proposed, applied for, or run fleet
+      charging and staging facilities. Click a point for details. Map by Xueer Lu. Data as of Aug. 18, 2026.
+    </div>
+  </div>
+
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
+  <script src="map.js"></script>
+</body>
+
+</html>
