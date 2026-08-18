@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---- CONFIG ----
-  mapboxgl.accessToken = "pk.eyJ1IjoibWxub3ciLCJhIjoiY21scG5hY2V5MHdwODNkcHRxb2Nhc2N5NyJ9.Ccmhr38K26uGXhVqe1yepA"; // <-- using the 2026-graphics token for now
+  mapboxgl.accessToken = "pk.eyJ1IjoibWxub3ciLCJhIjoiY21scG5hY2V5MHdwODNkcHRxb2Nhc2N5NyJ9.Ccmhr38K26uGXhVqe1yepA"; 
   const MAP_STYLE = "mapbox://styles/mlnow/cm2tndow500co01pw3fho5d21";
   const DATA_URL = "av-locations.geojson";
 
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ${has(operator) ? `<span class="sep">•</span><span class="info-operator">${esc(operator)}</span>` : ""}
       </div>`;
 
-    const addressLine = has(addr) ? `<div class="info-address">${esc(addr)}</div>` : "";
+    //const addressLine = has(addr) ? `<div class="info-address">${esc(addr)}</div>` : "";
 
     const rows = [];
     if (has(fleet))   rows.push(`<div class="row"><span class="label">Stated use:</span> ${esc(fleet)}</div>`);
@@ -63,7 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const desc = has(status) ? `<div class="info-desc">${esc(status)}</div>` : "";
 
-    return `${header}${addressLine}${stats}${desc}`;
+    return `${header}${stats}${desc}`;
+
+    // if we want addressLine, it should be: return `${header}${addressLine}${stats}${desc}`; 
   }
 
   let hoveredId = null;
