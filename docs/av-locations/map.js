@@ -22,9 +22,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const MAP_STYLE = "mapbox://styles/mlnow/cm2tndow500co01pw3fho5d21";
   const DATA_URL = "av-locations.geojson";
 
-  // House dot color (single color — not coded to any field)
-  const DOT_COLOR = "#007DBC";
-  const DOT_COLOR_ACTIVE = "#005892";
+  // ---- Status color coding ----
+  // Order here also drives the legend order (two per row, three rows).
+  const STATUS_COLORS = {
+    "Inactive":  "#e6e6e6",  // grey
+    "Approved":  "#007dbc",  // blue
+    "Active":    "#46c134",  // green
+    "Denied":    "#f36e57",  // red
+    "Withdrawn": "#d896ff",  // purple
+    "Abandoned": "#ef9f6a"   // orange
+  };
+  const STATUS_DEFAULT = "#9aa0a6"; // fallback for any unexpected value
+  const colorFor = (status) => STATUS_COLORS[status] || STATUS_DEFAULT;
+
+  // Build a fresh Mapbox "match" expression from the color table.
+  // Used for both the fill and the (full-opacity) stroke.
+  const buildColorExpr = () => {
+    const expr = ['match', ['get', 'Status']];
+    for (const [status, color] of Object.entries(STATUS_COLORS)) expr.push(status, color);
+    expr.push(STATUS_DEFAULT); // default
+    return expr;
+  };
 
   const infoBox = document.getElementById('info');
 
@@ -37,35 +55,52 @@ document.addEventListener('DOMContentLoaded', () => {
   const has = (v) => {
     if (v === null || v === undefined) return false;
     const s = String(v).trim();
-    return s !== "" && !/^(nan|na|n\/a|none|null|undefined|unlisted)$/i.test(s);
+    return s !== "" && !/^(nan|na|n\/a|none|null|undefined|unlisted|unknown|uknown)$/i.test(s);
   };
 
   function tplInfo(p = {}) {
-    const site = p["Site Address"];
-    const operator = p["Operator / User"];
-    const fleet = p["Stated Fleet Use"];
-    const landUse = p["Proposed / Approved Land Use"];
-    const status = p["Planning Status and Policy Conflict"];
-    const addr = p["matched_address"];
+    const site = p["Site"];
+    const status = p["Status"];
+    const statusDetail = p["Status detail"];
+    const operator = p["Owner/User"];
+    const fleet = p["Fleet use"];
+    const otherUse = p["Other use proposed/Approved use"];
+
+    const statusPill = has(status)
+      ? `<span class="status-pill"><span class="pill-dot" style="background:${colorFor(status)}"></span>${esc(status)}</span>`
+      : "";
 
     const header = `
       <div class="info-header">
         <strong>${esc(site || "—")}</strong>
-        ${has(operator) ? `<span class="sep">•</span><span class="info-operator">${esc(operator)}</span>` : ""}
+        ${statusPill}
       </div>`;
 
-    //const addressLine = has(addr) ? `<div class="info-address">${esc(addr)}</div>` : "";
+    // Show the owner line whenever there's any value — including "Unknown".
+    // (Normalize the "Uknown" typo that appears in the data for display.)
+    const ownerRaw = String(operator ?? "").trim();
+    const ownerDisplay = /^(unknown|uknown)$/i.test(ownerRaw) ? "Unknown" : ownerRaw;
+    const operatorLine = ownerDisplay
+      ? `<div class="info-operator">User/Owner: ${esc(ownerDisplay)}</div>` : "";
 
     const rows = [];
-    if (has(fleet))   rows.push(`<div class="row"><span class="label">Stated use:</span> ${esc(fleet)}</div>`);
-    if (has(landUse)) rows.push(`<div class="row"><span class="label">Proposed / approved land use:</span> ${esc(landUse)}</div>`);
+    if (has(statusDetail)) rows.push(`<div class="row"><span class="label">Status detail:</span> ${esc(statusDetail)}</div>`);
+    if (has(fleet))        rows.push(`<div class="row"><span class="label">Fleet use:</span> ${esc(fleet)}</div>`);
+    if (has(otherUse))     rows.push(`<div class="row"><span class="label">Other use proposed/Approved use:</span> ${esc(otherUse)}</div>`);
     const stats = rows.length ? `<div class="info-stats">${rows.join("")}</div>` : "";
 
-    const desc = has(status) ? `<div class="info-desc">${esc(status)}</div>` : "";
+    return `${header}${operatorLine}${stats}`;
+  }
 
-    return `${header}${stats}${desc}`;
-
-    // if we want addressLine, it should be: return `${header}${addressLine}${stats}${desc}`; 
+  // ---- Legend ----
+  function buildLegend() {
+    const el = document.getElementById('legend');
+    if (!el) return;
+    el.innerHTML = Object.entries(STATUS_COLORS).map(([status, color]) => `
+      <div class="legend-item">
+        <span class="legend-swatch" style="background:${color}"></span>
+        <span class="legend-label">${esc(status)}</span>
+      </div>`).join("");
   }
 
   let hoveredId = null;
@@ -102,6 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   map.on('error', e => console.error('Mapbox GL error:', e && e.error));
 
+  buildLegend();
+
   map.on('load', async () => {
     let data;
     try {
@@ -125,15 +162,18 @@ document.addEventListener('DOMContentLoaded', () => {
           15, ['case', ['boolean', ['feature-state', 'selected'], false], 11,
                         ['boolean', ['feature-state', 'hover'], false], 10, 8]
         ],
-        'circle-color': [
+        // Fill is coded to Status (rendered at 90% opacity below).
+        'circle-color': buildColorExpr(),
+        // Border is the same color at full opacity (stroke ignores circle-opacity).
+        'circle-stroke-color': buildColorExpr(),
+        // Thicken the ring on hover/selected.
+        'circle-stroke-width': [
           'case',
-          ['boolean', ['feature-state', 'selected'], false], DOT_COLOR_ACTIVE,
-          ['boolean', ['feature-state', 'hover'], false], DOT_COLOR_ACTIVE,
-          DOT_COLOR
+          ['boolean', ['feature-state', 'selected'], false], 2.5,
+          ['boolean', ['feature-state', 'hover'], false], 2.5,
+          1.5
         ],
-        'circle-stroke-color': '#ffffff',
-        'circle-stroke-width': 1.5,
-        'circle-opacity': 0.95
+        'circle-opacity': 0.9
       }
     });
 

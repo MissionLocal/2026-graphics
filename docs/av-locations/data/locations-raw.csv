@@ -1,32 +1,32 @@
-Site Address,Operator / User,Stated Fleet Use,Proposed / Approved Land Use,Planning Status and Policy Conflict
-50 Quint St,Sherman Little,76 Charging Spaces,Industrial land,Active/proposed fleet charging in PDR zone; subject to 2024 Conditional Use rules.
-1111 Pennsylvania Ave,Sherman Little,52 Charging Spaces,Life sciences laboratory,Successfully opposed by Teamsters due to displacement of laboratory development.
-330 8th St,Lyft,30 Charging Spaces,Commercial,Application withdrawn prior to approval.
-1101-1123 Sutter St,Unlisted,Fleet charging in garage,Mixed-use building,No movement on Planning Application; conflicts with housing priorities.
-2450 Alameda St,Zoox,15 Charging Spaces & R&D,Industrial / R&D,Near Animal Care and SFSCPA; subject to non-retail automotive controls.
-1200 Larkin St,Sterling Organization,74 Charging Spaces,132 housing units + 2 retail,Successfully appealed by Teamsters; prevented loss of 132 housing units.
-1500 19th Ave,Unlisted,12 Charging Spaces,Automotive conversion,Cancelled application.
-1485 Bay Shore Blvd,Waymo,Waymo Staging Site,Industrial storage,Surface staging use subject to Transit First restrictions.
-5th St & Brannan St,Waymo,Waymo Staging Site,"1,500+ rental apartments",Staging site directly conflicts with Central SoMa residential entitlement.
-1160 Mission St,"TeraWatt, Waymo",65 Charging Spaces,Downtown Commercial,Private fleet hub in transit-rich Downtown corridor.
-2293 Powell St,Tesla,19 Superchargers,6-story mixed-use residential,Authorized as non-fleet charging; successfully appealed by Teamsters.
-825 Sansome St,Tesla,2 fleet charging levels,Public parking garage,Successfully appealed by Teamsters to prevent private fleet conversion.
-140 14th St,Waymo,Waymo Staging Site,Commercial lot,Fleet charging application closed without approval; operating as staging.
-1700 Pine St,Cruise,Charging site (now empty),Commercial garage,"Former Cruise charging facility, currently inactive."
-855 Geary St,Cruise,20 Chargers,Commercial garage,Mid-block garage conversion subject to non-conforming use rules.
-241 Loomis St,Cruise,Charging site (now empty),Industrial,Inactive charging location.
-1201 08th St,Unlisted,Approved fleet charging (empty),15 housing units + retail,Fleet approval sitting empty on parcel designated for housing infill.
-465 Irwin St,Unlisted,Applied for fleet charging,Commercial / Industrial,Application closed without city approval.
-2270 McKinnon Ave,National Cab Co. / Dan Hinds,Applied for fleet charging,Taxi / Industrial lot,Application closed without city approval.
-301 Brannan St,Cruise,Cruise HQ Site,Commercial office,Zoning Administrator ruled Conditional Use Permit required; never obtained.
-333 Brannan St,Cruise,Cruise HQ Site,Commercial office,Zoning Administrator ruled Conditional Use Permit required; never obtained.
-130 Townsend St,Cruise,Rear lot vehicle storage,Off-street parking rear lot,City ruled rear lot was not permitted for vehicle storage.
-777 Harrison St,"Waymo, Whole Foods",Waymo Staging Site,572 housing units,Surface staging lot delays high-density SoMa housing development.
-120 Perry St,"Waymo, Caltrans",Waymo Staging Site,14-story mixed-use building,Staging lot conflicts with approved high-density tower height allowances.
-350 Pacific Ave,Waymo,Waymo Staging Site,78 housing units,Staging lot conflicts with Jackson Square residential infill.
-350 2nd St,Waymo,Waymo Staging Site,14-story hotel,Staging lot occupies land designated for commercial development.
-640 Cesar Chavez St,Cruise,Operational site,Industrial PDR,Industrial site subject to PDR fleet charging rules.
-2860 16th St,Unlisted,Applied for fleet charging,Commercial,Application closed without city approval.
-201 Toland St,Waymo,Waymo Main Site,Industrial PDR,Main operational base located in the industrial PDR zone.
-1428 Yosemite Ave,Unlisted,Applied for fleet charging,Industrial PDR,Application closed without city approval.
-500 Beach St,Unlisted,Large EV project proposed,Commercial / Wharf,Commercial EV proposal; not formally designated as fleet charging.
+Site,Status detail,Status,Owner/User,Fleet use,Other use proposed/Approved use
+50 Quint St,No fleet charging currently,Inactive,Private owner,76 Charging Spaces,
+1101-1123 Sutter St,"Submitted an application, currently no fleet charging in the city",Inactive,Unknown,Uknown,
+2293 Powell St,No fleet charging currently,Inactive,Tesla,19 superchargers for Tesla Use,"Application submitted to build a six-story, mixed-use residential building "
+1201 08th St,"Approved for Fleet Charging, sitting empty",Inactive,Unknown,"Approved for Fleet Charging, sitting empty",Proposedfive-story building with 15 dwelling units and ground floor retail
+2270 McKinnon Ave,No fleet charging currently,Inactive,"2270 McKinnon Ave LLC, National Cab Company Inc","Applied for change of use to fleet charging, closed without approval",
+130 Townsend Street,Was a Cruise staging site,Inactive,Cruise,,
+2860 16th St,No fleet charging currently,Inactive,Unknown,"Applied for Fleet Charging, but closed the application without approval ",
+1428 Yosemite Ave,No fleet charging currently,Inactive,Unknown,"Applied for change of use to fleet charging, closed without approval",
+1111 Pennsylvania Avenue,Approved for Fleet Charging,Approved,Private owner,52 Charging Spaces,Application submitted to build a labratory on the site
+2450 Alameda Street,Has AV fleet ,Active,Zoox,"15 Charging Spaces, and R&D",
+5th and Brannan,Waymo staging site,Active,Unknown,Waymo Staging Site,
+1160 Mission St,Fleet Charging,Active,TeraWatt and Waymo,65 Charging Spaces,
+140 14th St,Waymo staging site,Active,Waymo,"Applied for Fleet Charging, but closed the application without approval 
+Now used as Waymo Staging Site",
+777 Harrison St,Waymo staging site,Active,Waymo renting from Whole Foods property,Waymo staging site,
+120 Perry St,Waymo staging site,Active,Waymo renting from California Departmrnt of Transportation District 4 property,Waymo staging site,
+350 Pacific Ave,Waymo fleet charging,Active,Waymo renting from Reese Charles W TR,,
+350 2nd St,Waymo staging site,Active,Waymo,Waymo Staging,Hotel
+201 Toland St,Waymo fleet charging,Active,Waymo ,Waymo Main Site,
+825 Sansome St.,Application denied,Denied,Tesla,"One level of public parking garage, with two fleet charging levels",
+465 Irwin St,No fleet charging currently,Denied,Unknown,"Applied for change of use to fleet charging, closed without approval",
+330 8th St,Application withdrawn,Withdrawn,Lyft,30 Charging Spaces,
+1200 Larkin st,"Withdrew Application, no AV's currently",Withdrawn,Sterling Organization,74 Charging Spaces ,Developer met with Planning in 2021 to discuss redeveloping the site into two commercial / retail units and 132 multifamily residential units including on-site inclusionary affordable housing units.
+1500 19th Ave,Application withdrawn,Withdrawn,Unknown,"Application was submitted to convert automotive use to Fleet Charging use, 12 Charging Spaces",
+1700 Pine St,Abandoned Cruise infastructure,Abandoned,Cruise,"Cruise charging site, now sitting empty",
+855 Geary St,Abandoned Cruise infastructure,Abandoned,Cruise,"Cruise site, 20 chargers",
+241 Loomis St,Abandoned Cruise infastructure,Abandoned,Cruise,"Cruise charging site, now sitting empty",
+301 Brannan,Abandoned Cruise infastructure,Abandoned,Cruise,"Cruise HQ site, adjacent parking lot formerly used as AV staging lot.  Application was submitted in 2019 to store, maintain and charge vehicles in the building's 5,797-square-foot parking area. ",
+333 Brannan,Abandoned Cruise infastructure,Abandoned,Cruise,"Cruise HQ site. Application was submitted in 2019 to store, maintain and charge vehicles in the building's 12,250-square-foot parking area.  ",
+640 Chavez ,Abandoned Cruise infastructure,Abandoned,Cruise,Unknown,
+345 Brannan,Abandoned Cruise infastructure,Abandoned,Cruise,"Cruise HQ site. Application was submitted in 2020 to store, charge and maintain vehicles in the building's 7,167-square-foot parking area.",
