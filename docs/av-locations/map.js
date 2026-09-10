@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---- Status color coding ----
   // Order here also drives the legend order (two per row, three rows).
   const STATUS_COLORS = {
-    "Inactive":  "#e6e6e6",  // grey
+    "Inactive":  "#777b7e",  // grey
     "Approved":  "#007dbc",  // blue
     "Active":    "#46c134",  // green
     "Denied":    "#f36e57",  // red
