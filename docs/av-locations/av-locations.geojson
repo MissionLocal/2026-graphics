@@ -4,7 +4,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "50 Quint St",
+                "Site": "50 Quint St.",
                 "Status detail": "No fleet charging currently",
                 "Status": "Inactive",
                 "Owner/User": "Private owner",
@@ -24,7 +24,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "1101-1123 Sutter St",
+                "Site": "1101-1123 Sutter St.",
                 "Status detail": "Submitted an application, currently no fleet charging in the city",
                 "Status": "Inactive",
                 "Owner/User": "Unknown",
@@ -44,7 +44,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "2293 Powell St",
+                "Site": "2293 Powell St.",
                 "Status detail": "No fleet charging currently",
                 "Status": "Inactive",
                 "Owner/User": "Tesla",
@@ -64,12 +64,12 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "1201 08th St",
+                "Site": "1201 8th St.",
                 "Status detail": "Approved for Fleet Charging, sitting empty",
                 "Status": "Inactive",
                 "Owner/User": "Unknown",
                 "Fleet use": "Approved for Fleet Charging, sitting empty",
-                "Other use proposed/Approved use": "Proposedfive-story building with 15 dwelling units and ground floor retail",
+                "Other use proposed/Approved use": "Proposed five-story building with 15 dwelling units and ground floor retail",
                 "matched_address": "1201 8th St, San Francisco, CA 94107",
                 "zip": 94107
             },
@@ -84,7 +84,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "2270 McKinnon Ave",
+                "Site": "2270 McKinnon Ave.",
                 "Status detail": "No fleet charging currently",
                 "Status": "Inactive",
                 "Owner/User": "2270 McKinnon Ave LLC, National Cab Company Inc",
@@ -104,7 +104,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "130 Townsend Street",
+                "Site": "130 Townsend St.",
                 "Status detail": "Was a Cruise staging site",
                 "Status": "Inactive",
                 "Owner/User": "Cruise",
@@ -124,7 +124,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "2860 16th St",
+                "Site": "2860 16th St.",
                 "Status detail": "No fleet charging currently",
                 "Status": "Inactive",
                 "Owner/User": "Unknown",
@@ -144,7 +144,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "1428 Yosemite Ave",
+                "Site": "1428 Yosemite Ave.",
                 "Status detail": "No fleet charging currently",
                 "Status": "Inactive",
                 "Owner/User": "Unknown",
@@ -164,12 +164,12 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "1111 Pennsylvania Avenue",
+                "Site": "1111 Pennsylvania Ave.",
                 "Status detail": "Approved for Fleet Charging",
                 "Status": "Approved",
                 "Owner/User": "Private owner",
                 "Fleet use": "52 Charging Spaces",
-                "Other use proposed/Approved use": "Application submitted to build a labratory on the site",
+                "Other use proposed/Approved use": "Application submitted to build a laboratory on the site",
                 "matched_address": "1111 PENNSYLVANIA AVE, SAN FRANCISCO, CA, 94107",
                 "zip": 94107
             },
@@ -184,8 +184,8 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "2450 Alameda Street",
-                "Status detail": "Has AV fleet ",
+                "Site": "2450 Alameda St.",
+                "Status detail": "Has AV fleet",
                 "Status": "Active",
                 "Owner/User": "Zoox",
                 "Fleet use": "15 Charging Spaces, and R&D",
@@ -224,7 +224,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "1160 Mission St",
+                "Site": "1160 Mission St.",
                 "Status detail": "Fleet Charging",
                 "Status": "Active",
                 "Owner/User": "TeraWatt and Waymo",
@@ -244,7 +244,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "140 14th St",
+                "Site": "140 14th St.",
                 "Status detail": "Waymo staging site",
                 "Status": "Active",
                 "Owner/User": "Waymo",
@@ -264,7 +264,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "777 Harrison St",
+                "Site": "777 Harrison St.",
                 "Status detail": "Waymo staging site",
                 "Status": "Active",
                 "Owner/User": "Waymo renting from Whole Foods property",
@@ -284,10 +284,10 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "120 Perry St",
+                "Site": "120 Perry St.",
                 "Status detail": "Waymo staging site",
                 "Status": "Active",
-                "Owner/User": "Waymo renting from California Departmrnt of Transportation District 4 property",
+                "Owner/User": "Waymo renting from California Department of Transportation",
                 "Fleet use": "Waymo staging site",
                 "Other use proposed/Approved use": null,
                 "matched_address": "120 PERRY ST, SAN FRANCISCO, CA, 94107",
@@ -304,10 +304,10 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "350 Pacific Ave",
+                "Site": "350 Pacific Ave.",
                 "Status detail": "Waymo fleet charging",
                 "Status": "Active",
-                "Owner/User": "Waymo renting from Reese Charles W TR",
+                "Owner/User": "Waymo renting site",
                 "Fleet use": null,
                 "Other use proposed/Approved use": null,
                 "matched_address": "350 PACIFIC AVE, SAN FRANCISCO, CA, 94111",
@@ -324,7 +324,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "350 2nd St",
+                "Site": "350 2nd St.",
                 "Status detail": "Waymo staging site",
                 "Status": "Active",
                 "Owner/User": "Waymo",
@@ -344,7 +344,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "201 Toland St",
+                "Site": "201 Toland St.",
                 "Status detail": "Waymo fleet charging",
                 "Status": "Active",
                 "Owner/User": "Waymo ",
@@ -384,7 +384,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "465 Irwin St",
+                "Site": "465 Irwin St.",
                 "Status detail": "No fleet charging currently",
                 "Status": "Denied",
                 "Owner/User": "Unknown",
@@ -404,7 +404,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "330 8th St",
+                "Site": "330 8th St.",
                 "Status detail": "Application withdrawn",
                 "Status": "Withdrawn",
                 "Owner/User": "Lyft",
@@ -424,8 +424,8 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "1200 Larkin st",
-                "Status detail": "Withdrew Application, no AV's currently",
+                "Site": "1200 Larkin St.",
+                "Status detail": "Withdrew Application, no AVs currently",
                 "Status": "Withdrawn",
                 "Owner/User": "Sterling Organization",
                 "Fleet use": "74 Charging Spaces ",
@@ -444,7 +444,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "1500 19th Ave",
+                "Site": "1500 19th Ave.",
                 "Status detail": "Application withdrawn",
                 "Status": "Withdrawn",
                 "Owner/User": "Unknown",
@@ -464,7 +464,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "1700 Pine St",
+                "Site": "1700 Pine St.",
                 "Status detail": "Abandoned Cruise infastructure",
                 "Status": "Abandoned",
                 "Owner/User": "Cruise",
@@ -484,7 +484,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "855 Geary St",
+                "Site": "855 Geary St.",
                 "Status detail": "Abandoned Cruise infastructure",
                 "Status": "Abandoned",
                 "Owner/User": "Cruise",
@@ -504,7 +504,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "241 Loomis St",
+                "Site": "241 Loomis St.",
                 "Status detail": "Abandoned Cruise infastructure",
                 "Status": "Abandoned",
                 "Owner/User": "Cruise",
@@ -524,7 +524,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "301 Brannan",
+                "Site": "301 Brannan St.",
                 "Status detail": "Abandoned Cruise infastructure",
                 "Status": "Abandoned",
                 "Owner/User": "Cruise",
@@ -544,7 +544,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "333 Brannan",
+                "Site": "333 Brannan St.",
                 "Status detail": "Abandoned Cruise infastructure",
                 "Status": "Abandoned",
                 "Owner/User": "Cruise",
@@ -564,7 +564,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "640 Chavez ",
+                "Site": "640 Cesar Chavez",
                 "Status detail": "Abandoned Cruise infastructure",
                 "Status": "Abandoned",
                 "Owner/User": "Cruise",
@@ -584,7 +584,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Site": "345 Brannan",
+                "Site": "345 Brannan St.",
                 "Status detail": "Abandoned Cruise infastructure",
                 "Status": "Abandoned",
                 "Owner/User": "Cruise",
