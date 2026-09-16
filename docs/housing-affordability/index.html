@@ -1,0 +1,821 @@
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "barlow", sans-serif;
+        font-size: 16px;
+    }
+
+    a {
+        color: #5E5E5E;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    a:hover {
+        color: #5682A9;
+    }
+
+    a:visited {
+        color: #5E5E5E;
+    }
+
+    /* legend */
+
+    .legend {
+        display: flex;
+        flex-direction: column;
+        max-width: 1000px;
+        margin: 5px auto;
+        padding: 0 20px;
+    }
+
+    .legend-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+
+    .legend-dot {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .green-dot {
+        background-color: #D0EBC7;
+    }
+
+    .yellow-dot {
+        background-color: #DBC297;
+    }
+
+    .red-dot {
+        background-color: #E8ADAB;
+    }
+
+    .grey-dot {
+        background-color: #858485;
+    }
+
+
+    /* category */
+
+    .portrait-category-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .portrait-category {
+        color: #848484;
+        margin: 15px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .portrait-category::before,
+    .portrait-category::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background-color: #b2b2b2;
+        margin: 0 10px;
+    }
+
+
+    /* Latest */
+
+    .latest-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 40px 0;
+    }
+
+    .latest-content {
+        display: flex;
+        flex-direction: column;
+        min-width: 275px;
+        max-width: 640px;
+        width: 90%;
+    }
+
+    .intro-graf {
+        font-size: 18px;
+        line-height: 1.5;
+        margin: 0 0 20px 0;
+    }
+
+    .intro-graf p {
+        font-weight: bold;
+    }
+
+    .firstcharacter {
+        float: left;
+        font-size: 48px;
+        line-height: 40px;
+        padding-right: 8px;
+        font-weight: bold;
+    }
+
+
+    /* portraits */
+
+    .portrait-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 1000px;
+        margin: auto;
+        /* Margin between containers */
+        padding: 0 10px;
+        /* Padding on the sides of the container */
+        gap: 20px;
+        /* Even spacing between columns */
+    }
+
+    .portrait-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 105px;
+        gap: 5px;
+    }
+
+    .portrait-row img {
+        width: 100px;
+        height: auto;
+    }
+
+    .portrait-row img:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+
+    .portrait-name {
+        font-weight: bold;
+        padding: 2px 0;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .portrait-title {
+        font-size: 14px;
+        color: #555;
+        padding: 0 0 2px 0;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    /* bio */
+
+    .bio {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .bio-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px 15px 20px;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        min-width: 275px;
+        max-width: 600px;
+        width: 90%;
+        gap: 10px;
+    }
+
+    .bio-title {
+        font-size: 24px;
+        font-weight: 900;
+        margin: 20px 0 12px 0;
+        padding: 0;
+    }
+
+    .bio-card {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .bio-card img {
+        width: 100px;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .bio-short-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bio-long-info {
+        margin-top: 15px;
+        line-height: 1.5;
+        padding-left: 20px;
+    }
+
+    .former-bio-long-info {
+        margin-top: 15px;
+        line-height: 1.5;
+        padding-left: 5px;
+    }
+
+    .read-more {
+        margin-top: 15px;
+        line-height: 1.5;
+        padding-left: 5px;
+    }
+
+    .name {
+        font-weight: bold;
+        font-size: 18px;
+        padding: 0 0 10px 0;
+    }
+
+    .status,
+    .department {
+        font-size: 14px;
+        color: #555;
+        padding: 0 0 5px 0;
+    }
+
+    .who-is-leaving {
+        font-size: 20px;
+        font-weight: 900;
+        padding: 0 0 10px 0;
+    }
+
+
+    /* mobile */
+
+    @media screen and (max-width: 480px) {
+
+        .portrait-category {
+            margin: 5px 0;
+        }
+
+        .portrait-title {
+            font-size: 14px;
+        }
+
+        .portrait-row img {
+            width: 80px;
+            height: auto;
+        }
+
+        .portrait-container {
+            width: 85px;
+            gap: 5px;
+        }
+
+        .bio-container {
+            width: 100%;
+        }
+
+        .bio-title {
+            font-size: 20px;
+            font-weight: 900;
+            margin: 15px 0 10px 0;
+            padding: 0;
+        }
+
+        .bio-card img {
+            width: 80px;
+            height: auto;
+            border-radius: 8px;
+        }
+    }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+
+<!-- last updated: Sept. 15, 2026 -->
+<!-- what's latest -->
+<div class="latest-box">
+    <div class="latest-content">
+        <div class="intro-graf"><span class="firstcharacter">S</span>ay what you will about the <a
+                href="https://missionlocal.org/2025/12/sf-marina-safeway-housing-daniel-lurie/">housing
+                affordability</a>. TK TK TK TK TK COPY</div>
+
+        <div class="intro-graf">COPY <a
+                href="https://www.sfchronicle.com/sf/article/safeway-tower-housing-marina-21224148.php">TK</a> COPY
+        </div>
+
+        <div class="intro-graf">And here are their responses: </div>
+    </div>
+</div>
+<!-- legend -->
+<div class="legend">
+    <div class="legend-item">
+        <div class="legend-dot green-dot"></div>
+        <div>Support the Marina Safeway project</div>
+    </div>
+    <div class="legend-item">
+        <div class="legend-dot red-dot"></div>
+        <div>Oppose the Marina Safeway project</div>
+    </div>
+    <div class="legend-item">
+        <div class="legend-dot yellow-dot"></div>
+        <div>Ambiguous on the Marina Safeway project</div>
+    </div>
+    <div class="legend-item">
+        <div class="legend-dot grey-dot"></div>
+        <div>Declined to answer</div>
+    </div>
+    <div class="legend-item">
+        <div><span style="font-style: italic;">Click on the photos to read more about their positions.</span></div>
+    </div>
+</div>
+
+<!-- portraits: mayor -->
+
+<div class="portrait-category-container" id="top">
+    <div class="portrait-category">the Mayor</div>
+</div>
+<div class="portrait-row">
+    <div class="portrait-container">
+        <a href="#mayor"><img
+                src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/daniel-lurie.png"
+                alt="Daniel Lurie"></a>
+        <div class="portrait-name">Daniel Lurie</div>
+    </div>
+</div>
+
+<!-- portraits: Board of Supervisors -->
+
+<div class="portrait-category-container" id="top">
+    <div class="portrait-category">Board of Supervisors</div>
+</div>
+<div class="portrait-row">
+    <div class="portrait-container">
+        <a href="#sup-d1"><img
+                src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/connie-chan.png"
+                alt="Connie Chan"></a>
+        <div class="portrait-name">Connie Chan</div>
+        <div class="portrait-title">District 1 Supervisor</div>
+    </div>
+    <div class="portrait-container">
+        <a href="#sup-d2"><img
+                src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/stephen-sherrill.png"
+                alt="Stephen Sherrill"></a>
+        <div class="portrait-name">Stephen Sherrill</div>
+        <div class="portrait-title">District 2 Supervisor</div>
+    </div>
+    <div class="portrait-container">
+        <a href="#sup-d3"><img
+                src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/danny-sauter.png"
+                alt="Danny Sauter"></a>
+        <div class="portrait-name">Danny Sauter</div>
+        <div class="portrait-title">District 3 Supervisor</div>
+    </div>
+    <div class="portrait-container">
+        <a href="#sup-d4"><img
+                src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/alan-wong-1.png"
+                alt="Paul Yep"></a>
+        <div class="portrait-name">Alan Wong</div>
+        <div class="portrait-title">District 4 Supervisor</div>
+    </div>
+    <div class="portrait-container">
+        <a href="#sup-d5"><img
+                src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/bilal-mahmood.png"
+                alt="Bilal Mahmood"></a>
+        <div class="portrait-name">Bilal Mahmood</div>
+        <div class="portrait-title">District 5 Supervisor</div>
+    </div>
+    <div class="portrait-container">
+        <a href="#sup-d6"><img
+                src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/matt-dorsey.png"
+                alt="Matt Dorsey"></a>
+        <div class="portrait-name">Matt Dorsey</div>
+        <div class="portrait-title">District 6 Supervisor</div>
+    </div>
+    <div class="portrait-container">
+        <a href="#sup-d7"><img
+                src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/myrna-melgar.png"
+                alt="Myrna Melgar"></a>
+        <div class="portrait-name">Myrna Melgar</div>
+        <div class="portrait-title">District 7 Supervisor</div>
+    </div>
+    <div class="portrait-container">
+        <a href="#sup-d8"><img
+                src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/rafael-mandelman.png"
+                alt="Rafael Mandelman"></a>
+        <div class="portrait-name">Rafael Mandelman</div>
+        <div class="portrait-title">District 8 Supervisor</div>
+    </div>
+    <div class="portrait-container">
+        <a href="#sup-d9"><img
+                src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/jackie-fielder.png"
+                alt="Jackie Fielder"></a>
+        <div class="portrait-name">Jackie Fielder</div>
+        <div class="portrait-title">District 9 Supervisor</div>
+    </div>
+    <div class="portrait-container">
+        <a href="#sup-d10"><img
+                src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/shamann-walton.png"
+                alt="Shamann Walton"></a>
+        <div class="portrait-name">Shamann Walton</div>
+        <div class="portrait-title">District 10 Supervisor</div>
+    </div>
+    <div class="portrait-container">
+        <a href="#sup-d11"><img
+                src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/chyanne-chen.png"
+                alt="Chyanne Chen"></a>
+        <div class="portrait-name">Chyanne Chen</div>
+        <div class="portrait-title">District 11 Supervisor</div>
+    </div>
+</div>
+
+<!-- portraits: Congress -->
+
+<div class="portrait-category-container">
+    <div class="portrait-category">House of Representatives</div>
+</div>
+<div class="portrait-row">
+    <div class="portrait-container">
+        <a href="#nancy-pelosi"><img
+                src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/matt-haney.png"
+                alt="Nancy Pelosi"></a>
+        <div class="portrait-name">Nancy Pelosi</div>
+        <div class="portrait-title">Speaker Emerita, Rep. CA-11</div>
+    </div>
+    <div class="portrait-container">
+        <a href="#kevin-mullin"><img
+                src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/catherine-stefani.png"
+                alt="Kevin Mullin"></a>
+        <div class="portrait-name">Kevin Mullin</div>
+        <div class="portrait-title">Rep. CA-15</div>
+    </div>
+</div>
+
+<!-- portraits: Congressional candidates CA-11 -->
+
+<div class="portrait-category-container">
+    <div class="portrait-category">Congressional CA-11 candidates</div>
+</div>
+<div class="portrait-row">
+    <div class="portrait-container">
+        <a href="#sup-d1"><img
+                src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/connie-chan.png"
+                alt="Connie Chan"></a>
+        <div class="portrait-name">Connie Chan</div>
+        <div class="portrait-title">Congressional candidate</div>
+    </div>
+    <div class="portrait-container">
+        <a href="#wiener"><img
+                src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/scott-wiener.png"
+                alt="Scott Wiener"></a>
+        <div class="portrait-name">Scott Wiener</div>
+        <div class="portrait-title">Congressional candidate</div>
+    </div>
+</div>
+
+<!-- bio info -->
+<div class="bio">
+    <!-- mayor: bio info -->
+    <div class="bio-container" id="mayor">
+        <div class="bio-title">Mayor</div>
+        <div class="bio-card">
+            <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/daniel-lurie.png"
+                alt="Daniel Lurie">
+            <div class="bio-short-info">
+                <div class="name">Daniel Lurie</div>
+                <div class="department">Mayor of San Francisco</div>
+                <div class="status">Elected in November 2024</div>
+            </div>
+        </div>
+        <div class="bio-long-info">
+            <p>My administration is helping San Franciscans stay in their homes today, while building more homes for tomorrow.</p>
+
+            <p>Last week, we partnered with the Board of Supervisors to tackle the rent emergency—protecting renters from unwarranted evictions and preventing sudden rent spikes that force people out.</p>
+
+            <p>We will cap banked rent increases with Supervisor Sauter, protect renters who fall just a bit behind on rent with Supervisor Fielder, provide key information to tenants with Supervisor Dorsey, expand Tenant Right to Counsel, and strengthen enforcement with City Attorney Chiu.</p>
+
+            <p>But we must also tackle the main driver of housing costs: There aren't enough homes.</p>
+
+            <p>Last year, we passed Family Zoning, the first meaningful zoning update since we downzoned 50 years ago—and projects are already using the new rules.</p>
+
+            <p>We're building housing more quickly with PermitSF. We're making it easier to turn empty offices into homes, with hundreds of units in the pipeline. In November, voters can significantly expand the Housing Trust Fund so we can build affordable homes. </p>
+
+            <p>We have more work to do, but our administration is acting with urgency so that our recovery helps San Franciscans put down roots and participate in our city's success—not be displaced it.</p>
+
+            <a href="#top">Back ↑</a>
+        </div>
+    </div>
+
+    <!-- board of supervisors: bio info -->
+    <div class="bio-container" id="sup-d1">
+        <div class="bio-title">District 1 Supervisor</div>
+        <div class="bio-card">
+            <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/connie-chan.png"
+                alt="Connie Chan">
+            <div class="bio-short-info">
+                <div class="name">Connie Chan</div>
+                <div class="department">Board of Supervisors</div>
+                <div class="status">Elected in 2020. Re-elected in November 2024. Candidate for Congressional CA-11.</div>
+            </div>
+        </div>
+        <div class="bio-long-info">
+            <p>Housing affordability is part of the overall affordability crisis facing working families. People are
+            forced to make impossible choices: to pay rent, or pay for medication and groceries. This is
+            unsustainable. To bring down the cost of living immediately, we have to provide livable wages that keep
+            up with rising costs. We must safeguard healthcare, provide affordable childcare, expand rental
+            subsidies for workers, and build housing people can afford.</p>
+
+            <p>As Supervisor, I advanced 100% affordable housing, helped secure financing for developments at Stonestown and Potrero Power Station, and sponsored the Affordable Housing Production Act to build affordable homes with strong labor standards. We should continue using public land, community land trusts and low-cost financing to produce permanently affordable and middle-income housing. But building at the necessary scale will require sustained local, state and federal investment over many years — not a single, or even multiple, zoning changes.</p>
+
+            <p>Tenants need relief now. I will continue my efforts to strengthen protections against unfair evictions and excessive rent increases, preserve rent-controlled housing, and expand rental assistance and tenant counseling. We must also raise wages and reduce healthcare and childcare costs, which can be funded by making billionaires and large corporations pay their fair share.</p>
+
+            <a href="#top">Back ↑</a>
+        </div>
+    </div>
+    <div class="bio-container" id="sup-d2">
+        <div class="bio-title">District 2 Supervisor</div>
+        <div class="bio-card">
+            <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/stephen-sherrill.png"
+                alt="Stephen Sherrill">
+            <div class="bio-short-info">
+                <div class="name">Stephen Sherrill</div>
+                <div class="department">Board of Supervisors</div>
+                <div class="status">Appointed by Mayor London Breed in December 2024. Elected in June 2026. Running for re-election in November 2026.</div>
+            </div>
+        </div>
+        <div class="bio-long-info">
+            <p>We need more homes in San Francisco —  and right now finding money to build these homes is the biggest blocker.</p>
+
+            <p>It's too expensive to build housing here because of extra fees, taxes, and regulations that we impose on builders – additional costs that other cities don't require. Separately, we don't have enough funding dedicated to building new affordable housing.</p>
+
+            <p>To lower costs, I'm pushing legislation to cut these fees that ultimately get passed onto tenants as higher rent– this will provide some relief to renters and encourage more homes to be built faster.</p>
+
+            <p>Beyond that, we need to look at our excessive taxes imposed when a building is sold and our inordinate permitting delays, both of which combined can make a project 25% more expensive to build, as compared to other major cities.</p>
+
+            <p>Finally, I am looking at our outdated building codes, which don't account for new technologies that could lower construction costs, like mass timber. We can't control interest rates or tariffs, but that's no excuse for inaction on what we can fix.</p>
+
+            <p>For affordable housing, we need to pass Prop C to build up the Housing Trust Fund. It's well-designed: as the economy grows, more funding flows to affordable housing - without new taxes. I am excited about this common sense approach to automatically devote more money to affordable housing.</p>
+
+            <a href="#top">Back ↑</a>
+        </div>
+    </div>
+    <div class="bio-container" id="sup-d3">
+        <div class="bio-title">District 3 Supervisor</div>
+        <div class="bio-card">
+            <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/danny-sauter.png"
+                alt="Danny Sauter">
+            <div class="bio-short-info">
+                <div class="name">Danny Sauter</div>
+                <div class="department">Board of Supervisors</div>
+                <div class="status">Elected in November 2024</div>
+            </div>
+        </div>
+        <div class="bio-long-info">
+            <p>To create new homes, I am co-sponsoring the Housing Trust Fund (Prop C) which will result in hundreds of millions of dollars in new funding for affordable housing. I'm also leading an audit of city-owned vacant or underutilized properties, an exercise which has identified dozens of parcels that could amount to thousands of new homes.</p>
+
+            <p>This builds on the work we've already done: Last year, I supported the Family Zoning Plan, the most significant rezoning of our city in decades to allow for new homes near transit. I authored special legislation to allow us to break ground on 1111 Sutter, the largest new housing project in District 3 in over 20 years. And as the Chair of the Downtown Revitalization Financing District, I'm leading the push to convert empty offices into homes downtown.</p>
+
+            <p>I am a renter myself and represent a district that is overwhelmingly composed of tenants living in rent-controlled homes. I've introduced a package of tenant protections which we'll work to pass this fall, which include reforming banked rent to cut down on surprise rent increases, greater accountability for elevator access for tenants, expanded language support, and increased oversight on contractors and builders who defraud tenants.</p>
+
+            <a href="#top">Back ↑</a>
+        </div>
+    </div>
+    <div class="bio-container" id="sup-d4">
+        <div class="bio-title">District 4 Supervisor</div>
+        <div class="bio-card">
+            <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/alan-wong-1.png"
+                alt="Alan Wong">
+            <div class="bio-short-info">
+                <div class="name">Alan Wong</div>
+                <div class="department">Board of Supervisors</div>
+                <div class="status">Appointed by Mayor Daniel Lurie in December 2025. Elected in June 2026. Running for re-election in November 2026.</div>
+            </div>
+        </div>
+        <div class="bio-long-info">
+            <p>At its core, housing affordability reflects a basic economic reality: when the demand for housing exceeds the supply, housing becomes more expensive. San Francisco needs to protect existing residents and increase housing supply for all income levels. We need to support increased density in our City's center while also having neighborhoods do their fair share.</p>
+            
+            <p>If we want increased housing, we have to make it possible. Every unnecessary cost, delay, and barrier makes housing less likely to get built and more expensive. We should streamline permitting, shorten approval timelines, and reduce unnecessary costs. The cost of creating more housing must pencil out, otherwise nothing will get built.</p>
+
+            <p>We also need to help people stay in their homes today through tenant protections, efforts to prevent displacement and increase affordability. We need to make better use of what we already have by converting existing commercial buildings and legalizing existing housing. I authored legislation making it easier to legalize existing in-law units and add housing within existing buildings.</p>
+
+            <p>There is no single solution. We need to increase supply, protect existing residents, invest in affordable housing, reimagine existing buildings, and give communities a meaningful voice in how they grow.</p>
+            
+            <a href="#top">Back ↑</a>
+        </div>
+    </div>
+    <div class="bio-container" id="sup-d5">
+        <div class="bio-title">District 5 Supervisor</div>
+        <div class="bio-card">
+            <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/bilal-mahmood.png"
+                alt="Bilal Mahmood">
+            <div class="bio-short-info">
+                <div class="name">Bilal Mahmood</div>
+                <div class="department">Board of Supervisors</div>
+                <div class="status">Elected in November 2024</div>
+            </div>
+        </div>
+        <div class="bio-long-info">
+            <p>San Francisco faces twin housing and rental emergencies, and we need solutions on both fronts: helping renters afford and stay in today's homes while making it easier to build and finance tomorrow's.</p>
+
+            <p>Renters are stuck in bidding wars over scarce housing, and longtime San Franciscans face rising eviction rates. My focus is rental transparency—like our No Hidden Rent Act, which requires all fees be disclosed in your monthly rent upfront, so you can find an apartment you can actually afford. We also need to keep closing loopholes in our eviction laws, like Supervisor Fielder's legislation ensuring tenants can't be evicted over relatively small unpaid balances.</p>
+
+            <p>At the same time, the city must get out of its own way on new housing. That means cutting red tape, unnecessary hearings, and fees that hold back both affordable and market-rate homes. My SHADE Act streamlines the CEQA appeals that have blocked or delayed over 2,000 units, and I'm working on a broader housing emergency package to speed permitting and lower costs. And to finance housing—especially affordable homes—we must pass Prop C and expand the housing trust fund.</p>
+
+            <a href="#top">Back ↑</a>
+        </div>
+    </div>
+    <div class="bio-container" id="sup-d6">
+        <div class="bio-title">District 6 Supervisor</div>
+        <div class="bio-card">
+            <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/matt-dorsey.png"
+                alt="Matt Dorsey">
+            <div class="bio-short-info">
+                <div class="name">Matt Dorsey</div>
+                <div class="department">Board of Supervisors</div>
+                <div class="status">Appointed by Mayor London Breed in 2022. Elected in November 2022. Running for re-election in November 2026.</div>
+            </div>
+        </div>
+        <div class="bio-long-info">
+            <p>There's no silver bullet here. San Francisco will always have housing demand, and for years we've criminally underbuilt for it. Historic downzoning, layered with years of hostility to new development predictably led us here. Zoning capacity, zoning district-level restrictions, and permitting timelines all matter, and I am always thinking of and acting on legislative solutions.</p>
+
+            <p>Financing has a huge impact on housing production, but it's largely outside of City Hall's control. Projects don't get built if capital markets don't see San Francisco as a good investment, and that's exactly what the Board and Mayor Lurie's leadership has been working to change. Market-rate housing has to be part of the answer, and so does 100% affordable housing at real scale.</p>
+
+            <p>The city has doubled down on converting underused office space into housing through code changes, fee relief, and implementing state laws that further support these projects. We're finally starting to see some of these projects come to life, and I'm optimistic that we'll be seeing more of them. We also need to stay committed to our big development areas, Treasure Island and Central SoMa chief among them with tens of thousands of units of long-term capacity in the pipeline. I've been closely involved in this work in my own district, and I'll keep pushing to make sure these projects actually deliver.</p>
+
+            <p>Tenants getting squeezed now can't wait years for financing to catch up, which is why I support the Mayor's rent emergency package and the work my colleagues have put into supporting tenants. We're also thinking creatively about incentives and voluntary options for landlords on rent stability, because relief has to reach people now, not just years from now. I have legislation that will beef up noticing and involve the rent board in supporting tenants covered by anti-rent gouging state law. There is not a silver bullet here; all creative solutions to help tenants must be on the table.</p>
+
+            <a href="#top">Back ↑</a>
+        </div>
+    </div>
+    <div class="bio-container" id="sup-d7">
+        <div class="bio-title">District 7 Supervisor</div>
+        <div class="bio-card">
+            <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/myrna-melgar.png"
+                alt="Myrna Melgar">
+            <div class="bio-short-info">
+                <div class="name">Myrna Melgar</div>
+                <div class="department">Board of Supervisors</div>
+                <div class="status">Elected in 2022. Re-elected in November 2024</div>
+            </div>
+        </div>
+        <div class="bio-long-info">
+            <p>It took decades to create a housing shortage that does not affect everyone the same way. It is most acute for lower income people, renters, single parents, the young, and vulnerable people  There has been a deliberate underinvestment of housing production, long-lasting racist and segregationist land use policies that limited who got to own land and what got built; real estate speculation that drives up land prices, and the high cost to build any housing. We have created many more jobs than housing  over the last decades and that deficit has accumulated and driven up housing prices.  Our State property tax structure disincentivizes downsizing when you no longer need the bigger house exacerbating the shortage. Immediate relief for tenants would require monumental shifts in State law that would reform Ellis Act, expand rent control, and further allow a cap on rent increases, and we need to build more housing for everyone faster, more efficiently, and more sustainably.</p>
+
+            <p><b>Support tenant protections and hold predatory landlords accountable.</b> The Mayor and Board could expand funding for Right-to-Counsel for tenants as voters intended and be proactive in tenant education.   Lastly, we should partner with the City Attorney to hold predatory landlords accountable for building code violations and predatory practices. It should be a priority to keep existing tenants in rent-controlled units safely housed.  I am working on legislation to expand tenant protections and ensuring that utility costs for renters are fairly charged.</p>
+
+            <p><b>Invest in Creative Financing Models for ALL types of housing.</b> We have a small office of housing that invests in one flavor of nonprofit affordable housing that is at the whims of the market and is competing for limited State tax credits. We have one of the most restrictive residual receipts policies that makes it difficult for housing providers to expand or sustain. We lack the foundation to be bold with comprehensive policymaking, planning, landbanking, and investing in more innovative financing private-public financing models  allowing more cross-subsidization of different income households to make a development projects more sustainable and economically integrated. I am working on creating a program for the limited equity co-operative housing model; developing a program for Transfer for Air Rights to incentivize creation of new rent-controlled units; and legislation to support a Housing Development & Preservation Department. I am also working with our regional partners on creating a regional housing financing mechanism through the Bay Area Housing Finance Authority in my capacity as the SF representative on the Metropolitan Transportation Commission.</p>
+
+            <a href="#top">Back ↑</a>
+        </div>
+    </div>
+    <div class="bio-container" id="sup-d8">
+        <div class="bio-title">District 8 Supervisor (Board President)</div>
+        <div class="bio-card">
+            <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/rafael-mandelman.png"
+                alt="Rafael Mandelman">
+            <div class="bio-short-info">
+                <div class="name">Rafael Mandelman</div>
+                <div class="department">Board of Supervisors</div>
+                <div class="status">Elected in 2018. Re-elected in 2022</div>
+            </div>
+        </div>
+        <div class="bio-long-info">
+            <p>ANSWER TO COME</p>
+            
+            <a href="#top">Back ↑</a>
+        </div>
+    </div>
+    <div class="bio-container" id="sup-d9">
+        <div class="bio-title">District 9 Supervisor</div>
+        <div class="bio-card">
+            <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/jackie-fielder.png"
+                alt="Jackie Fielder">
+            <div class="bio-short-info">
+                <div class="name">Jackie Fielder</div>
+                <div class="department">Board of Supervisors</div>
+                <div class="status">Elected in November 2024</div>
+            </div>
+        </div>
+        <div class="bio-long-info">
+            <p>We must keep tenants in their homes and invest heavily in building more affordable and social housing, the latter of which includes market rate and below-market rate housing. San Francisco is facing a ten-year high eviction crisis, with the majority of evictions for non-payment of rent. I introduced legislation that will prevent landlords from evicting tenants who owe less than one month's Fair Market Rent in order to stem the eviction tide and keep more San Franciscan tenants in their homes. In order to build more affordable homes, we need more innovative investment, which is why I've been a major proponent of Prop B, which would be a step in establishing a public bank to provide low cost loans for affordable housing and social housing development; Prop C, the Housing Trust Fund, and Prop I, the Housing Guarantee Act, which would also fund social housing development.</p>
+            <a href="#top">Back ↑</a>
+        </div>
+    </div>
+    <div class="bio-container" id="sup-d10">
+        <div class="bio-title">District 10 Supervisor</div>
+        <div class="bio-card">
+            <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/shamann-walton.png"
+                alt="Shamann Walton">
+            <div class="bio-short-info">
+                <div class="name">Shamann Walton</div>
+                <div class="department">Board of Supervisors</div>
+                <div class="status">Elected in 2018. Re-elected in November 2022.</div>
+            </div>
+        </div>
+        <div class="bio-long-info">
+            <p>I have supported the Family Zoning Plan and other legislative efforts to increase San Francisco's zoned housing capacity, reduce development costs by deferring and eliminating fees, and streamline our approval processes.  Plainly, however, there is more work to be done in all these regards.  The Family Zoning Plan only covered a portion of the city, and our approval processes remain far too complicated.  I am hopeful that the Mayor's efforts to reform the permitting processes through PermitSF will bear fruit, and Charter Reform will allow even more significant process improvements.  With respect to the eviction crisis, I strongly support full funding of Tenant Right to Counsel to ensure that all San Francisco renters are able to take full advantage of all legal protections that may be available to them.</p>
+
+            <a href="#top">Back ↑</a>
+        </div>
+    </div>
+    <div class="bio-container" id="sup-d11">
+        <div class="bio-title">District 11 Supervisor</div>
+        <div class="bio-card">
+            <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/chyanne-chen.png"
+                alt="Chyanne Chen">
+            <div class="bio-short-info">
+                <div class="name">Chyanne Chen</div>
+                <div class="department">Board of Supervisors</div>
+                <div class="status">Elected in November 2024</div>
+            </div>
+        </div>
+        <div class="bio-long-info">
+            <p>Housing affordability is one of San Francisco's most critical challenges, and I strongly support a  comprehensive "Three Ps" approach that builds on the three pillars of Protection, Preservation, and Production.</p>
+
+            <p>We need strong Protection and Preservation policies to provide front-line defense against displacement and gentrification. Protection policies like just cause protections, rent stabilization, and expanded tenant protections provide immediate relief to those at risk of displacement. Preservation policies help to keep our existing stock of deed-restricted and rent-stabilized housing affordable over the long term. In addition, Preservation strategies convert older, tenant-occupied multi-family properties into permanently affordable housing.  Together, these strategies can provide more immediate and cost-effective relief to low income and working people while the city works to increase the supply of affordable housing.</p>
+
+            <p>The third pillar of new production is critical to address severe supply shortages of affordable housing.  We must produce more housing at all income levels, and in particular affordable housing.  I support expanding the city's dedicated funds for affordable housing through Prop C, the expansion of the Affordable Housing Trust Fund. I also support expanding our city's tool box to help finance new affordable units with the support of Prop B, a charter amendment that I authored on a Municipal Finance Corporation and Public Bank.  I support the city's efforts to develop a Municipal Housing pilot program and sit on the LAFCO Commission overseeing this effort.  I believe we must pair all of these new tools with a strong Public Lands strategy for affordable housing.  New regional, state, and federal investments are needed and I support the statewide affordable housing bond on the 2026 ballot as well as a potential regional affordable housing measure for the 2028 ballot.  Together, these new tools and public financing strategies will enable our city to make meaningful headway towards increasing the supply of affordable housing.</p>
+            
+            <a href="#top">Back ↑</a>
+        </div>
+    </div>
+
+    <!-- house of representatives -->
+    <div class="bio-container" id="nancy-pelosi">
+        <div class="bio-title">Speaker Emerita, United States Representative, CA-11</div>
+        <div class="bio-card">
+            <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/catherine-stefani.png"
+                alt="Catherine Stefani">
+            <div class="bio-short-info">
+                <div class="name">Nancy Pelosi</div>
+                <div class="department">House of Representatives</div>
+                <div class="status">Elected in 1987. Will retire when term ends in January 2027.</div>
+            </div>
+        </div>
+        <div class="bio-long-info">
+            <p>Affordable housing is a matter of public health and essential to a stronger, more inclusive San Francisco. Our crisis reflects both a shortage of affordable homes and the widening gap between housing costs and working families' incomes. The goal has always been to make housing more affordable, and to do so we must increase housing stock and assistance for working people. Although the federal government has limited authority or policy tools to directly affect supply in local housing markets, Congress can provide the resources and incentives communities need to build and preserve housing that local residents can afford.</p>
+
+            <p>When I was first elected to Congress, I joined the Banking, Finance and Urban Affairs Committee to address the housing needs of San Francisco. To that end, it has been with pride that I've secured billions of dollars in federal funding for housing and long fought for the Low-Income Housing Tax Credit, which enables the private and non-profit sectors to build more low-income homes. For example, we have made federal investments in RAD and HOPE SF that revitalized public housing at Hunters View, Alice Griffith and Sunnydale. I've also worked to provide assistance for first-time homebuyers and created housing resources for people living with HIV/AIDS through HOPWA.</p>
+
+            <p>This year, I supported and advocated for the bipartisan 21st Century ROAD to Housing Act — an important step, but not a complete solution. Congress must go further by strengthening the national Housing Trust Fund, expanding financing for deeply affordable housing and preserving existing affordable and public housing. But construction takes years, and tenants need relief now. Congress should protect and expand rental assistance, fund homelessness prevention and help communities prevent displacement. San Francisco must pair federal investments with strong tenant protections and locally driven plans that meet the full range of our housing needs.</p>
+            
+            <a href="#top">Back ↑</a>
+        </div>
+    </div>
+    <div class="bio-container" id="kevin-mullin">
+        <div class="bio-title">United States Representative, CA-15</div>
+        <div class="bio-card">
+            <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/scott-wiener.png"
+                alt="Kevin Mullin">
+            <div class="bio-short-info">
+                <div class="name">Kevin Mullin</div>
+                <div class="department">House of Representatives</div>
+                <div class="status">Elected in November 2022. Running for re-election in November 2026.</div>
+            </div>
+        </div>
+        <div class="bio-long-info">
+            <p>Having an affordable, quality place to call home should be a basic human right, but sadly it's a challenge for families across America and especially here in California. All levels of government – including local, state and federal – need to be working to support efforts to reduce the cost of housing and keep people stabilized.</p>
+
+            <p>I am pushing a two-pronged strategy at the federal level that focuses on more immediate solutions, as well as longer-term reforms. For example, I authored the bipartisan Empty Lots to Housing Act that would help turn vacant parcels near transit into affordable housing, and cosponsored the Affordable Housing Credit Improvement Act that was recently enacted and will help finance nearly 1.6 million affordable homes nationwide over the next 10 years. I'm also cosponsoring the Green New Deal for Public Housing, which proposes the most significant investment in preserving and improving public housing in decades, but will need a Democratic trifecta to pass.</p>
+
+            <p>San Franciscans know all too well how hard it is to live in such a high-cost area, and we need the federal government to support the local City/County and state efforts to expand housing supply, increase ownership opportunities, and protect tenants and vulnerable communities.</p>
+
+            <a href="#top">Back ↑</a>
+        </div>
+    </div>
+
+    <div class="bio-container" id="wiener">
+        <div class="bio-title">Congressional candidate</div>
+        <div class="bio-card">
+            <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/scott-wiener.png"
+                alt="Scott Wiener">
+            <div class="bio-short-info">
+                <div class="name">Scott Wiener</div>
+                <div class="department">California state senator. Candidate for Congressional CA-11.</div>
+            </div>
+        </div>
+        <div class="bio-long-info">
+            <p>We need to embrace policies that make it easier to build housing for people at every income level. Zoning reform, expediting approvals/permits, renter protections, and addressing economic feasibility — we have to do it all at once to build the homes San Franciscans need to lower costs and protect renters. San Francisco's housing affordability crisis is the result of decades of bad housing policy that made it impossible to build affordable housing and market rate housing alike, and there are no silver bullets.</p>
+
+            <p>Part of the solution is funding to build the affordable homes the market won't build on its own. I've proposed a plan for Congress to provide $1.2 trillion — paid for by reversing Bush's and Trump's tax cuts on corporations and the wealthy — to build over 8 million homes nationwide, including both traditional affordable housing and mixed income social housing.</p>
+
+            <p>But truly delivering homes at scale requires fixing our broken system of building them. I've led a movement to make it cheaper and easier to build in California. The laws I've passed and helped pass have cut average approval times for new homes in San Francisco by 80%, removing endless barriers to building. Market conditions have made building an uphill battle, but what has been built has largely come under laws I passed or helped pass. Today, thousands of San Franciscans live in affordable homes made possible by reforms I've championed — and thousands more are now in the pipeline as new reforms take effect.</p>
+
+            <p>This is progress, but it's not enough. We must keep pushing for policies that will get homes built and rein in costs to levels people can afford.</p>
+
+            <p></p><a href="#top">Back ↑</a>
+        </div>
+    </div>
+</div>
