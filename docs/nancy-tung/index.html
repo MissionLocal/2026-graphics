@@ -1,0 +1,1376 @@
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "barlow", sans-serif;
+        font-size: 16px;
+    }
+
+    a {
+        color: #5E5E5E;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    
+    a:hover {
+        color: #5682A9;
+    }
+    
+    a:visited {
+        color: #5E5E5E;
+    }
+
+    /* legend */
+
+    .legend {
+        display: flex;
+        flex-direction: column;
+        max-width: 1000px;
+        margin: 5px auto;
+        padding: 0 20px;
+    }
+
+    .legend-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+
+    .legend-dot {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .green-dot {
+        background-color: #92C5BE;
+    }
+
+    .yellow-dot {
+        background-color: #D5BA8F;
+    }
+
+    .red-dot {
+        background-color: #E89D94;
+    }
+
+    .grey-dot {
+        background-color: #919191;
+    }
+
+
+    /* category */
+
+    .portrait-category-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .portrait-category {
+        color: #848484;
+        margin: 15px 0;
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .portrait-category::before,
+    .portrait-category::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background-color: #b2b2b2;
+        margin: 0 10px;
+    }
+
+
+    /* Latest */
+
+    .latest-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 40px 0;
+    }
+    .latest-content {
+        display: flex;
+        flex-direction: column;
+        min-width: 275px;
+        max-width: 640px;
+        width: 90%;
+    }
+    .intro-graf {
+        font-size: 18px;
+        line-height: 1.5;
+        margin: 0 0 20px 0;
+    }
+
+    .intro-graf p {
+        font-weight: bold;
+    }
+
+    .firstcharacter {
+        float: left;
+        font-size: 48px;
+        line-height: 40px;
+        padding-right: 8px;
+        font-weight: bold;
+    }
+
+
+    /* portraits */
+
+    .portrait-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 1000px;
+        margin: auto; /* Margin between containers */
+        padding: 0 10px; /* Padding on the sides of the container */
+        gap: 20px; /* Even spacing between columns */
+    }
+
+    .portrait-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 105px;
+        gap: 5px;
+    }
+    
+    .portrait-row img {
+        width: 100px;
+        height: auto;
+    }
+
+    .portrait-row img:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+
+    .portrait-name {
+        font-weight: bold;
+        padding: 2px 0; 
+        justify-content: center;
+        text-align: center;
+    }
+
+    .portrait-title {
+        font-size: 14px;
+        color: #555;
+        padding: 0 0 2px 0;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    /* bio */
+
+    .bio {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .bio-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px 15px 20px;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        min-width: 275px;
+        max-width: 600px;
+        width: 90%;
+        gap: 10px;
+    }
+
+    .bio-title {
+        font-size: 24px;
+        font-weight: 900;
+        margin: 20px 0 12px 0;
+        padding: 0;
+    }
+
+    .bio-card {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .bio-card img {
+        width: 100px;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .bio-short-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bio-long-info {
+        margin-top: 15px;
+        line-height: 1.5;
+        padding-left: 20px;
+    }
+
+    .former-bio-long-info {
+        margin-top: 15px;
+        line-height: 1.5;
+        padding-left: 5px;
+    }
+
+    .read-more {
+        margin-top: 15px;
+        line-height: 1.5;
+        padding-left: 5px;
+    }
+
+    .name {
+        font-weight: bold;
+        font-size: 18px;
+        padding: 0 0 10px 0;
+    }
+
+    .status, .department {
+        font-size: 14px;
+        color: #555;
+        padding: 0 0 5px 0;
+    }
+
+    .who-is-leaving {
+        font-size: 20px;
+        font-weight: 900;
+        padding: 0 0 10px 0;
+    }
+
+
+    /* mobile */
+
+    @media screen and (max-width: 480px) {
+
+        .portrait-category {
+            margin: 5px 0;
+        }
+        
+        .portrait-title {
+            font-size: 14px;
+        }
+
+        .portrait-row img {
+            width: 80px;
+            height: auto;
+        }
+
+        .portrait-container {
+            width: 85px;
+            gap: 5px;
+        }
+
+        .bio-container {
+            width: 100%;
+        }
+        
+        .bio-title {
+            font-size: 20px;
+            font-weight: 900;
+            margin: 15px 0 10px 0;
+            padding: 0;
+        }
+        
+        .bio-card img {
+            width: 80px;
+            height: auto;
+            border-radius: 8px;
+        }
+    }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+
+<body>
+    <!-- last updated: Oct. 8, 2026 -->
+    <!-- what's latest -->
+    <div class="latest-box">
+        <div class="latest-content">
+            <div class="intro-graf"><span class="firstcharacter">S</span>an Francisco’s Democratic Party is axles up in a ditch. </div>
+
+<div class="intro-graf">Chair Nancy Tung’s party supporters say she’s navigated the party into this place with “integrity and vision.” Good to know: Insofar as there’s a way out, it will be Tung who’s behind the wheel. </div>
+
+<div class="intro-graf">It has, indeed, been a rough road of late for the county Democratic Party. </div>
+
+<div class="intro-graf">
+    The local party reversed its own bylaws so it could <a href="https://missionlocal.org/2026/08/sf-dems-oppose-billionaire-tax/">in August</a> buck the California Democratic Party and oppose Prop. 40, the “Billionaire Tax.” Last month, the local party <a href="https://missionlocal.org/2026/09/san-francisco-democratic-party-flock-cameras/">voted handily</a> to spurn attempts to mitigate the city’s contract with controversial surveillance camera outfit Flock — not one week before Mayor Daniel Lurie enacted attempts to do just that. </div>
+
+<div class="intro-graf">Complicating matters, Tung in August <a href="https://sfstandard.com/2026/09/28/sf-dem-party-chair-who-blocked-key-flock-vote-got-10-000-donation-billionaire/">accepted a $10,000 donation</a> from crypto billionaire Chris Larsen; she used some of that money to pay for airfare to an Atlanta confab put on by Flock. 
+</div>
+
+<div class="intro-graf">Larsen is a major contributor to the massive-dollar effort to sink Prop. 40 and has put millions of dollars into installing Flock cameras throughout San Francisco. Tung told the San Francisco Standard that the donation had “no bearing whatsoever” on her actions. </div>
+
+<div class="intro-graf">Also in August, the San Francisco Democratic Party <a href="https://missionlocal.org/2026/08/san-francisco-democratic-party-manny-yekutiel-endorsement/">endorsed Manny Yekutiel</a> for District 8 supervisor, despite an on-the-record allegation of sexual assault by Brad Chapin. This came after a five-week “investigation” into that allegation.</div>
+
+<div class="intro-graf">On the very day of the vote, party members were delivered <a href="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/08/Notice-to-SFDCCC-Chair.pdf">a half-page letter</a> tersely noting that the accusation against Yekutiel did not come under the aegis of the party’s anti-harassment policy and its “investigation” could neither confirm nor deny whether an assault occurred. 
+</div>
+
+<div class="intro-graf">As the party policy only covers actions undertaken at party-linked events, and Chapin alleges he was assaulted at a private home, it should have been rapidly determined that the Democratic Party could not take this matter up. Instead, the “investigation” was allowed to drag on for weeks and, in the end, its non-findings were used to buttress the endorsement of the party’s preferred candidate. </div>
+
+<div class="intro-graf">And then: Axles up in a ditch. </div>
+
+<div class="intro-graf">Following the party’s endorsement of Yekutiel, Mayor Lurie also backed him, adding that he believed Yekutiel’s account that Chapin was not telling the truth. This, it seems, led directly to two more men <a href="https://sfstandard.com/2026/10/01/manny-yekutiel-sexual-assault-allegation-sf-supervisor-candidate/">this month coming forward to accuse Yekutiel of sexual misconduct</a>. It warrants mentioning that Lurie appears to have, counter-intuitively sunk Yekutiel’s chances by endorsing him. 
+</div>
+
+<div class="intro-graf">The party will hold an emergency meeting on Oct. 11 to reconsider its District 8 endorsement. It promises to be a fraught affair. </div>
+
+<div class="intro-graf">Tung has since <a href="https://www.kqed.org/news/12102904/san-francisco-democratic-party-chair-apologizes-after-sexual-assault-policy-broke-down">apologized for this outcome and this process</a>. But not before her detractors have called for her to do more — and step down. A planned Wednesday Richmond District press conference intended to bolster Tung in the face of this criticism was abruptly canceled, leaving befuddled members of the media to instead interview anti-Tung protesters. </div>
+
+<div class="intro-graf">As it has done regarding contentious issues in the past — see <a href="https://missionlocal.org/2025/12/sf-marina-safeway-government-poll/">here</a> and <a href="https://missionlocal.org/2026/03/overpaid-ceo-tax-proposal-government-poll/">here</a> — Mission Local asked virtually every San Francisco elected official to go on the record. Our question: </div>
+
+<div class="intro-graf">“Should Nancy Tung resign from the DCCC and/or step down as San Francisco Democratic Party chair? Why or why not?”</div>
+
+
+<div class="intro-graf">Respondents who simply answered “yes” or “no” were urged to explain their answers. Some did. Most did not. </div>
+
+
+<div class="intro-graf">Finally, when faced with questions about Flock in August, Democratic Party members were urged <a href="https://sfstandard.com/2026/08/30/power-play-flock-democrat-newsom-yimby/">in writing</a> on their internal group chat to spurn inquiries from the media. Mission Local is informed that nothing of this sort happened regarding our recent query. Rather, we are told that phone calls were made.  
+</div>
+
+
+<div class="intro-graf">Here are the results of our survey: </div>
+
+        </div>
+    </div>
+    <!-- legend -->
+    <div class="legend">
+        <div class="legend-item">
+          <div class="legend-dot green-dot"></div>
+          <div>Tung should resign</div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot red-dot"></div>
+          <div>Tung should not resign</div>
+        </div>
+                <div class="legend-item">
+          <div class="legend-dot yellow-dot"></div>
+          <div>Ambiguous / wait and see</div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot grey-dot"></div>
+          <div>Did not respond</div>
+        </div>
+        <div class="legend-item">
+            <div><span style="font-style: italic;">Click on the photos to read more about their positions.</span></div>
+        </div>
+    </div>
+
+    <!-- portraits: mayor -->
+
+        <div class="portrait-category-container" id="top">
+        <div class="portrait-category">the Mayor</div>
+    </div>
+    <div class="portrait-row">
+        <div class="portrait-container">
+            <a href="#mayor"><img src="https://missionlocal.org/wp-content/uploads/2026/10/daniel_lurie_grey.png" alt="Daniel Lurie"></a>
+            <div class="portrait-name">Daniel Lurie</div>
+        </div>
+    </div>
+    <div class="portrait-category-container" id="top">
+        <div class="portrait-category">Board of Supervisors</div>
+    </div>
+    <div class="portrait-row">
+        <div class="portrait-container">
+            <a href="#connie-chan"><img src="https://missionlocal.org/wp-content/uploads/2026/10/connie_chan_blue-2.png" alt="Connie Chan"></a>
+            <div class="portrait-name">Connie Chan</div>
+            <div class="portrait-title">District 1 supervisor</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#sup-d2"><img src="https://missionlocal.org/wp-content/uploads/2026/10/stephen_sherrill_grey.png" alt="Stephen Sherrill"></a>
+            <div class="portrait-name">Stephen Sherrill</div>
+            <div class="portrait-title">District 2 supervisor</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#sup-d3"><img src="https://missionlocal.org/wp-content/uploads/2026/10/danny_sauter_grey.png" alt="Danny Sauter"></a>
+            <div class="portrait-name">Danny Sauter</div>
+            <div class="portrait-title">District 3 supervisor</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#sup-d4"><img src="https://missionlocal.org/wp-content/uploads/2026/10/alan_wong_grey.png" alt="Paul Yep"></a>
+            <div class="portrait-name">Alan Wong</div>
+            <div class="portrait-title">District 4 supervisor</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#bilal-mahmood"><img src="https://missionlocal.org/wp-content/uploads/2026/10/bilal_mahmood_grey-1.png" alt="Bilal Mahmood"></a>
+            <div class="portrait-name">Bilal Mahmood</div>
+            <div class="portrait-title">District 5 supervisor</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#matt-dorsey"><img src="https://missionlocal.org/wp-content/uploads/2026/10/matt_dorsey_red-1.png" alt="Matt Dorsey"></a>
+            <div class="portrait-name">Matt Dorsey</div>
+            <div class="portrait-title">District 6 supervisor</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#sup-d7"><img src="https://missionlocal.org/wp-content/uploads/2026/10/myrna_melgar_red.png" alt="Myrna Melgar"></a>
+            <div class="portrait-name">Myrna Melgar</div>
+            <div class="portrait-title">District 7 supervisor</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#sup-d8"><img src="https://missionlocal.org/wp-content/uploads/2026/10/rafael_mandelman_grey.png" alt="Rafael Mandelman"></a>
+            <div class="portrait-name">Rafael Mandelman</div>
+            <div class="portrait-title">District 8 supervisor</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#sup-d9"><img src="https://missionlocal.org/wp-content/uploads/2026/10/jackie_fielder_blue.png" alt="Jackie Fielder"></a>
+            <div class="portrait-name">Jackie Fielder</div>
+            <div class="portrait-title">District 9 supervisor</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#sup-d10"><img src="https://missionlocal.org/wp-content/uploads/2026/10/shamann_walton_blue.png" alt="Shamann Walton"></a>
+            <div class="portrait-name">Shamann Walton</div>
+            <div class="portrait-title">District 10 supervisor</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#sup-d11"><img src="https://missionlocal.org/wp-content/uploads/2026/10/chyanne_chen_blue.png" alt="Chyanne Chen"></a>
+            <div class="portrait-name">Chyanne Chen</div>
+            <div class="portrait-title">District 11 supervisor</div>
+        </div>
+    </div>
+
+    <!-- portraits: candidates -->
+    <div class="portrait-category-container">
+        <div class="portrait-category">Notable candidates for the Board of Supervisors</div>
+    </div>
+    <div class="portrait-row">
+        <div class="portrait-container">
+            <a href="#connie-chan"><img src="https://missionlocal.org/wp-content/uploads/2026/10/connie_chan_blue.png" alt="Connie Chan"></a>
+            <div class="portrait-name">Connie Chan</div>
+            <div class="portrait-title">Congressional candidate</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#scott-wiener"><img src="https://missionlocal.org/wp-content/uploads/2026/10/scott_wiener_red.png" alt="Scott Wiener"></a>
+            <div class="portrait-name">Scott Wiener</div>
+            <div class="portrait-title">Congressional candidate</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#matt-dorsey"><img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/matt-dorsey.png" alt="Matt Dorsey"></a>
+            <div class="portrait-name">Matt Dorsey</div>
+            <div class="portrait-title">District 6 Supervisor and candidate</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#d6-candidate-alex"><img src="https://missionlocal.org/wp-content/uploads/2026/10/alex_behrend_blue.png" alt="Alex Behrend"></a>
+            <div class="portrait-name">Alex Behrend</div>
+            <div class="portrait-title">District 6 candidate</div>
+        </div>
+
+        <div class="portrait-container">
+            <a href="#d8-candidate-gary"><img src="https://missionlocal.org/wp-content/uploads/2026/10/gary_mccoy_yellow.png" alt="Gary McCoy"></a>
+            <div class="portrait-name">Gary McCoy</div>
+            <div class="portrait-title">District 8 candidate</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#michael-nguyen"><img src="https://missionlocal.org/wp-content/uploads/2026/10/michael_nguyen_blue-1.png" alt="Michael Nguyen"></a>
+            <div class="portrait-name">Michael Nguyen</div>
+            <div class="portrait-title">District 8 candidate</div>
+        </div>
+                <div class="portrait-container">
+            <a href="#d8-candidate-darshini"><img src="https://missionlocal.org/wp-content/uploads/2026/10/darshini_patel_blue.png" alt="Darshini Patel"></a>
+            <div class="portrait-name">Darshini Patel</div>
+            <div class="portrait-title">District 8 candidate</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#d10-candidate-theo"><img src="https://missionlocal.org/wp-content/uploads/2026/10/theo_ellington_yellow.png" alt="Theo Ellington"></a>
+            <div class="portrait-name">Theo Ellington</div>
+            <div class="portrait-title">District 10 candidate</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#d10-candidate-jr"><img src="https://missionlocal.org/wp-content/uploads/2026/10/jr_eppler_blue.png" alt="J.R. Eppler"></a>
+            <div class="portrait-name">J.R. Eppler</div>
+            <div class="portrait-title">District 10 candidate</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#d10-candidate-dj"><img src="https://missionlocal.org/wp-content/uploads/2026/10/dj_brookter_blue.png" alt="D.J. Brookter"></a>
+            <div class="portrait-name">D.J. Brookter</div>
+            <div class="portrait-title">District 10 candidate</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#d10-candidate-shawn"><img src="https://missionlocal.org/wp-content/uploads/2026/10/shawn_richard_blue.png" alt="Shawn Richard"></a>
+            <div class="portrait-name">Shawn Richard</div>
+            <div class="portrait-title">District 10 candidate</div>
+        </div>
+        </div>
+        
+    </div>
+
+    
+    <div class="portrait-category-container">
+        <div class="portrait-category">SF DCCC members</div>
+    </div>
+    <div class="portrait-row">
+                <div class="portrait-container">
+            <a href="#dan-calamuci"><img src="https://missionlocal.org/wp-content/uploads/2026/10/dan_calamuci_red.png" alt="Dan Calamuci"></a>
+            <div class="portrait-name">Dan Calamuci</div>
+            
+        </div>
+        <div class="portrait-container">
+            <a href="#patrick-boileau"><img src="https://missionlocal.org/wp-content/uploads/2026/10/patrick_boileau_red.png" alt="Patrick Boileau"></a>
+            <div class="portrait-name">Patrick Boileau</div>
+            
+        </div>
+        <div class="portrait-container">
+            <a href="#trevor-chandler"><img src="https://missionlocal.org/wp-content/uploads/2026/10/trevor_chendler_red.png" alt="Trevor L. Chandler"></a>
+            <div class="portrait-name">Trevor L. Chandler</div>
+            
+        </div>
+        <div class="portrait-container">
+            <a href="#lily-ho"><img src="https://missionlocal.org/wp-content/uploads/2026/10/lily_ho_red.png" alt="Lily Ho"></a>
+            <div class="portrait-name">Lily Ho</div>
+            
+        </div>
+        <div class="portrait-container">
+            <a href="#jade-tu"><img src="https://missionlocal.org/wp-content/uploads/2026/10/jade_tu_grey.png" alt="Jade Tu"></a>
+            <div class="portrait-name">Jade Tu</div>
+            
+        </div>
+        <div class="portrait-container">
+            <a href="#marjan-philhour"><img src="https://missionlocal.org/wp-content/uploads/2026/10/marjan_philhour_red.png" alt="Marjan Philhour"></a>
+            <div class="portrait-name">Marjan Philhour</div>
+            
+        </div>
+        <div class="portrait-container">
+            <a href="#matt-dorsey"><img src="https://missionlocal.org/wp-content/uploads/2026/10/matt_dorsey_red-1.png" alt="Matt Dorsey"></a>
+            <div class="portrait-name">Matt Dorsey</div>
+            
+        </div>
+        <div class="portrait-container">
+            <a href="#mike-chen"><img src="https://missionlocal.org/wp-content/uploads/2026/10/mike_chen_red.png" alt="Mike Chen"></a>
+            <div class="portrait-name">Mike Chen</div>
+            
+        </div>
+        <div class="portrait-container">
+            <a href="#joe-sangirardi"><img src="https://missionlocal.org/wp-content/uploads/2026/10/joe_sangirardi_red.png" alt="Joe Sangirardi"></a>
+            <div class="portrait-name">Joe Sangirardi</div>
+            
+        </div>
+        <div class="portrait-container">
+            <a href="#eric-kingsbury"><img src="https://missionlocal.org/wp-content/uploads/2026/10/eric_kingsbury_red.png" alt="Eric Kingsbury"></a>
+            <div class="portrait-name">Eric Kingsbury</div>
+            
+        </div>
+        <div class="portrait-container">
+            <a href="#lanier-coles"><img src="https://missionlocal.org/wp-content/uploads/2026/10/lanier_coles_red.png" alt="Lanier Coles"></a>
+            <div class="portrait-name">Lanier Coles</div>
+            
+        </div>
+        <div class="portrait-container">
+            <a href="#cedric-akbar"><img src="https://missionlocal.org/wp-content/uploads/2026/10/cedric_akbar_grey.png" alt="Cedric Akbar"></a>
+            <div class="portrait-name">Cedric Akbar</div>
+            
+        </div>
+        <div class="portrait-container">
+            <a href="#michela-alioto-pier"><img src="https://missionlocal.org/wp-content/uploads/2026/10/michela_alioto_pier_red.png" alt="Michela Alioto-Pier"></a>
+            <div class="portrait-name">Michela Alioto-Pier</div>
+            
+        </div>
+        <div class="portrait-container">
+            <a href="#michael-nguyen"><img src="https://missionlocal.org/wp-content/uploads/2026/10/michael_nguyen_blue-1.png" alt="Michael Trung Nguyen"></a>
+            <div class="portrait-name">Michael Nguyen</div>
+            
+        </div>
+        <div class="portrait-container">
+            <a href="#michael-lai"><img src="https://missionlocal.org/wp-content/uploads/2026/10/michael_lai_red.png" alt="Michael Lai"></a>
+            <div class="portrait-name">Michael Lai</div>
+            
+        </div>
+        <div class="portrait-container">
+            <a href="#joshua-arce"><img src="https://missionlocal.org/wp-content/uploads/2026/10/josh_arce_red.png" alt="Joshua Arce"></a>
+            <div class="portrait-name">Joshua Arce</div>
+            
+        </div>
+        <div class="portrait-container">
+            <a href="#nancy-tung"><img src="https://missionlocal.org/wp-content/uploads/2026/10/nancy_tung_red.png" alt="Nancy Tung"></a>
+            <div class="portrait-name">Nancy Tung</div>
+            
+        </div>
+        <div class="portrait-container">
+            <a href="#peter-gallotta"><img src="https://missionlocal.org/wp-content/uploads/2026/10/peter_gallotta_blue.png" alt="Peter Gallotta"></a>
+            <div class="portrait-name">Peter Gallotta</div>
+            
+        </div>
+        <div class="portrait-container">
+            <a href="#bilal-mahmood"><img src="https://missionlocal.org/wp-content/uploads/2026/10/bilal_mahmood_grey-1.png" alt="Bilal Mahmood"></a>
+            <div class="portrait-name">Bilal Mahmood</div>
+            
+        </div>
+        <div class="portrait-container">
+            <a href="#connie-chan"><img src="https://missionlocal.org/wp-content/uploads/2026/10/connie_chan_blue-2.png" alt="Connie Chan"></a>
+            <div class="portrait-name">Connie Chan</div>
+            
+        </div>
+        <div class="portrait-container">
+            <a href="#emma-hare"><img src="https://missionlocal.org/wp-content/uploads/2026/10/emma_hare_yellow.png" alt="Emma Hare"></a>
+            <div class="portrait-name">Emma Hare</div>
+            
+        </div>
+        <div class="portrait-container">
+            <a href="#gordon-mar"><img src="https://missionlocal.org/wp-content/uploads/2026/10/gordon_mar_blue.png" alt="Gordon Mar"></a>
+            <div class="portrait-name">Gordon Mar</div>
+            
+        </div>
+        <div class="portrait-container">
+            <a href="#jane-kim"><img src="https://missionlocal.org/wp-content/uploads/2026/10/jane_kim_blue.png" alt="Jane Kim"></a>
+            <div class="portrait-name">Jane Kim</div>
+            
+        </div>
+
+
+<div class="portrait-category-container" id="top">
+        <div class="portrait-category">SF DCCC ex-officio members</div>
+
+    <div class="portrait-row">
+         <div class="portrait-container">
+            <a href="#nancy-pelosi"><img src="https://missionlocal.org/wp-content/uploads/2026/10/nancy_pelosi_grey.png" alt="Nancy Pelosi"></a>
+            <div class="portrait-name">Nancy Pelosi</div>
+            <div class="portrait-title">Speaker Emerita of the U.S. House of Representatives</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#kevin-mullin"><img src="https://missionlocal.org/wp-content/uploads/2026/10/kevin-mullin_grey.png" alt="Kevin Mullin"></a>
+            <div class="portrait-name">Kevin Mullin</div>
+            <div class="portrait-title">U.S. House of Representatives</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#eleni-kounalakis"><img src="https://missionlocal.org/wp-content/uploads/2026/10/eleni_kounalakis_red.png" alt="Eleni Kounalakis"></a>
+            <div class="portrait-name">Eleni Kounalakis</div>
+            <div class="portrait-title">California Lieutenant Governor</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#fiona-ma"><img src="https://missionlocal.org/wp-content/uploads/2026/10/fiona_ma_red.png" alt="Fiona Ma"></a>
+            <div class="portrait-name">Fiona Ma</div>
+            <div class="portrait-title">California State Treasurer</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#malia-m-cohen"><img src="https://missionlocal.org/wp-content/uploads/2026/10/malia_cohen_red.png" alt="Malia M. Cohen"></a>
+            <div class="portrait-name">Malia M. Cohen</div>
+            <div class="portrait-title">California State Controller</div>
+        </div>
+
+                <div class="portrait-container">
+            <a href="#scott-wiener"><img src="https://missionlocal.org/wp-content/uploads/2026/10/scott_wiener_red.png" alt="Scott Wiener"></a>
+            <div class="portrait-name">Scott Wiener</div>
+            <div class="portrait-title">California State Senator</div>
+        </div>
+
+                <div class="portrait-container">
+            <a href="#matt-haney"><img src="https://missionlocal.org/wp-content/uploads/2026/10/matt_haney_grey.png" alt="Matt Haney"></a>
+            <div class="portrait-name">Matt Haney</div>
+            <div class="portrait-title">Assemblymember</div>
+        </div>
+        <div class="portrait-container">
+            <a href="#catherine-stefani"><img src="https://missionlocal.org/wp-content/uploads/2026/10/catherine_stefani_grey.png" alt="Catherine Stefani"></a>
+            <div class="portrait-name">Catherine Stefani</div>
+            <div class="portrait-title">Assemblymember</div>
+        </div>
+    </div>
+
+
+       
+
+
+
+        </div>
+
+
+    </div>
+
+    </div>
+
+    <!-- bio info -->
+    <div class="bio">
+        <!-- mayor: bio info -->
+        <div class="bio-container" id="mayor">
+            <div class="bio-title">Mayor</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/daniel-lurie.png" alt="Daniel Lurie">
+                <div class="bio-short-info">
+                    <div class="name">Daniel Lurie</div>
+                    <div class="department">Mayor of San Francisco</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Declined to answer the question.</p>
+ <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="connie-chan">
+            <div class="bio-title">District 1 Supervisor and Congressional Candidate</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/connie-chan.png" alt="Connie Chan">
+                <div class="bio-short-info">
+                    <div class="name">Connie Chan</div>
+                    <div class="department">Board of Supervisors</div>
+                    <div class="status">Elected in 2020 and re-elected in November 2024</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+            <p>Under Nancy Tung, the San Francisco Democratic Party has lost all credibility. I stand with SFWPC in calling on Chair Tung to resign. Survivors deserve leaders who stand with them when it matters, not when it becomes politically convenient. Accountability must begin with her resignation.</p>
+
+<p>San Francisco’s political establishment had months to act. Party leaders had a formal complaint, public reporting and a survivor standing before them asking to be heard. They endorsed Manny Yekutiel anyway, deepening the harm to Brad Chapin and sending a devastating message to all survivors. No policy forced an endorsement, they made that choice. </p>
+
+<p>When more survivors courageously came forward last week, the SFDCCC’s response was to schedule a meeting ten days later to ‘reconsider’ its endorsement. No immediate withdrawal of support. No call for Manny to end his campaign. Survivors were asked to wait again. Then it took Chair Tung four days to apologize after Manny’s campaign collapsed and he had become a political liability.
+</p>
+            <a href="#top">Back ↑</a>
+            </div>
+            </div>
+        <div class="bio-container" id="sup-d2">
+            <div class="bio-title">District 2 Supervisor</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/stephen-sherrill.png" alt="Stephen Sherrill">
+                <div class="bio-short-info">
+                    <div class="name">Stephen Sherrill</div>
+                    <div class="department">Board of Supervisors</div>
+                    <div class="status">Appointed by Mayor London Breed in December 2024</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Did not return multiple messages.</p>
+ <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="sup-d3">
+            <div class="bio-title">District 3 Supervisor</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/danny-sauter.png" alt="Danny Sauter">
+                <div class="bio-short-info">
+                    <div class="name">Danny Sauter</div>
+                    <div class="department">Board of Supervisors</div>
+                    <div class="status">Elected in November 2024</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Did not return multiple messages.</p> <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="sup-d4">
+            <div class="bio-title">District 4 Supervisor</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/alan-wong.png" alt="Alan Wong">
+                <div class="bio-short-info">
+                    <div class="name">Alan Wong</div>
+                    <div class="department">Board of Supervisors</div>
+                    <div class="status">Appointed by Mayor Daniel Lurie in December 2025</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Did not return multiple messages.</p> <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="bilal-mahmood">
+            <div class="bio-title">District 5 Supervisor</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/bilal-mahmood.png" alt="Bilal Mahmood">
+                <div class="bio-short-info">
+                    <div class="name">Bilal Mahmood</div>
+                    <div class="department">Board of Supervisors</div>
+                    <div class="status">Elected in November 2024</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Did not return multiple messages.</p>
+                <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="matt-dorsey">
+            <div class="bio-title">District 6 Supervisor</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/matt-dorsey.png" alt="Matt Dorsey">
+                <div class="bio-short-info">
+                    <div class="name">Matt Dorsey</div>
+                    <div class="department">Board of Supervisors</div>
+                    <div class="status">Appointed by Mayor London Breed in 2022 and elected in November 2022</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>I think Nancy Tung is one of the best and most effective Democratic Party chairs I’ve seen in more than 35 years of being in and around San Francisco politics. She deserves a lot of credit for taking on tough issues her predecessors avoided, including creating a Code of Conduct and Policies for Sexual Assault and Harassment. As a career prosecutor, Nancy knows better than most how hard it is to balance serious accusations with the rights of the accused — but that it’s incredibly important to do so anyway. These are always tough issues, whether they play out in a court of law or a court of public opinion. I think it speaks volumes about her commitment to getting it right that she issued a public apology. So, I have a lot of respect for Nancy Tung’s leadership, humility and class — and zero respect for demands that she step down</p>
+<a href="#top">Back ↑</a>
+            </div>
+        </div>
+        
+        <div class="bio-container" id="sup-d7">
+            <div class="bio-title">District 7 Supervisor</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/myrna-melgar.png" alt="Myrna Melgar">
+                <div class="bio-short-info">
+                    <div class="name">Myrna Melgar</div>
+                    <div class="department">Board of Supervisors</div>
+                    <div class="status">Elected in 2022 and re-elected in November 2024</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                 <p>The chair has greatly disappointed me but has not done anything illegal. This is an internal decision by the elected members and the Democratic voters of San Francisco can hold the entire DCCC accountable if San Franciscans don't agree.</p> <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="sup-d8">
+            <div class="bio-title">District 8 Supervisor</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/rafael-mandelman.png" alt="Rafael Mandelman">
+                <div class="bio-short-info">
+                    <div class="name">Rafael Mandelman</div>
+                    <div class="department">Board of Supervisors</div>
+                    <div class="status">Elected in 2018, and re-elected in 2022</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Did not return multiple messages.</p> <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="sup-d9">
+            <div class="bio-title">District 9 Supervisor</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/jackie-fielder.png" alt="Jackie Fielder">
+                <div class="bio-short-info">
+                    <div class="name">Jackie Fielder</div>
+                    <div class="department">Board of Supervisors</div>
+                    <div class="status">Elected in November 2024</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Yes. Clearly, the DCCC failed Brad Chapin, the first person to come forward with a story about a sexual assault by Manny. The problem is bigger than Nancy Tung, however, as a number of sitting DCCC members, and non-DCCC members, including Board President Rafael Mandelman and Mayor Daniel Lurie stood by Manny even after Brad came forward. Neither Mandelman nor Lurie have apologized for or retracted their problematic statements doubling down on their support of Manny, Lurie having said “I asked Manny about it. He assured me that the allegation simply was not true” and Mandelman having said “I think sexual assault occurs differently [in the gay community] and there’s a different threshold.</p>
+ <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="sup-d10">
+            <div class="bio-title">District 10 Supervisor</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/shamann-walton.png" alt="Shamann Walton">
+                <div class="bio-short-info">
+                    <div class="name">Shamann Walton</div>
+                    <div class="department">Board of Supervisors</div>
+                    <div class="status">Elected in 2018 and re-elected in November 2022</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>I will just say that all members of the DCCC should be Democrats.</p>
+
+<p>You can even say: I will just say that all members of the DCCC should AT LEAST be Democrats.</p>
+
+<p>I don’t believe we have a Democratic Party in San Francisco.</p>
+<a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="sup-d11">
+            <div class="bio-title">District 11 Supervisor</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/chyanne-chen.png" alt="Chyanne Chen">
+                <div class="bio-short-info">
+                    <div class="name">Chyanne Chen</div>
+                    <div class="department">Board of Supervisors</div>
+                    <div class="status">Elected in November 2024</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Our community deserves leaders that they can trust. San Francisco’s Democratic Party (DCCC) previously adopted guidelines governing sexual assault and harassment. They failed to adhere to their own policies, did not initiate an investigation and instead endorsed a candidate with a serious sexual assault allegation. It should not be required for multiple victims to come forward before allegations are investigated. The Party Chair now admits the process failed survivors. An apology is not enough. Those responsible must be held accountable for these decisions and show how they will prevent this from happening again. Our communities deserve leaders with the courage to hold their own allies accountable.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="d6-candidate-alex">
+            <div class="bio-title">District 6 Supervisor Candidate</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/alex_behrend_blue.png" alt="Alex Behrend">
+                <div class="bio-short-info">
+                    <div class="name">Alex Behrend</div>
+                    <div class="department">Former organizer for Dean Preston's 2024 District 5 Supervisor re-election campaign</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>ANYBODY who voted to give Manny the @SFDemocrats endorsement must resign NOW</p>
+
+<p>ANYBODY who backed Manny must have their @SFDemocrats endorsement pulled NOW
+
+<p>Accountability is repairing harm, NOT performative acts to rehabilitate the image of those who showed their HORRIFYING judgement</p>
+
+<p>If @mattdorsey @NancyTungSF & anybody else who voted to give my Democratic Party endorsement to Manny had any decency, they would resign themselves.
+</p> <a href="#top">Back ↑</a>
+            </div>
+        </div>
+       
+        <div class="bio-container" id="scott-wiener">
+            <div class="bio-title">State Senator and congressional candidate</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/scott_wiener_red.png" alt="Scott Wiener">
+                <div class="bio-short-info">
+                    <div class="name">Scott Wiener</div>
+                    <div class="department">State senator</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>No. The Democratic Party’s process around sexual harassment and sexual violence needs to be revamped. Chair Tung has been clear she is committed to making that change, and she apologized for the process’s failure. Chair Tung has stabilized and grown the San Francisco Democratic Party. She is also one of our most effective Chinese American leaders in San Francisco. She has my support.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="d8-candidate-gary">
+            <div class="bio-title">District 8 Supervisor Candidate</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2025/12/gary-mccoy.png" alt="Gary McCoy">
+                <div class="bio-short-info">
+                    <div class="name">Gary McCoy</div>
+                    <div class="department">Aide to Rep. Nancy Pelosi and recovery advocate</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>’ve spoken with Chair Tung and am waiting to hear from survivors and others at the upcoming meeting during public comment. As a candidate in this race where this has been largely centered, I want to be sure we’re focused on survivors and hear what folks have to say when given the opportunity Sunday night.</p> <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="michael-nguyen">
+            <div class="bio-title">District 8 Supervisor Candidate</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/michael-nguyen.png" alt="Michael Nguyen">
+                <div class="bio-short-info">
+                    <div class="name">Michael Nguyen</div>
+                    <div class="department">IP attorney, LGBTQ+ activist and drag performer</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>I believe Nancy Tung should step down as Chair of the SF Democratic Party. The rollout of the Code of Conduct and the process for handling sexual assault and harassment complaints was a failure of leadership. We should have met within 72 hours to revoke the Manny endorsement and make a new one before ballots dropped on October 5th. Voters are confused, and many have told me they've lost confidence in the party. A new Chair can restore our credibility.</p>
+
+<p>Survivors who come forward deserve compassion, support and leaders willing to act — even when the accused is a political ally. Under Nancy Tung’s leadership, the SFDCCC failed that test.
+</p>
+                <a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="d8-candidate-darshini">
+            <div class="bio-title">District 8 Supervisor Candidate</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/darshini_patel_blue.png" alt="Darshini Patel">
+                <div class="bio-short-info">
+                    <div class="name">Darshini Patel</div>
+                    <div class="department">Former DoorDash employee, worked on the 2012 Obama campaign and the 2024 Harris campaign, former Obama staffer</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+               <p>Yes, she should step down as chair. Voters gave Nancy her DCCC seat, and they can decide what happens to it. The committee made her chair; the chair is responsible for the institution she leads, and the institution failed.</p>
+<p>In 2024, the party built a process that promised to protect survivors. In August, that process ended with no finding on what happened and failed to protect the person who came forward. Brad Chapin spoke before the committee himself and called the process “a sham.” The party said his complaint fell outside its rules and endorsed the same day, 12 to 10.</p>
+<p>That same month, Nancy used her authority as chair to keep a resolution restricting Flock off the agenda. A month later, two members with ties to Flock voted on Flock cameras, and her response was that the party had no rule against it. The chair has discretion, and she clearly uses it. Having no rule doesn't mean having no responsibility.</p>
+<p>I appreciate that Nancy has since apologized for the endorsement and acknowledged that the party's framework “broke down and did not protect survivors.” That apology came nearly six weeks after the endorsement and after the party's candidate had already left the race. I don't doubt that Nancy is sorry, but accountability is not a judgment about whether someone feels remorse. It is about whether leadership carries consequences when an institution fails, and I don't believe the person who led the party through this failure should be the one to lead it out.</p>
+<p>Who replaces her matters. A new chair backed by the same slate may change little. But who decided this has to be the status quo? The status quo isn't working for us, and uncertainty about what comes next isn't a reason to preserve what has already failed.</p>
+<p>This is bigger than Nancy. The party told survivors it would protect them. When that promise was tested, its process failed the person who came forward, and the committee endorsed anyway. That cannot become our precedent. The next person weighing whether to come forward is watching what our party does now.</p>
+<p>Every survivor, of every gender, deserves to be taken seriously by our leaders and by the public. Speaking up must cost less than staying silent.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="d10-candidate-theo">
+            <div class="bio-title">District 10 Supervisor Candidate</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/theo-ellington.png" alt="Unfilled">
+                <div class="bio-short-info">
+                    <div class="name">Theo Ellington</div>
+                    <div class="department">Policy director at legal and government relations firm Brownstein and interim executive director of Ruth Williams Opera House</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>You can note for the record that I’ll make comments after the DCCC special meeting. </p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="d10-candidate-jr">
+            <div class="bio-title">District 10 Supervisor Candidate</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/jr_eppler_blue.png" alt="J.R. Eppler">
+                <div class="bio-short-info">
+                    <div class="name">J.R. Eppler</div>
+                    <div class="department">Business and nonprofit attorney, member of the Board of Appeals</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Yes. Nancy Tung should step down as San Francisco Democratic Party chair. Our endorsements carry our party’s name. They should also carry our values.</p>
+
+<p>When Brad Chapin brought serious allegations against Manny Yekutiel, he waited months for a process that ultimately said it would not consider his complaint. The DCCC then endorsed Yekutiel. Under Tung’s leadership, the party failed to give Brad a fair process before making that decision.</p>
+
+<p>The handling of Flock raises further concerns. Tung coauthored a resolution defending the company while two members employed by Flock were allowed to vote on it. Her officeholder account also received $10,000 from billionaire Chris Larsen, a Flock investor. She later used that account to pay for travel to a Flock conference. Those relationships demanded scrutiny and clear safeguards before the vote.</p>
+
+<p>Democrats must uphold the standards we ask of others. Tung has lost my confidence as chair.
+</p><a href="#top">Back ↑</a>
+            </div>
+
+        </div>
+        <div class="bio-container" id="d10-candidate-dj">
+            <div class="bio-title">District 10 Supervisor Candidate</div>
+            <div class="bio-card">
+                <img src="https://newspack-missionlocal.s3.amazonaws.com/mission/wp-content/uploads/2026/03/dj-brookter.png" alt="D.J. Brookter">
+                <div class="bio-short-info">
+                    <div class="name">D.J. Brookter</div>
+                    <div class="department">Chief Executive Officer at Young Community Developers Inc., a nonprofit, and Member of Sheriff’s Department Oversight Board</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>When Brad Chapin came forward this summer, he did what we ask survivors to do. The San Francisco Democratic Party, under Chair Nancy Tung, delayed, declared its own code didn't apply, and endorsed anyway.</p>
+
+<p>It took more survivors coming forward and the candidate leaving the race before the party admitted its process failed. Today's apology confirms that failure. The leader who oversaw it can't be the one to fix it.</p>
+
+<p>I'm calling on Nancy Tung to step down as Chair, and I urge DCCC members to use the October 11 special meeting to start a real review of how the party handles misconduct complaints, with survivors at the table.
+</p><a href="#top">Back ↑</a>
+            </div>
+
+            </div>
+        <div class="bio-container" id="d10-candidate-shawn">
+            <div class="bio-title">District 10 Supervisor Candidate</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/shawn_richard_blue.png" alt="Shawn Richard">
+                <div class="bio-short-info">
+                    <div class="name">Shawn Richard</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>I believe Nancy Tung should step down as San Francisco Democratic Party chair. Under her leadership, the process failed the survivors it was supposed to protect. Taking responsibility after the fact must be followed by meaningful accountability, stronger policies, and leadership with the insight and judgment to act responsibly during crucial moments.</p>
+
+<p>My concerns also extend to her alignment with billionaire interests. Her reported acceptance of $10,000 from a billionaire supporter of Flock, alongside her role in helping block consideration of a surveillance resolution, raises serious questions about her independence and priorities.</p>
+
+<p>San Francisco’s working people and retirees deserve leadership that protects their safety, rights, and voices. I believe restoring that trust requires new leadership.</p><a href="#top">Back ↑</a>
+            </div>
+
+        <!-- SFDCCC members -->
+
+                <div class="bio-container" id="dan-calamuci">
+            <div class="bio-title">SFDCCC member</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/dan_calamuci_red.png" alt="Dan Calamuci">
+                <div class="bio-short-info">
+                    <div class="name">Dan Calamuci</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>No.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="patrick-boileau">
+            <div class="bio-title">SFDCCC member</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/patrick_boileau_red.png" alt="Patrick Boileau">
+                <div class="bio-short-info">
+                    <div class="name">Patrick Boileau</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>No.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="trevor-chandler">
+            <div class="bio-title">SFDCCC member</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/trevor_chendler_red.png" alt="Trevor L. Chandler">
+                <div class="bio-short-info">
+                    <div class="name">Trevor L. Chandler</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>No.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="lily-ho">
+            <div class="bio-title">SFDCCC member</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/lily_ho_red.png" alt="Lily Ho">
+                <div class="bio-short-info">
+                    <div class="name">Lily Ho</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>No.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="jade-tu">
+            <div class="bio-title">SFDCCC member</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/jade_tu_grey.png" alt="Jade Tu">
+                <div class="bio-short-info">
+                    <div class="name">Jade Tu</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Did not return multiple messages.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="marjan-philhour">
+            <div class="bio-title">SFDCCC member</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/marjan_philhour_red.png" alt="Marjan Philhour">
+                <div class="bio-short-info">
+                    <div class="name">Marjan Philhour</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>No (Sent as a text message with the word “No” swirling around the screen like confetti)</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="mike-chen">
+            <div class="bio-title">SFDCCC member</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/mike_chen_red.png" alt="Mike Chen">
+                <div class="bio-short-info">
+                    <div class="name">Mike Chen</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>No.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="joe-sangirardi">
+            <div class="bio-title">SFDCCC member</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/joe_sangirardi_red.png" alt="Joe Sangirardi">
+                <div class="bio-short-info">
+                    <div class="name">Joe Sangirardi</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>No.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="eric-kingsbury">
+            <div class="bio-title">SFDCCC member</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/eric_kingsbury_red.png" alt="Eric Kingsbury">
+                <div class="bio-short-info">
+                    <div class="name">Eric Kingsbury</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>No. The party failed Brad Chapin and survivors by endorsing Manny Yekutiel on the strength of a grievously flawed investigation, and it damaged our credibility. Chair Tung has apologized. Credibility is rebuilt by what the party does next, and I will judge her by that.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="lanier-coles">
+            <div class="bio-title">SFDCCC member</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/lanier_coles_red.png" alt="Lanier Coles">
+                <div class="bio-short-info">
+                    <div class="name">Lanier Coles</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Chair Tung has led the Democratic Party in San Francisco since 2024 with integrity and vision. One of Chair Tung’s most innovative initiatives, Dems on the Move, was extremely well received when monthly DCCC meetings were held in various neighborhoods to make the Party more accessible to voters.  Leaders should be assessed on the totality of their performance and Chair Tung has and will continue to serve San Francisco Democrats well. It’s unfortunate the process for filing sexual misconduct claims was not as robust and responsive to Brad Chapin as it should have been. I have confidence that our party will learn from this experience and be more responsive to anyone filing a sexual misconduct claim going forward.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="cedric-akbar">
+            <div class="bio-title">SFDCCC member</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/cedric_akbar_grey.png" alt="Cedric Akbar">
+                <div class="bio-short-info">
+                    <div class="name">Cedric Akbar</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Did not return multiple messages.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="michela-alioto-pier">
+            <div class="bio-title">SFDCCC member</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/michela_alioto_pier_red.png" alt="Michela Alioto-Pier">
+                <div class="bio-short-info">
+                    <div class="name">Michela Alioto-Pier</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>No. I don’t think Nancy should resign. I think we stay focused and keep moving forward.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="michael-lai">
+            <div class="bio-title">SFDCCC member</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/michael_lai_red.png" alt="Michael Lai">
+                <div class="bio-short-info">
+                    <div class="name">Michael Lai</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>No.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="joshua-arce">
+            <div class="bio-title">SFDCCC member</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/josh_arce_red.png" alt="Joshua Arce">
+                <div class="bio-short-info">
+                    <div class="name">Joshua Arce</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>No.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="nancy-tung">
+            <div class="bio-title">SFDCCC member</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/nancy_tung_red.png" alt="Nancy Tung">
+                <div class="bio-short-info">
+                    <div class="name">Nancy Tung</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>No.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="peter-gallotta">
+            <div class="bio-title">SFDCCC member</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/peter_gallotta_blue.png" alt="Peter Gallotta">
+                <div class="bio-short-info">
+                    <div class="name">Peter Gallotta</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>By endorsing Manny Yekutiel after hearing the heartbreaking public comment from one of his alleged victims, the San Francisco Democratic Party failed survivors of sexual assault and undermined the trust our community should be able to place in its political leaders. It should never have taken more than one survivor coming forward for these allegations to be taken seriously. Yet the Party has still failed to take concrete steps to address its conduct or meaningfully reckon with the harm it caused by choosing politics over doing what was right.</p>
+
+<p>This is a morally clarifying moment, and under this Chair’s leadership, the Party has failed to meet it. San Francisco Democrats deserve better. We need new leadership and meaningful reform to restore the Party’s credibility, and I join calls from the community for the Chair to resign.”
+</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="emma-hare">
+            <div class="bio-title">SFDCCC member</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/emma_hare_yellow.png" alt="Emma Hare">
+                <div class="bio-short-info">
+                    <div class="name">Emma Hare</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>I believe Chair Tung has made a series of decisions that undermine trust in our Party. The DCCC is having an emergency meeting to discuss the District 8 endorsement and what went wrong with the sexual assault investigation this Sunday. I will make a judgment on the question posed based on the substance of said meeting and the next steps she outlines.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="gordon-mar">
+            <div class="bio-title">SFDCCC member</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/gordon_mar_blue.png" alt="Gordon Mar">
+                <div class="bio-short-info">
+                    <div class="name">Gordon Mar</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Yes, Nancy Tung must resign as Chair.</p>
+
+<p>She has completely destroyed her credibility as party leader through a pattern of severe ethical failures and pay-to-play governance in the past several months:</p> 
+<p>1. Shielding Insiders: Pushing through Yekutiel’s endorsement after running a sham investigation into his first sexual assault allegation, betraying her past "zero-tolerance" rhetoric and ignoring survivors.</p>
+<p>2. Changing by-laws for billionaires: Altering party rules and by-laws so the DCCC could formally vote to oppose Proposition 40 (the Billionaire's Tax), making San Francisco the only local Democratic Party in the entire state of California to break ranks and oppose the state party's official position.</p> 
+<p>3. Conflicts of Interest: Taking a $10,000 campaign donation from Chris Larsen, attending a Flock conference in Atlanta while at the same time blocking a resolution calling for an end to SFPD’s Flock surveillance contract unless enforceable protections against sharing data with ICE and federal agencies are guaranteed.</p>
+
+<p>A party chair who changes rules to protect wealthy donors and shields political insiders until bad press forces damage control is morally bankrupt. She must step down.
+</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="jane-kim">
+            <div class="bio-title">SFDCCC member</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/jane_kim_blue.png" alt="Jane Kim">
+                <div class="bio-short-info">
+                    <div class="name">Jane Kim</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Yes, she should step down as chair.</p>
+
+<p>One of Nancy Tung’s FIRST directives as Chair was to establish a robust and independent due process for survivors and zero tolerance for sexual harassment and assaults within the Dem Party.</p>
+
+<p>The process failed its first public test, further eroding the fragile trust the party was building with survivors.</p>
+
+
+<p>"People who are survivors — who share their stories — deserve to be treated with dignity and respect," <a href="https://calmatters.org/commentary/2024/08/san-francisco-democrats-sexual-harassment/">Nancy Tung said</a>. "They deserve to be believed, and they deserve to have the process center around them."
+</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+
+                <div class="bio-container" id="nancy-pelosi">
+            <div class="bio-title">Speaker Emerita of the U.S. House of Representatives</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/nancy_pelosi_grey.png" alt="Nancy Pelosi">
+                <div class="bio-short-info">
+                    <div class="name">Nancy Pelosi</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Aides did not return multiple messages.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="kevin-mullin">
+            <div class="bio-title">U.S. House of Representatives</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/kevin-mullin_grey.png" alt="Kevin Mullin">
+                <div class="bio-short-info">
+                    <div class="name">Kevin Mullin</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Aides did not return multiple messages.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="eleni-kounalakis">
+            <div class="bio-title">California Lieutenant Governor</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/eleni_kounalakis_red.png" alt="Eleni Kounalakis">
+                <div class="bio-short-info">
+                    <div class="name">Eleni Kounalakis</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>I support Chair Tung and her leadership. While our 2024 Code of Conduct and Policies for Sexual Assault and Harassment failed us as a board, Chair Tung is taking swift and decisive action to address the situation. I am grateful for her leadership during this difficult time. I would also like to take this opportunity to apologize to all the victims and their families. I know we can and must do better.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="fiona-ma">
+            <div class="bio-title">California State Treasurer</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/fiona_ma_red.png" alt="Fiona Ma">
+                <div class="bio-short-info">
+                    <div class="name">Fiona Ma</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>I do not think Nancy should step down.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="malia-m-cohen">
+            <div class="bio-title">California State Controller</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/malia_cohen_red.png" alt="Malia M. Cohen">
+                <div class="bio-short-info">
+                    <div class="name">Malia M. Cohen</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>I think Nancy has shown great leadership in leading the party to adopt its sexual harassment code of conduct policy, and even more in acknowledging that mistakes were made in implementing that policy.</p>
+
+            <p>An apology may not be enough for everyone, and I understand that. What matters now is what we do next. There needs to be meaningful change so that people who experience sexual harassment feel safe coming forward and confident that they will be heard and taken seriously. I believe Nancy can lead that effort. The party has an opportunity to learn from what happened, have informed and honest discussions about sexual harassment, and strengthen its policies and procedures.</p>
+
+<p>I’ll be watching — and I’ll be expecting that change.
+</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+    
+        <div class="bio-container" id="matt-haney">
+            <div class="bio-title">State Assemblymember</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/matt_haney_grey.png" alt="Matt Haney">
+                <div class="bio-short-info">
+                    <div class="name">Matt Haney</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Did not return multiple messages.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        <div class="bio-container" id="catherine-stefani">
+            <div class="bio-title">State Assemblymember</div>
+            <div class="bio-card">
+                <img src="https://missionlocal.org/wp-content/uploads/2026/10/catherine_stefani_grey.png" alt="Catherine Stefani">
+                <div class="bio-short-info">
+                    <div class="name">Catherine Stefani</div>
+                </div>
+            </div> 
+            <div class="bio-long-info">
+                <p>Did not return multiple messages.</p><a href="#top">Back ↑</a>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+      
+</body>
