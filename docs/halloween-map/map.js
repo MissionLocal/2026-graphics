@@ -94,11 +94,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const where = closureWhere(p);
     return `
       ${closeBtn}
-      <div class="info-kind">Car-free street</div>
       <div class="info-title-row">
-        <div class="event"><strong>🚧 ${esc(purpose)}</strong></div>
+        <div class="event"><strong>🚧 CAR-FREE STREET</strong></div>
       </div>
       <div class="info-desc">
+        <strong>What for:</strong> ${esc(purpose)}<br/>
         ${where ? `<strong>📍 Where:</strong> ${esc(where)}` : ``}
       </div>
     `;
@@ -114,7 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const link = safeLink(p.event_link);
     return `
       ${closeBtn}
-      <div class="info-kind">Halloween event</div>
       <div class="info-title-row">
         <div class="event"><strong>🎃 ${esc(title)}</strong></div>
       </div>
