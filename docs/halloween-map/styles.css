@@ -8,43 +8,34 @@ body{margin:0;padding:0 0 2px 0;font-family:'Barlow',sans-serif}
 
 .credit{text-align:center;font-family:'Barlow',sans-serif;font-size:.9em;color:#555}
 
-/* ===== Title (top left) ===== */
-.map-container.with-map-title .map-title{
-  position:absolute;top:8px;left:8px;z-index:4;
-  background:#1a1a1a;
-  padding:8px 12px;
-  border:2px solid #ff964f;
-  border-radius:2px;
-  box-shadow:0 2px 8px rgba(0,0,0,.12);
-  font-weight:700;color:#fff;font-size:16px;line-height:1;
-  white-space:nowrap;pointer-events:none;
-}
+/* ===== Shared border for the legend and the popup ===== */
+:root{--card-border:1px solid rgba(255,150,79,.6)}
 
-/* ===== Legend (sits under the title, same dark theme) ===== */
+/* ===== Legend (top left) ===== */
 .legend{
   position:absolute;left:8px;top:8px;z-index:3;
   background:#1a1a1a;color:#e0e0e0;
-  border:1px solid rgba(255,150,79,.6);
+  border:var(--card-border);
   border-radius:2px;
   box-shadow:0 2px 8px rgba(0,0,0,.12);
   padding:7px 10px;
   font-size:12px;line-height:1.15;
   pointer-events:none;
 }
-.map-container.with-map-title .legend{top:50px}
 .legend .row{display:flex;align-items:center;gap:7px;margin:3px 0}
 .legend .row:first-child{margin-top:0}
 .legend .row:last-child{margin-bottom:0}
 .legend .swatch-pumpkin{width:16px;text-align:center;font-size:14px;line-height:1}
 .legend .swatch-line{width:16px;height:4px;border-radius:2px;background:#ff964f;flex:0 0 16px}
 
-/* ===== Info box (Halloween theme) ===== */
+/* ===== Info box (popup) ===== */
 .info-box{
   position:absolute;left:50%;transform:translateX(-50%);bottom:14px;z-index:2;
   width:calc(100% - 12px);max-width:460px;box-sizing:border-box;
   padding:16px 20px;
   background:#1a1a1a;
-  border:2px solid #ff964f;border-radius:2px;
+  border:var(--card-border);
+  border-radius:2px;
   box-shadow:0 8px 24px rgba(0,0,0,.6),0 0 20px rgba(255,150,79,.4);
   font-size:13px;line-height:1.35;
   max-height:45%;overflow-y:auto;
@@ -56,10 +47,6 @@ body{margin:0;padding:0 0 2px 0;font-family:'Barlow',sans-serif}
   font:600 18px/1 'Barlow',sans-serif;cursor:pointer;padding:4px;
 }
 .info-close:hover{color:#ff964f}
-.info-kind{
-  color:#ff964f;font-size:11px;font-weight:600;
-  letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px;
-}
 .info-title-row{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;padding-right:18px}
 .info-title-row .event{font-weight:600;color:#ff964f;font-size:inherit;margin-bottom:8px}
 .info-desc{margin-top:4px;color:#e0e0e0;line-height:1.6;font-size:inherit}
@@ -72,8 +59,6 @@ body{margin:0;padding:0 0 2px 0;font-family:'Barlow',sans-serif}
 @media (max-width:768px){
   .map-container{max-width:400px}
   .map{height:500px}
-  .map-container.with-map-title .map-title{font-size:15px;padding:7px 10px}
-  .map-container.with-map-title .legend{top:46px}
 }
 
 /* ===== Desktop: map up to 500px wide ===== */
