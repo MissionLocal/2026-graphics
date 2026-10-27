@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const map = new mapboxgl.Map({
     container: "map",
     style: "mapbox://styles/mlnow/cmhcjcs6y003s01smeip27ohd",
-    center: [-122.433, 37.765],
-    zoom: 11.5,
+    center: [-122.45, 37.765],
+    zoom: 11.2,
   });
 
   // ======================= CONFIG =======================
@@ -224,9 +224,9 @@ document.addEventListener('DOMContentLoaded', () => {
       layout: {
         'icon-image': 'pumpkin',
         'icon-size': ['interpolate', ['linear'], ['zoom'],
-          10, IS_MOBILE ? 0.75 : 0.65,
-          13, IS_MOBILE ? 1.0 : 0.9,
-          16, 1.25],
+            10, IS_MOBILE ? 0.5 : 0.45,
+            13, IS_MOBILE ? 0.75 : 0.65,
+            16, 1.25],
         'icon-allow-overlap': true,
         'icon-ignore-placement': true
       }
