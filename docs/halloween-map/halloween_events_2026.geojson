@@ -1,0 +1,556 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Boohalla ",
+                "Description?": "Celebrate the Valkyries finals run at anytime, stopping by this Inner Richmond home turning Ballhalla into Boohalla. ",
+                "Time ": "Stop by anytime",
+                "Where ": "Third Avenue and Clement Street",
+                "Neighborhood ": "Inner Richmond ",
+                "Cost ": "Free",
+                "Event link": "https://www.instagram.com/boohalla/?hl=en"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.46122,
+                    37.78315
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Boo at the Zoo",
+                "Description?": "For the price of a zoo ticket, participate in a costume parade and contest, and trick-or-treat, treats for animals and more.  ",
+                "Time ": "Halloween, 10 a.m. - 3 p.m. ",
+                "Where ": "San Francisco Zoo & Gardens, Sloat Boulevard at the Upper Great Highway",
+                "Neighborhood ": null,
+                "Cost ": "Free with zoo ticket ",
+                "Event link": "https://www.sfzoo.org/event/boo-at-the-zoo/"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.50288,
+                    37.73309
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Music & Free Food @ Gumbo Social ",
+                "Description?": "Gumbo Social is handing out complimentary gumbo bites or mini-hoecakes if you RSVP to their Halloween Block party on Third Street. ",
+                "Time ": "Halloween 3 - 8 p.m. ",
+                "Where ": "5176 Third St.",
+                "Neighborhood ": null,
+                "Cost ": "Free",
+                "Event link": "https://events.humanitix.com/halloween-block-party-bayview-2026?utm_source=sfgate.com&utm_medium=referral"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.39223,
+                    37.73113
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Trunk-or-Treat and Haunted House on Third!",
+                "Description?": "Why go door to door when you could walk a bit less and get a bit more candy at trunk or treat? Go to the old Walgreens parking lot at Third Street and Williams to speed run your candy stash. ",
+                "Time ": "Halloween 5:30 - 9 p.m. ",
+                "Where ": "5300 Third St.",
+                "Neighborhood ": null,
+                "Cost ": "Free",
+                "Event link": "https://events.humanitix.com/halloween-block-party-bayview-2026?utm_source=sfgate.com&utm_medium=referral"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.39323,
+                    37.72893
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Spooky Movies for Adults & Kids at Let's Eat BBQ and More!",
+                "Description?": "Let's Eat BBQ is hosting Halloween festivities, with spooky movies all day. ",
+                "Time ": "Halloween 12 - 8 p.m. ",
+                "Where ": "5130 Third St.",
+                "Neighborhood ": null,
+                "Cost ": "Free",
+                "Event link": "https://events.humanitix.com/halloween-block-party-bayview-2026?utm_source=sfgate.com&utm_medium=referral"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.39205,
+                    37.73186
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Halloween Hours until Dark at Smoke Soul Kitchen ",
+                "Description?": "If none of the other Third Street events pique your interest, Smoke Soul Kitchen will host an event with music and drinks. ",
+                "Time ": "Halloween 4 to 8 p.m. ",
+                "Where ": "4618 Third St.",
+                "Neighborhood ": null,
+                "Cost ": "Free",
+                "Event link": "https://events.humanitix.com/halloween-block-party-bayview-2026?utm_source=sfgate.com&utm_medium=referral"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.39055,
+                    37.73619
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Vespers for the (Un)Dead presents: Attend! Attend! A Most Dreadful Talk & Table Read",
+                "Description?": "Join Green Apple Books by the Park for A Most Dreadful Talk & Table Read, \"on vampires, monsters, and why we keep returning to horror.\" ",
+                "Time ": "Friday, Oct. 30, 7 p.m. ",
+                "Where ": "Green Apple Books, 1231 9th Ave.",
+                "Neighborhood ": null,
+                "Cost ": "Free ",
+                "Event link": "https://greenapplebooks.com/event/2026-10-30/9th-ave-vespers-undead-presents-attend-attend-most-dreadful-talk-table-read"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.46655,
+                    37.76553
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Dance-O-Ween 2026",
+                "Description?": "\"Total Flanarchy\" is coming to the Mission on Halloween, so be sure to get your best costume and dancing shoes on. ",
+                "Time ": "Halloween 7:30 - 11:30 p.m. ",
+                "Where ": "16th Street BART plaza",
+                "Neighborhood ": null,
+                "Cost ": "Free",
+                "Event link": "https://partiful.com/e/McDwcgosSYxmojaE3S2s"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.41956,
+                    37.76536
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Halloween Storytime",
+                "Description?": "Little ones can enjoy a Halloween story before going out Trick or Treating in Francisco Park ",
+                "Time ": "Halloween 10:30 - 11:15 a.m.",
+                "Where ": "Francisco Park, Bay and Larkin streets",
+                "Neighborhood ": null,
+                "Cost ": "Suggested donation of $10 ",
+                "Event link": "https://franciscopark.org/events/"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.42102,
+                    37.80456
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Chinatown Annual Halloween Festival + Block Party ",
+                "Description?": "A Halloween Block Party with tons of activities, crafts, costume contests and a pumpkin patch in the middle of Chinatown. ",
+                "Time ": "Halloween 11 a.m. to 3 p.m. ",
+                "Where ": "Waverly Place",
+                "Neighborhood ": null,
+                "Cost ": "Free",
+                "Event link": "https://www.cycsf.org/chinatown-halloween-festival/"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.40688,
+                    37.79428
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Balbooa Fright Fest",
+                "Description?": null,
+                "Time ": "Halloween 11 a.m. to 4 p.m.",
+                "Where ": "Balboa Street, between 33rd Street and 41st Street",
+                "Neighborhood ": null,
+                "Cost ": "Free",
+                "Event link": "https://www.instagram.com/p/Ddmld49y0tK/?utm_source=ig_web_copy_link&stkn=NTc4MTIwNjQ2YQ%3D%3D"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.49842,
+                    37.77571
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Halloween Hoopla ",
+                "Description?": null,
+                "Time ": "Halloween 12 to 3 p.m. ",
+                "Where ": "Yerba Buena Children's Garden, Howard and 4th streets",
+                "Neighborhood ": null,
+                "Cost ": "Free",
+                "Event link": "https://ybgfestival.org/event/halloween-hoopla-2025/"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.40032,
+                    37.78385
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "“Wags & Wheels” Halloween Dog Pawty",
+                "Description?": null,
+                "Time ": "Halloween 11 a.m. to 3 p.m. ",
+                "Where ": "2860 Taylor St.",
+                "Neighborhood ": null,
+                "Cost ": "Free, sliding scale for Trunk-or-Treat and costume context donations",
+                "Event link": "https://www.eventbrite.com/e/wags-wheels-tickets-2001412375291"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.41435,
+                    37.80884
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Crawloween ",
+                "Description?": null,
+                "Time ": "Halloween 2 to 10 p.m. ",
+                "Where ": "Mayes Oyster House, 1233 Polk St.",
+                "Neighborhood ": null,
+                "Cost ": "$15",
+                "Event link": "https://crawloween.com/"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.42027,
+                    37.78851
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Halloween Tattoo Party",
+                "Description?": null,
+                "Time ": "Halloween 12 to 8 p.m. ",
+                "Where ": "1038 Larkin St.",
+                "Neighborhood ": null,
+                "Cost ": "Event free, tattoos not ",
+                "Event link": "https://sf.funcheap.com/halloween-tattoo-party-flash-deals-scary-movies-sf/"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.4182,
+                    37.78788
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Castro Halloween 2026 Block Party & Night Market",
+                "Description?": null,
+                "Time ": "Halloween 5 to 10 p.m. ",
+                "Where ": "18th Street, between Diamond Street and Noe Street",
+                "Neighborhood ": null,
+                "Cost ": "Free ",
+                "Event link": "https://www.eventbrite.com/e/castro-halloween-2026-tickets-1999724872926"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.43515,
+                    37.76087
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Downtown SF Halloween + Día de los Muertos Block Party",
+                "Description?": null,
+                "Time ": "Halloween 5 p.m. to 1 a.m. ",
+                "Where ": "Shotskis, 239 Kearny St.",
+                "Neighborhood ": null,
+                "Cost ": "Free ",
+                "Event link": "https://www.eventbrite.com/e/downtown-san-francisco-halloween-block-party-at-shotskis-tickets-2002347695860"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.40416,
+                    37.79055
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Nob Hill Halloween in the Park, with a dog costume contest",
+                "Description?": null,
+                "Time ": "Halloween 4 to 6 p.m.",
+                "Where ": "Huntington Park, California and Taylor streets",
+                "Neighborhood ": null,
+                "Cost ": "Free",
+                "Event link": "https://sf.funcheap.com/nob-hill-halloween-park-dog-costume-contest-2026-sf/"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.41585,
+                    37.79817
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Hayes Valley Pet Parade",
+                "Description?": null,
+                "Time ": "Halloween 1 to 3 p.m. ",
+                "Where ": "295 Oak St.",
+                "Neighborhood ": null,
+                "Cost ": "Free",
+                "Event link": "https://hayesvalleyartworks.org/hayes-valley-pet-parade-2026/"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.42388,
+                    37.77481
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Halloween Magic Show + Dog Costume Contest (Ghirardelli Square)",
+                "Description?": null,
+                "Time ": "Halloween 1 to 3 p.m.",
+                "Where ": "900 North Point St.",
+                "Neighborhood ": null,
+                "Cost ": "Free",
+                "Event link": "https://www.ghirardellisq.com/ongoing-events/2026/10/2/spooky-square"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.42327,
+                    37.80572
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Trick-or-Treat Trail w/ Full-Size Candy Bars",
+                "Description?": null,
+                "Time ": "Halloween 3 to 10 p.m. ",
+                "Where ": "Burrows Street and San Bruno Avenue",
+                "Neighborhood ": null,
+                "Cost ": "Free ",
+                "Event link": "https://sf.funcheap.com/halloween-2026-trickortreat-trail-fullsize-candy-bars-sfs-portola/"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.40706,
+                    37.73792
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Fillmore After Dark",
+                "Description?": null,
+                "Time ": "Halloween 4 to 9 p.m. ",
+                "Where ": "1500 Fillmore St.",
+                "Neighborhood ": null,
+                "Cost ": "Free",
+                "Event link": "https://www.eventbrite.com/e/fillmore-after-dark-kids-scream-zone-halloween-night-market-free-rsvp-tickets-1988574870970"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.43247,
+                    37.7838
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "2026 San Francisco Ocean Avenue Halloween Block Party",
+                "Description?": null,
+                "Time ": "Halloween 12 to 3 p.m. ",
+                "Where ": "Unity Plaza, 1002-1040 Ocean Ave.",
+                "Neighborhood ": null,
+                "Cost ": "Free",
+                "Event link": "https://sf.funcheap.com/2026-san-francisco-ocean-avenue-halloween-block-party/"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.45304,
+                    37.72368
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Emporium’s 8th Annual Halloween Costume Contest Party (SF)",
+                "Description?": null,
+                "Time ": "Halloween 9 p.m. to 2 a.m. ",
+                "Where ": "616 Divisadero St.",
+                "Neighborhood ": null,
+                "Cost ": "Free",
+                "Event link": "https://www.emporiumarcadebar.com/event/8th-annual-emporium-costume-contest-party-w-dj-weapon-dj-aaron-the-era-103126/"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.43749,
+                    37.77572
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Youth 1st Halloween Party",
+                "Description?": null,
+                "Time ": "Friday, Oct. 30, 6-7 p.m. ",
+                "Where ": "Merced Heights Playground, 181 Byxbee St.",
+                "Neighborhood ": null,
+                "Cost ": "Free",
+                "Event link": "https://www.instagram.com/p/Dd7_r7_lA7w/?ref=inglesidelight.com"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.47012,
+                    37.7178
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "West Portal Halloween Stroll",
+                "Description?": null,
+                "Time ": "Halloween 4-7 p.m.",
+                "Where ": "Along West Portal Avenue",
+                "Neighborhood ": null,
+                "Cost ": "Free",
+                "Event link": "https://westportalsf.com/events/?ref=inglesidelight.com"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.46707,
+                    37.73975
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Treacherous French Halloween Bash",
+                "Description?": null,
+                "Time ": "Halloween, 6:30 p.m.",
+                "Where ": "Ocean Ale House, 1314 Ocean Ave.",
+                "Neighborhood ": null,
+                "Cost ": "Free",
+                "Event link": "https://oceanalehouse.com/events/?ref=inglesidelight.com"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.45665,
+                    37.72424
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Hillbillies on Halloween Performance",
+                "Description?": null,
+                "Time ": "Halloween, 7:30 p.m.",
+                "Where ": "Bird & Beckett Books & Records, 653 Chenery St.",
+                "Neighborhood ": null,
+                "Cost ": "$20",
+                "Event link": "https://birdbeckett.com/event/hillbillies_2026-10-31/?ref=inglesidelight.com"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.43211,
+                    37.73448
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Spooky Garden Reverie Halloween Light Show",
+                "Description?": null,
+                "Time ": "Halloween, 6 to 11 p.m.",
+                "Where ": "Burrow Pocket Park",
+                "Neighborhood ": null,
+                "Cost ": "Free",
+                "Event link": "https://dothebay.com/events/2026/10/31/spooky-garden-reverie-tickets"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.4037,
+                    37.72924
+                ]
+            }
+        }
+    ]
+}

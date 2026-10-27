@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Halloween Events and Car-Free Streets in San Francisco 2026</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="cont">
+    <div class="map-container with-map-title">
+      <div id="map" class="map"></div>
+      <div class="map-title">Halloween 2026 in San Francisco</div>
+      <div id="legend" class="legend">
+        <div class="row"><span class="swatch-pumpkin" aria-hidden="true">🎃</span>Halloween event</div>
+        <div class="row"><span class="swatch-line" aria-hidden="true"></span>Car-free street</div>
+      </div>
+      <div id="info-box" class="info-box" role="dialog" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <div id="last-updated" class="credit">
+    Street closure data from SFMTA. Reporting by Rosina Boehm and Xueer Lu. Map by Xueer Lu.
+  </div>
+
+  <script src="https://pym.nprapps.org/pym.v1.min.js"></script>
+  <script src="map.js"></script>
+</body>
+</html>

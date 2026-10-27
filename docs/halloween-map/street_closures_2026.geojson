@@ -1,0 +1,941 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "42ND AVE between LINCOLN WAY and IRVING ST",
+        "street": "42ND AVE",
+        "from": "LINCOLN WAY",
+        "to": "IRVING ST",
+        "group": 1,
+        "cnns": [
+          "1932000"
+        ],
+        "purpose": "Trick or Treat"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.501900726,
+            37.764360773
+          ],
+          [
+            -122.501770514,
+            37.762474674
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "43RD AVE between JUDAH ST and KIRKHAM ST",
+        "street": "43RD AVE",
+        "from": "JUDAH ST",
+        "to": "KIRKHAM ST",
+        "group": 2,
+        "cnns": [
+          "1956000"
+        ],
+        "purpose": "Trick or Treat"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.502712988,
+            37.760566533
+          ],
+          [
+            -122.502581702,
+            37.758700162
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "42ND AVE between JUDAH ST and KIRKHAM ST",
+        "street": "42ND AVE",
+        "from": "JUDAH ST",
+        "to": "KIRKHAM ST",
+        "group": 3,
+        "cnns": [
+          "1934000"
+        ],
+        "purpose": "Trick or Treat"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.501639646,
+            37.760613955
+          ],
+          [
+            -122.501505399,
+            37.758747221
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KIRKHAM ST between 42ND AVE and 43RD AVE",
+        "street": "KIRKHAM ST",
+        "from": "42ND AVE",
+        "to": "43RD AVE",
+        "group": 4,
+        "cnns": [
+          "7882000"
+        ],
+        "purpose": "Neighbors of K42 & 43 Halloween Bash"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.501505399,
+            37.758747221
+          ],
+          [
+            -122.502581702,
+            37.758700162
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "45TH AVE between PACHECO ST and QUINTARA ST",
+        "street": "45TH AVE",
+        "from": "PACHECO ST",
+        "to": "QUINTARA ST",
+        "group": 5,
+        "cnns": [
+          "2006000"
+        ],
+        "purpose": "Block Party"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.504073708,
+            37.74928242
+          ],
+          [
+            -122.503941818,
+            37.747414803
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "36TH AVE between RIVERA ST and QUINTARA ST",
+        "street": "36TH AVE",
+        "from": "RIVERA ST",
+        "to": "QUINTARA ST",
+        "group": 6,
+        "cnns": [
+          "1811000"
+        ],
+        "purpose": "Block Party"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.494166942,
+            37.745975372
+          ],
+          [
+            -122.494297081,
+            37.747840997
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "12TH AVE between JUDAH ST and IRVING ST",
+        "street": "12TH AVE",
+        "from": "JUDAH ST",
+        "to": "IRVING ST",
+        "group": 7,
+        "cnns": [
+          "528000"
+        ],
+        "purpose": "Trick or Treat"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.469391826,
+            37.762034108
+          ],
+          [
+            -122.469521964,
+            37.763895944
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "06TH AVE between KIRKHAM ST and JUDAH ST",
+        "street": "06TH AVE",
+        "from": "KIRKHAM ST",
+        "to": "JUDAH ST",
+        "group": 8,
+        "cnns": [
+          "324000"
+        ],
+        "purpose": "Trick or Treat"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.462841914,
+            37.760452255
+          ],
+          [
+            -122.462972001,
+            37.762315769
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SHRADER ST between FREDERICK ST and BEULAH ST",
+        "street": "SHRADER ST",
+        "from": "FREDERICK ST",
+        "to": "BEULAH ST",
+        "group": 10,
+        "cnns": [
+          "11858000"
+        ],
+        "purpose": "Block Party"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.451295534,
+            37.766591503
+          ],
+          [
+            -122.451487264,
+            37.767517857
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "9TH AVE between ANZA ST and BALBOA ST",
+        "street": "9TH AVE",
+        "from": "ANZA ST",
+        "to": "BALBOA ST",
+        "group": 11,
+        "cnns": [
+          "427000"
+        ],
+        "purpose": "Trick or Treat"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.46735401,
+            37.778945797
+          ],
+          [
+            -122.467220404,
+            37.77708786
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "IRIS AVE between EUCLID AVE and MAYFAIR DR",
+        "street": "IRIS AVE",
+        "from": "EUCLID AVE",
+        "to": "MAYFAIR DR",
+        "group": 12,
+        "cnns": [
+          "7274000"
+        ],
+        "purpose": "Trick or Treat"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.451875437,
+            37.784126742
+          ],
+          [
+            -122.452002678,
+            37.784912248
+          ],
+          [
+            -122.452048191,
+            37.7853625
+          ],
+          [
+            -122.452069955,
+            37.785871705
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "OFARRELL ST between STEINER ST and FILLMORE ST",
+        "street": "OFARRELL ST",
+        "from": "STEINER ST",
+        "to": "FILLMORE ST",
+        "group": 13,
+        "cnns": [
+          "9738000"
+        ],
+        "purpose": "Fillmore After Dark Night Market"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.434350396,
+            37.783083017
+          ],
+          [
+            -122.43270618,
+            37.783292592
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AVILA ST between CHESTNUT ST and PRADO ST",
+        "street": "AVILA ST",
+        "from": "CHESTNUT ST",
+        "to": "PRADO ST",
+        "group": 14,
+        "cnns": [
+          "2567000",
+          "2568000",
+          "2569000",
+          "2570000"
+        ],
+        "purpose": "Trick or Treat"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.440309605,
+            37.800301008
+          ],
+          [
+            -122.440508602,
+            37.801281321
+          ],
+          [
+            -122.440780072,
+            37.802618613
+          ],
+          [
+            -122.441031574,
+            37.803857503
+          ],
+          [
+            -122.44119623,
+            37.804668567
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "WALLER ST between STEINER ST and SCOTT ST",
+        "street": "WALLER ST",
+        "from": "STEINER ST",
+        "to": "SCOTT ST",
+        "group": 15,
+        "cnns": [
+          "13363000",
+          "13364000",
+          "13365000",
+          "13366000"
+        ],
+        "purpose": "Trick or Treat"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.431904325,
+            37.770964427
+          ],
+          [
+            -122.432717263,
+            37.770860911
+          ],
+          [
+            -122.43354716,
+            37.770755232
+          ],
+          [
+            -122.434404513,
+            37.770646049
+          ],
+          [
+            -122.435184079,
+            37.77054808
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PIERCE ST between HAIGHT ST and street end",
+        "street": "PIERCE ST",
+        "from": "HAIGHT ST",
+        "to": "street end",
+        "group": 15,
+        "cnns": [
+          "10418000",
+          "10417000"
+        ],
+        "purpose": "Trick or Treat"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.433734773,
+            37.771688274
+          ],
+          [
+            -122.43354716,
+            37.770755232
+          ],
+          [
+            -122.433355765,
+            37.769803357
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SHOTWELL ST between 18TH ST and 24TH ST",
+        "street": "SHOTWELL ST",
+        "from": "18TH ST",
+        "to": "24TH ST",
+        "group": 16,
+        "cnns": [
+          "11836000",
+          "11837000",
+          "11838000",
+          "11839000",
+          "11840000",
+          "11841000"
+        ],
+        "purpose": "Trick or Treat"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.416077986,
+            37.762034002
+          ],
+          [
+            -122.415928746,
+            37.760433261
+          ],
+          [
+            -122.415779298,
+            37.758830232
+          ],
+          [
+            -122.415626197,
+            37.757232409
+          ],
+          [
+            -122.415473275,
+            37.755634108
+          ],
+          [
+            -122.415320139,
+            37.754033534
+          ],
+          [
+            -122.415172289,
+            37.752439645
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CUMBERLAND ST between DOLORES ST and GUERRERO ST",
+        "street": "CUMBERLAND ST",
+        "from": "DOLORES ST",
+        "to": "GUERRERO ST",
+        "group": 17,
+        "cnns": [
+          "4547000"
+        ],
+        "purpose": "Block Party"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.425843422,
+            37.759029398
+          ],
+          [
+            -122.423612942,
+            37.759164228
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HILL ST between VALENCIA ST and GUERRERO ST",
+        "street": "HILL ST",
+        "from": "VALENCIA ST",
+        "to": "GUERRERO ST",
+        "group": 18,
+        "cnns": [
+          "6920000"
+        ],
+        "purpose": "Block Party"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.421041142,
+            37.756101806
+          ],
+          [
+            -122.423214535,
+            37.755970968
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "FAIR OAKS ST between 22ND ST and 26TH ST",
+        "street": "FAIR OAKS ST",
+        "from": "22ND ST",
+        "to": "26TH ST",
+        "group": 19,
+        "cnns": [
+          "5382000",
+          "5383000",
+          "5384000",
+          "5385000"
+        ],
+        "purpose": "Halloween event"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.424289762,
+            37.755105763
+          ],
+          [
+            -122.424136235,
+            37.753503075
+          ],
+          [
+            -122.423988398,
+            37.751911295
+          ],
+          [
+            -122.423829852,
+            37.750304483
+          ],
+          [
+            -122.42367722,
+            37.74871093
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MIRABEL AVE between COSO AVE and SHOTWELL ST",
+        "street": "MIRABEL AVE",
+        "from": "COSO AVE",
+        "to": "SHOTWELL ST",
+        "group": 20,
+        "cnns": [
+          "9065000"
+        ],
+        "purpose": "Block Party"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.417822834,
+            37.745957271
+          ],
+          [
+            -122.416004055,
+            37.746653727
+          ],
+          [
+            -122.415064785,
+            37.746546852
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HOLLADAY AVE between PERALTA AVE and WRIGHT ST",
+        "street": "HOLLADAY AVE",
+        "from": "PERALTA AVE",
+        "to": "WRIGHT ST",
+        "group": 21,
+        "cnns": [
+          "6943201"
+        ],
+        "purpose": "Block Party"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.404937275,
+            37.748222726
+          ],
+          [
+            -122.404968033,
+            37.748155169
+          ],
+          [
+            -122.405101357,
+            37.747366312
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CORTLAND AVE between BENNINGTON ST and FOLSOM ST",
+        "street": "CORTLAND AVE",
+        "from": "BENNINGTON ST",
+        "to": "FOLSOM ST",
+        "group": 22,
+        "cnns": [
+          "4424000",
+          "4425000",
+          "4426000",
+          "4427000",
+          "4428000",
+          "4429000",
+          "4430000"
+        ],
+        "purpose": "Halloween event"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.417779081,
+            37.739183666
+          ],
+          [
+            -122.417138819,
+            37.739121438
+          ],
+          [
+            -122.416519599,
+            37.739061699
+          ],
+          [
+            -122.41589948,
+            37.73900187
+          ],
+          [
+            -122.415183627,
+            37.738932913
+          ],
+          [
+            -122.41466598,
+            37.738882852
+          ],
+          [
+            -122.414558859,
+            37.738881489
+          ],
+          [
+            -122.413937708,
+            37.738930424
+          ],
+          [
+            -122.413410475,
+            37.738972149
+          ],
+          [
+            -122.413311823,
+            37.738982051
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SANCHEZ ST between 30TH ST and RANDALL ST",
+        "street": "SANCHEZ ST",
+        "from": "30TH ST",
+        "to": "RANDALL ST",
+        "group": 23,
+        "cnns": [
+          "11541000"
+        ],
+        "purpose": "Trick or Treat"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.428911417,
+            37.741952911
+          ],
+          [
+            -122.428736128,
+            37.740121826
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "RANDALL ST between HARPER ST and SANCHEZ ST",
+        "street": "RANDALL ST",
+        "from": "HARPER ST",
+        "to": "SANCHEZ ST",
+        "group": 24,
+        "cnns": [
+          "10914000"
+        ],
+        "purpose": "Trick or Treat"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.429840275,
+            37.740752944
+          ],
+          [
+            -122.428736128,
+            37.740121826
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "RANDALL ST between WHITNEY ST and SANCHEZ ST",
+        "street": "RANDALL ST",
+        "from": "WHITNEY ST",
+        "to": "SANCHEZ ST",
+        "group": 25,
+        "cnns": [
+          "10913000"
+        ],
+        "purpose": "Trick or Treat"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.427914896,
+            37.739652404
+          ],
+          [
+            -122.428736128,
+            37.740121826
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CHENERY ST between DIAMOND ST and ELK ST",
+        "street": "CHENERY ST",
+        "from": "DIAMOND ST",
+        "to": "ELK ST",
+        "group": 26,
+        "cnns": [
+          "3927000",
+          "3928000",
+          "3929000",
+          "3930000",
+          "3931000",
+          "3932000",
+          "3933000"
+        ],
+        "purpose": "Trick or Treat"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.433879093,
+            37.734507816
+          ],
+          [
+            -122.43430354,
+            37.734528942
+          ],
+          [
+            -122.434714699,
+            37.734617324
+          ],
+          [
+            -122.435550525,
+            37.734796986
+          ],
+          [
+            -122.435821614,
+            37.734853411
+          ],
+          [
+            -122.436399821,
+            37.734909712
+          ],
+          [
+            -122.436604194,
+            37.734929611
+          ],
+          [
+            -122.43807771,
+            37.735416252
+          ],
+          [
+            -122.438821245,
+            37.735669449
+          ],
+          [
+            -122.438821245,
+            37.735669449
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "OTSEGO AVE between SANTA YNEZ AVE and SANTA YSABEL AVE",
+        "street": "OTSEGO AVE",
+        "from": "SANTA YNEZ AVE",
+        "to": "SANTA YSABEL AVE",
+        "group": 27,
+        "cnns": [
+          "10050000",
+          "10049000"
+        ],
+        "purpose": "Trick or Treat"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.440316502,
+            37.724681409
+          ],
+          [
+            -122.44008254,
+            37.725205691
+          ],
+          [
+            -122.439912605,
+            37.725534447
+          ],
+          [
+            -122.439617477,
+            37.725965421
+          ],
+          [
+            -122.438791727,
+            37.727211218
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BURROWS ST between SAN BRUNO AVE and START: 1-99 BLOCK",
+        "street": "BURROWS ST",
+        "from": "SAN BRUNO AVE",
+        "to": "START: 1-99 BLOCK",
+        "group": 28,
+        "cnns": [
+          "3404000"
+        ],
+        "purpose": "Spooky Garden Reverie Halloween Light Show"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.404099703,
+            37.728834999
+          ],
+          [
+            -122.403683059,
+            37.728944274
+          ]
+        ]
+      }
+    }
+  ]
+}
