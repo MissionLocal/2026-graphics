@@ -95,10 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
     return `
       ${closeBtn}
       <div class="info-title-row">
-        <div class="event"><strong>🚧 CAR-FREE STREET</strong></div>
+        <div class="event"><strong>CAR-FREE STREET</strong></div>
       </div>
       <div class="info-desc">
-        <strong>What for:</strong> ${esc(purpose)}<br/>
+        <strong>🎃 What for:</strong> ${esc(purpose)}<br/>
         ${where ? `<strong>📍 Where:</strong> ${esc(where)}` : ``}
       </div>
     `;
