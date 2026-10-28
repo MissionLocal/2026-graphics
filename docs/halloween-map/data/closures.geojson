@@ -4,10 +4,10 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "42ND AVE between LINCOLN WAY and IRVING ST",
-        "street": "42ND AVE",
-        "from": "LINCOLN WAY",
-        "to": "IRVING ST",
+        "name": "42nd Ave between Lincoln Way and Irving St",
+        "street": "42nd Ave",
+        "from": "Lincoln Way",
+        "to": "Irving St",
         "group": 1,
         "cnns": [
           "1932000"
@@ -30,10 +30,10 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "43RD AVE between JUDAH ST and KIRKHAM ST",
-        "street": "43RD AVE",
-        "from": "JUDAH ST",
-        "to": "KIRKHAM ST",
+        "name": "43rd Ave between Judah St and Kirkham St",
+        "street": "43rd Ave",
+        "from": "Judah St",
+        "to": "Kirkham St",
         "group": 2,
         "cnns": [
           "1956000"
@@ -56,10 +56,10 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "42ND AVE between JUDAH ST and KIRKHAM ST",
-        "street": "42ND AVE",
-        "from": "JUDAH ST",
-        "to": "KIRKHAM ST",
+        "name": "42nd Ave between Judah St and Kirkham St",
+        "street": "42nd Ave",
+        "from": "Judah St",
+        "to": "Kirkham St",
         "group": 3,
         "cnns": [
           "1934000"
@@ -82,10 +82,10 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "KIRKHAM ST between 42ND AVE and 43RD AVE",
-        "street": "KIRKHAM ST",
-        "from": "42ND AVE",
-        "to": "43RD AVE",
+        "name": "Kirkham St between 42nd Ave and 43rd Ave",
+        "street": "Kirkham St",
+        "from": "42nd Ave",
+        "to": "43rd Ave",
         "group": 4,
         "cnns": [
           "7882000"
@@ -108,10 +108,10 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "45TH AVE between PACHECO ST and QUINTARA ST",
-        "street": "45TH AVE",
-        "from": "PACHECO ST",
-        "to": "QUINTARA ST",
+        "name": "45th Ave between Pacheco St and Quintara St",
+        "street": "45th Ave",
+        "from": "Pacheco St",
+        "to": "Quintara St",
         "group": 5,
         "cnns": [
           "2006000"
@@ -134,10 +134,10 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "36TH AVE between RIVERA ST and QUINTARA ST",
-        "street": "36TH AVE",
-        "from": "RIVERA ST",
-        "to": "QUINTARA ST",
+        "name": "36th Ave between Rivera St and Quintara St",
+        "street": "36th Ave",
+        "from": "Rivera St",
+        "to": "Quintara St",
         "group": 6,
         "cnns": [
           "1811000"
@@ -160,10 +160,10 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "12TH AVE between JUDAH ST and IRVING ST",
-        "street": "12TH AVE",
-        "from": "JUDAH ST",
-        "to": "IRVING ST",
+        "name": "12th Ave between Judah St and Irving St",
+        "street": "12th Ave",
+        "from": "Judah St",
+        "to": "Irving St",
         "group": 7,
         "cnns": [
           "528000"
@@ -186,10 +186,10 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "06TH AVE between KIRKHAM ST and JUDAH ST",
-        "street": "06TH AVE",
-        "from": "KIRKHAM ST",
-        "to": "JUDAH ST",
+        "name": "6th Ave between Kirkham St and Judah St",
+        "street": "6th Ave",
+        "from": "Kirkham St",
+        "to": "Judah St",
         "group": 8,
         "cnns": [
           "324000"
@@ -212,10 +212,10 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SHRADER ST between FREDERICK ST and BEULAH ST",
-        "street": "SHRADER ST",
-        "from": "FREDERICK ST",
-        "to": "BEULAH ST",
+        "name": "Shrader St between Frederick St and Beulah St",
+        "street": "Shrader St",
+        "from": "Frederick St",
+        "to": "Beulah St",
         "group": 10,
         "cnns": [
           "11858000"
@@ -238,10 +238,10 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "9TH AVE between ANZA ST and BALBOA ST",
-        "street": "9TH AVE",
-        "from": "ANZA ST",
-        "to": "BALBOA ST",
+        "name": "9th Ave between Anza St and Balboa St",
+        "street": "9th Ave",
+        "from": "Anza St",
+        "to": "Balboa St",
         "group": 11,
         "cnns": [
           "427000"
@@ -264,10 +264,10 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "IRIS AVE between EUCLID AVE and MAYFAIR DR",
-        "street": "IRIS AVE",
-        "from": "EUCLID AVE",
-        "to": "MAYFAIR DR",
+        "name": "Iris Ave between Euclid Ave and Mayfair Dr",
+        "street": "Iris Ave",
+        "from": "Euclid Ave",
+        "to": "Mayfair Dr",
         "group": 12,
         "cnns": [
           "7274000"
@@ -298,10 +298,10 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "OFARRELL ST between STEINER ST and FILLMORE ST",
-        "street": "OFARRELL ST",
-        "from": "STEINER ST",
-        "to": "FILLMORE ST",
+        "name": "O'Farrell St between Steiner St and Fillmore St",
+        "street": "O'Farrell St",
+        "from": "Steiner St",
+        "to": "Fillmore St",
         "group": 13,
         "cnns": [
           "9738000"
@@ -324,10 +324,10 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "AVILA ST between CHESTNUT ST and PRADO ST",
-        "street": "AVILA ST",
-        "from": "CHESTNUT ST",
-        "to": "PRADO ST",
+        "name": "Avila St between Chestnut St and Prado St",
+        "street": "Avila St",
+        "from": "Chestnut St",
+        "to": "Prado St",
         "group": 14,
         "cnns": [
           "2567000",
@@ -365,10 +365,10 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "WALLER ST between STEINER ST and SCOTT ST",
-        "street": "WALLER ST",
-        "from": "STEINER ST",
-        "to": "SCOTT ST",
+        "name": "Waller St between Steiner St and Scott St",
+        "street": "Waller St",
+        "from": "Steiner St",
+        "to": "Scott St",
         "group": 15,
         "cnns": [
           "13363000",
@@ -406,11 +406,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "PIERCE ST between HAIGHT ST and street end",
-        "street": "PIERCE ST",
-        "from": "HAIGHT ST",
+        "name": "Pierce St between Haight St and street end",
+        "street": "Pierce St",
+        "from": "Haight St",
         "to": "street end",
-        "group": 15,
+        "group": 16,
         "cnns": [
           "10418000",
           "10417000"
@@ -437,11 +437,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SHOTWELL ST between 18TH ST and 24TH ST",
-        "street": "SHOTWELL ST",
-        "from": "18TH ST",
-        "to": "24TH ST",
-        "group": 16,
+        "name": "Shotwell St between 18th St and 24th St",
+        "street": "Shotwell St",
+        "from": "18th St",
+        "to": "24th St",
+        "group": 19,
         "cnns": [
           "11836000",
           "11837000",
@@ -488,11 +488,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "CUMBERLAND ST between DOLORES ST and GUERRERO ST",
-        "street": "CUMBERLAND ST",
-        "from": "DOLORES ST",
-        "to": "GUERRERO ST",
-        "group": 17,
+        "name": "Cumberland St between Dolores St and Guerrero St",
+        "street": "Cumberland St",
+        "from": "Dolores St",
+        "to": "Guerrero St",
+        "group": 20,
         "cnns": [
           "4547000"
         ]
@@ -514,11 +514,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "HILL ST between VALENCIA ST and GUERRERO ST",
-        "street": "HILL ST",
-        "from": "VALENCIA ST",
-        "to": "GUERRERO ST",
-        "group": 18,
+        "name": "Hill St between Valencia St and Guerrero St",
+        "street": "Hill St",
+        "from": "Valencia St",
+        "to": "Guerrero St",
+        "group": 21,
         "cnns": [
           "6920000"
         ]
@@ -540,11 +540,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "FAIR OAKS ST between 22ND ST and 26TH ST",
-        "street": "FAIR OAKS ST",
-        "from": "22ND ST",
-        "to": "26TH ST",
-        "group": 19,
+        "name": "Fair Oaks St between 22nd St and 26th St",
+        "street": "Fair Oaks St",
+        "from": "22nd St",
+        "to": "26th St",
+        "group": 22,
         "cnns": [
           "5382000",
           "5383000",
@@ -581,11 +581,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "MIRABEL AVE between COSO AVE and SHOTWELL ST",
-        "street": "MIRABEL AVE",
-        "from": "COSO AVE",
-        "to": "SHOTWELL ST",
-        "group": 20,
+        "name": "Mirabel Ave between Coso Ave and Shotwell St",
+        "street": "Mirabel Ave",
+        "from": "Coso Ave",
+        "to": "Shotwell St",
+        "group": 23,
         "cnns": [
           "9065000"
         ]
@@ -611,11 +611,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "HOLLADAY AVE between PERALTA AVE and WRIGHT ST",
-        "street": "HOLLADAY AVE",
-        "from": "PERALTA AVE",
-        "to": "WRIGHT ST",
-        "group": 21,
+        "name": "Holladay Ave between Peralta Ave and Wright St",
+        "street": "Holladay Ave",
+        "from": "Peralta Ave",
+        "to": "Wright St",
+        "group": 24,
         "cnns": [
           "6943201"
         ]
@@ -641,11 +641,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "CORTLAND AVE between BENNINGTON ST and FOLSOM ST",
-        "street": "CORTLAND AVE",
-        "from": "BENNINGTON ST",
-        "to": "FOLSOM ST",
-        "group": 22,
+        "name": "Cortland Ave between Bennington St and Folsom St",
+        "street": "Cortland Ave",
+        "from": "Bennington St",
+        "to": "Folsom St",
+        "group": 25,
         "cnns": [
           "4424000",
           "4425000",
@@ -705,11 +705,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SANCHEZ ST between 30TH ST and RANDALL ST",
-        "street": "SANCHEZ ST",
-        "from": "30TH ST",
-        "to": "RANDALL ST",
-        "group": 23,
+        "name": "Sanchez St between 30th St and Randall St",
+        "street": "Sanchez St",
+        "from": "30th St",
+        "to": "Randall St",
+        "group": 26,
         "cnns": [
           "11541000"
         ]
@@ -731,11 +731,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "RANDALL ST between HARPER ST and SANCHEZ ST",
-        "street": "RANDALL ST",
-        "from": "HARPER ST",
-        "to": "SANCHEZ ST",
-        "group": 24,
+        "name": "Randall St between Harper St and Sanchez St",
+        "street": "Randall St",
+        "from": "Harper St",
+        "to": "Sanchez St",
+        "group": 27,
         "cnns": [
           "10914000"
         ]
@@ -757,11 +757,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "RANDALL ST between WHITNEY ST and SANCHEZ ST",
-        "street": "RANDALL ST",
-        "from": "WHITNEY ST",
-        "to": "SANCHEZ ST",
-        "group": 25,
+        "name": "Randall St between Whitney St and Sanchez St",
+        "street": "Randall St",
+        "from": "Whitney St",
+        "to": "Sanchez St",
+        "group": 28,
         "cnns": [
           "10913000"
         ]
@@ -783,11 +783,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "CHENERY ST between DIAMOND ST and ELK ST",
-        "street": "CHENERY ST",
-        "from": "DIAMOND ST",
-        "to": "ELK ST",
-        "group": 26,
+        "name": "Chenery St between Diamond St and Elk St",
+        "street": "Chenery St",
+        "from": "Diamond St",
+        "to": "Elk St",
+        "group": 29,
         "cnns": [
           "3927000",
           "3928000",
@@ -847,11 +847,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "OTSEGO AVE between SANTA YNEZ AVE and SANTA YSABEL AVE",
-        "street": "OTSEGO AVE",
-        "from": "SANTA YNEZ AVE",
-        "to": "SANTA YSABEL AVE",
-        "group": 27,
+        "name": "Otsego Ave between Santa Ynez Ave and Santa Ysabel Ave",
+        "street": "Otsego Ave",
+        "from": "Santa Ynez Ave",
+        "to": "Santa Ysabel Ave",
+        "group": 30,
         "cnns": [
           "10050000",
           "10049000"
@@ -886,11 +886,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "BURROWS ST between SAN BRUNO AVE and START: 1-99 BLOCK",
-        "street": "BURROWS ST",
-        "from": "SAN BRUNO AVE",
-        "to": "START: 1-99 BLOCK",
-        "group": 28,
+        "name": "Burrows St between San Bruno Ave and Start: 1-99 Block",
+        "street": "Burrows St",
+        "from": "San Bruno Ave",
+        "to": "Start: 1-99 Block",
+        "group": 31,
         "cnns": [
           "3404000"
         ]
@@ -905,6 +905,130 @@
           [
             -122.403683059,
             37.728944274
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "12th Ave between Judah St and Kirkham St",
+        "street": "12th Ave",
+        "from": "Judah St",
+        "to": "Kirkham St",
+        "group": 33,
+        "cnns": [
+          "529000"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.469391826,
+            37.762034108
+          ],
+          [
+            -122.469263156,
+            37.760170586
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hearst Ave between Baden St and Foerster St",
+        "street": "Hearst Ave",
+        "from": "Baden St",
+        "to": "Foerster St",
+        "group": 35,
+        "cnns": [
+          "6862000",
+          "6863000",
+          "6864000",
+          "6865000"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.439737346,
+            37.730732907
+          ],
+          [
+            -122.442015664,
+            37.730721768
+          ],
+          [
+            -122.444298409,
+            37.730708221
+          ],
+          [
+            -122.446573476,
+            37.730699251
+          ],
+          [
+            -122.448860456,
+            37.730690189
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "18th St between Connecticut St and Texas St",
+        "street": "18th St",
+        "from": "Connecticut St",
+        "to": "Texas St",
+        "group": 37,
+        "cnns": [
+          "856000",
+          "855000"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.397494998,
+            37.762521203
+          ],
+          [
+            -122.396526826,
+            37.762579649
+          ],
+          [
+            -122.395561309,
+            37.762637925
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lake St between 6th Ave and 7th Ave",
+        "street": "Lake St",
+        "from": "6th Ave",
+        "to": "7th Ave",
+        "group": 40,
+        "cnns": [
+          "8014000"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.464693461,
+            37.786670438
+          ],
+          [
+            -122.465760339,
+            37.786627327
           ]
         ]
       }
