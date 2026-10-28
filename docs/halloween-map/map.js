@@ -97,14 +97,20 @@ document.addEventListener('DOMContentLoaded', () => {
   function tplClosure(p = {}) {
     const purpose = key(p.purpose) || 'Street closure';
     const where = closureWhere(p);
+    const hood = key(p.neighborhood);
+    const time = key(p.time);
+    const link = safeLink(p.link);
     return `
       ${closeBtn}
       <div class="info-title-row">
         <div class="event"><strong>CAR-FREE STREET</strong></div>
       </div>
       <div class="info-desc">
-        <strong>🎃 What for:</strong> ${esc(purpose)}<br/>
-        ${where ? `<strong>📍 Where:</strong> ${esc(where)}` : ``}
+        <strong>🎃 What for:</strong> ${link
+          ? `<a href="${esc(link)}" target="_blank" rel="noopener noreferrer">${esc(purpose)} ↗</a>`
+          : esc(purpose)}<br/>
+        ${time ? `<strong>🕐 When:</strong> ${esc(time)}<br/>` : ``}
+        ${where ? `<strong>📍 Where:</strong> ${esc(where)}${hood ? ` (${esc(hood)})` : ``}` : ``}
       </div>
     `;
   }
