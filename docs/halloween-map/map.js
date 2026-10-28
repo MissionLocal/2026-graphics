@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
   ));
 
-  // The events file has keys like "Time ", "Where ", "Description?".
+  // The events file has keys like "Time ", "Where ", "Description".
   // Normalize them to clean lowercase names: time, where, description, ...
   function cleanProps(p = {}) {
     const out = {};
