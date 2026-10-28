@@ -11,11 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---- Map
   const map = new mapboxgl.Map({
-    container: "map",
-    style: "mapbox://styles/mlnow/cmhcjcs6y003s01smeip27ohd",
-    center: [-122.45, 37.765],
-    zoom: 11.2,
-  });
+  container: "map",
+  style: "mapbox://styles/mlnow/cmhcjcs6y003s01smeip27ohd",
+  center: [-122.45, 37.765],
+  zoom: 11.27,
+  minZoom: 11.27,                 // how far out readers can zoom
+  maxBounds: [
+    [-122.56, 37.68],            // southwest corner [lng, lat]
+    [-122.33, 37.85]             // northeast corner [lng, lat]
+  ]
+});
 
   // ======================= CONFIG =======================
   const CLOSURES_PATH = 'street_closures_2026.geojson';
