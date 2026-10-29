@@ -665,6 +665,25 @@
                     37.73906
                 ]
             }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "What": "Trick or Treat with Robots",
+                "Description": "Robots will be handing out candies. Kids should attend with adults.",
+                "Time ": "Halloween 5 to 8 p.m.",
+                "Where ": "374 Connecticut St.",
+                "Neighborhood ": "Potrero Hill",
+                "Cost ": "Free",
+                "Event link": "https://candybot.org"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.39771,
+                    37.761742
+                ]
+            }
         }
     ]
 }
